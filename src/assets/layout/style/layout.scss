@@ -1,0 +1,2518 @@
+@import '../../mytheme/variables';
+
+@mixin shadow($value) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+}
+
+body {
+    font-family: $fontFamily;
+    color: #333333;
+    font-size: 14px;
+    background-color: #f3f3f3;
+    padding: 0;
+    margin: 0;
+
+    &.layout-scroll-block {
+        overflow: hidden;
+    }
+}
+button.ui-button:focus {
+   box-shadow: none !important;
+}
+
+//color get green of patient links if active
+.card-left.card-info-details .more-linkks a.active {
+    color: #13a001;
+}
+
+
+
+$bg-errors:#ff0000;
+
+
+.layout-topbar button.user-icon.mobile-top-icon {
+    display: inline-block !important;
+}
+
+
+.layout-content {
+    height: 100vh;
+    background-color: #fff;
+    overflow-y: scroll;
+}
+
+.layout-content .custom-sound-card {
+    height: 100vh;
+}
+
+.layout-wrapper {
+    .layout-topbar {
+        background: #252d32;
+        height: 60px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: 9;
+        @include shadow(0 0 16px 0 rgba(0, 0, 0, 0.16));
+
+        .layout-topbar-content {
+            padding: 10px 20px;
+            position: relative;
+
+            .topbar-logo {
+                height: 40px;
+                vertical-align: middle;
+            }
+    
+            .menu-btn {
+                display: none;
+                color: #d8d8d8;
+                font-size: 24px;
+                vertical-align: middle;
+                margin-right: 20px;
+                margin-left: 20px;
+
+                i {
+                    vertical-align: middle;
+                }
+            }
+    
+            .topbar-link {
+                color: #d8d8d8;
+                position: absolute;
+                right: 32px;
+                top: 0;
+                display: block;
+                height: 60px;
+                line-height: 60px;
+                font-size: 16px;
+                padding: 0 16px;
+                text-decoration: none;
+
+                &:hover {
+                    background-color: #3a4246;
+                }
+            }
+        }
+    }
+
+    .layout-sidebar {
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 250px;
+        background-color: #2a3238;
+        height: 100%;
+        z-index: 9999;
+        @include shadow(0 0 16px 0 rgba(0, 0, 0, 0.16));
+
+        .layout-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                a {
+                    text-decoration: none;
+                    display: block;
+                    padding: 12px 24px;
+                    color: #d8d8d8;
+                    background-color: #2a3238;
+                    font-size: 16px;
+                    border-left: 4px solid transparent;
+                    border-bottom: 1px solid #23292e;
+
+                    i {
+                        margin-right: 12px;
+                        vertical-align: middle;
+                    }
+
+                    span {
+                        vertical-align: middle;
+                    }
+
+                    &:hover {
+                        background-color: #353c43;
+                    }
+
+                    &.active{
+                        background-color: #1d2327;
+                        border-left-color: #007ad9;
+                        
+                        i {
+                            color: #007ad9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .layout-editor {
+        .layout-editor-button {
+            display: block;
+            position: fixed;
+            width: 52px;
+            height: 52px;
+            line-height: 52px;
+            background-color: #037ad9;
+            text-align: center;
+            top: 120px;
+            right: 0;
+            z-index: 1000000;
+            border-top-left-radius: 2px;
+            border-bottom-left-radius: 2px;
+            transition: background-color .2s;
+            box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 12px 17px 2px rgba(0, 0, 0, 0.14);
+            cursor: pointer;
+            transition: background-color .3s;
+            z-index: 9999;
+
+            &:hover {
+                background-color: #0261ad;
+            }
+
+            i {
+                line-height: inherit;
+                font-size: 32px;
+                color: #ffffff;
+            }
+        }
+
+        .layout-editor-panel {
+            position: fixed;
+            width: 600px;
+            height: 100%;
+            right: -600px;
+            top: 0;
+            z-index: 10000;
+            transition: right .3s;
+            background-color: #2a3238;
+            box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.16);
+            padding: 1em 0 2em 0;
+
+            &.layout-editor-panel-active {
+                right: 0;
+            }
+
+            .layout-editor-close-button {
+                display: inline-block;
+                width: 52px;
+                height: 52px;
+                line-height: 52px;
+                text-align: center;
+                border-radius: 50%;
+                margin-bottom: 1em;
+                margin-right: 1em;
+                transition: background-color .3s;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #4b4b4b;
+                }
+
+                i {
+                    color: #037ad9;
+                    line-height: inherit;
+                    font-size: 32px;
+                }
+            }
+            
+            h1 {
+                display: inline-block;
+                color: #ffffff;
+                margin: .5em 1em;
+                font-size: 24px;
+            }
+
+            button {
+                display: block;
+                width: 100%;
+                border-radius: 0;
+            
+                .ui-button-text {
+                    padding: 1em;
+                }
+
+                .ui-button-icon-left {
+                    font-size: 24px;
+                }
+            }
+            
+            .close-button-container {
+                text-align: right;
+            }
+
+			.highlights-container {
+				height: calc(100% - 87px);
+				overflow: auto;
+				background-color: #2a3238;
+				color: #ffffff;
+				padding: 1em;
+
+				pre {
+					font-size: 16px;
+					font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+					white-space: pre-wrap;
+                    overflow-wrap: break-word;
+                    color: #ffa94d;
+					
+					&:focus {
+						outline: 0 none;
+					}
+
+					.scss-variable {
+						color: #4dabf7;
+					}
+
+					.scss-comment {
+						color: #38d9a9;
+					}
+				}
+			}
+        }
+    }
+
+    .layout-content {
+        // margin-left: 250px;
+        padding: 24px 24px 0;
+    }
+
+    .layout-footer {
+        width: 100%;
+        background-color: #343c41;
+        padding: 16px;
+        padding-left: 266px;
+        color: #d8d8d8;
+    }
+}
+
+
+.fav-cont .ui-widget-header,.cur-med-content .ui-widget-header {
+    display: none;
+}
+p-dialog.modal-newrx-srch .ui-widget-header.ui-corner-top {
+    display: block;
+}
+
+.fav-cont .ui-panel-content.ui-widget-content,.cur-med-content .ui-panel-content.ui-widget-content {
+    padding: 0px;
+}
+
+
+.card {
+    border-radius: 3px;
+    background: #ffffff;
+    padding: 16px;
+    
+    
+    &.card-w-title {
+        padding-bottom: 16px;
+    }
+    
+    &.no-gutter {
+        margin-bottom: 0;
+    }
+    
+    h1 {
+        font-size: 20px;
+        font-weight: 400;
+        margin: 24px 0 12px 0;
+        
+        &:first-child {
+            margin-top: 0px;
+        }
+    }
+    
+    h2 {
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+    h3 {
+        font-size: 16px;
+        font-weight: 700;
+    }
+    
+    h4 {
+        font-size: 14px;
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 1024px) {
+    .layout-wrapper {
+        .layout-topbar {
+            .layout-topbar-content {   
+                .topbar-logo {
+                    height: 28px;
+                    margin-top: 6px;
+                }
+
+                .menu-btn {
+                    display: inline-block;
+                }
+            }
+        }
+
+        .layout-sidebar {
+            left: -250px;
+
+            &.layout-sidebar-active {
+                left: 0;
+                width: 100%;
+            }
+        }
+
+        .layout-content {
+            margin-left: 0;
+        }
+    }
+    .more-linkks[_ngcontent-thk-c0] a[_ngcontent-thk-c0] {
+        
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    body .tabs-main .ui-button.ui-button-text-only .ui-button-text {
+        font-weight: 500;
+        font-size: 15px !important;
+    }
+    span.badge_no {
+        font-size: 15px !important;
+    }
+
+
+
+
+}
+
+@media (max-width: 640px) {
+	.layout-wrapper {
+		.layout-editor {
+			.layout-editor-panel {
+				width: 100%;
+				right: -100%;
+			}
+		}
+	}
+}
+
+ @media screen and (min-width:100px) and (max-width:767px){
+
+    .layout-wrapper .layout-content {
+        padding: 10px;
+    }
+  
+
+    body .layout-wrapper .layout-topbar{display: block;}
+    .card.card-w-title.ui-g-3{width:100%;}
+    body .custom-ui-btn.ui-button{width: 100%;}
+    .ui-tabview-panels .ui-g-2{width: 100%;}
+    .layout-wrapper .layout-topbar .layout-topbar-content{padding: 20px 20px;}
+
+
+    .ui-tabview-panels .ui-g-2 a img{
+        margin: 0 auto; text-align: center; display: block; margin-left: auto !important;
+    }
+
+ }
+
+
+.layout-wrapper .layout-topbar{display: none;}
+body .ui-sidebar .ui-sidebar-close{color:#FFF !important; padding: 15px 6px;}
+
+
+.layout-topbar-content button {
+    background: transparent;
+    border: none;
+    color: #eaeaea;
+    font-size: 20px;
+}
+button.main-sidebar-icon {
+    float: right;
+}
+
+
+.custom-sidebar .ng-tns-c3-0 {
+    padding: 0;
+    border: none;
+}
+
+.custom-sidebar .ng-tns-c3-0 .patient-detail {
+    padding: 0 15px;
+}
+
+.scroll-table table {
+    width: 100%;
+}
+
+.custom-form .date-check label {
+    min-width: 50px !important;
+}
+
+.custom-sidebar .ng-tns-c3-0 h1 {
+    font-family: Arial;
+}
+
+.custom-sidebar .ng-tns-c3-0 a.ng-tns-c3-0 {
+    font-size: 20px;
+    position: absolute;
+    right: 0px;
+    top: -6px;
+    cursor: pointer;
+}
+
+/* my code - newrx tab page 3 sept*/
+
+.patient-listz {
+    width: 100%;
+    max-width: 250px;
+    float: right;
+    right: 0;
+    position: absolute;
+    top: 60px;
+    padding: 0;
+    box-shadow: 0px 0px 2px #b1afaf;
+    right: 1px;
+    border-radius: 0px;
+}
+
+.patient-listz h1 {
+    background-color: #61d1d1;
+    padding: 10px 10px;
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+}
+
+.patient-listz .ng-star-inserted {
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    margin:  0;
+}
+
+.patient-listz .ng-star-inserted img {
+    border: 1px solid #d6d6d6;
+}
+
+.patient-listz .ng-star-inserted span {
+    margin-left: 10px;
+}
+
+.patient-listz .ng-star-inserted:not(:first-child) {
+    border-bottom: 1px solid #ececec;
+}
+
+
+.form-upper-div p-dropdown.custom-select .ui-dropdown {
+    border: none;
+}
+
+.form-upper-div p-dropdown.custom-select {
+    padding: 4px 4px;
+}
+.custom-flex.pl-sm.ref label {
+    float: left;
+}
+.custom-flex.pl-sm.ref {
+    align-items: start;
+}
+
+
+.btnz-formz-current-med-all button span {
+    font-size: 16px !important;
+}
+
+p-checkbox.ng-untouched.ng-pristine label.ng-star-inserted.ui-chkbox-label {
+    color: #033076;
+    font-size: 16px;
+}
+.full-input label.ui-chkbox-label {
+    color: #033076;
+    font-size: 16px;
+}
+
+.footer-buttons label.ng-star-inserted.ui-chkbox-label {
+    font-weight: 600;
+    color: #033076;
+    font-size: 16px;
+}
+
+
+@media(max-width:991px)
+{
+    .setting-mennu .setting-menu ul {
+        width: 100% !important;
+        margin-top: 0px !important;
+    }
+    
+    .setting-mennu .setting-menu {
+        margin-top: 6px;
+    }
+
+    // css for medication add manually css 
+    p-dialog.modal-newrx-srch p-dialog.form_manualadd .ng-trigger.ng-trigger-animation.ui-widget.ui-widget-content .ui-dialog-content.ui-widget-content {
+        
+        padding: 6px 30px 6px 0px;
+    }
+  .layout-wrapper .layout-topbar {
+    display: block;
+}
+}
+
+/* validation css start */
+
+.custom-sound-card .form-upper-div p-message.ng-star-inserted {
+    position: absolute;
+ 
+  }
+  
+  .custom-sound-card .form-upper-div p-message.ng-star-inserted .ui-message-error {
+   padding: 10px 6px;
+    background-color:$bg-errors;
+    color: #fff;
+    line-height: 6px;
+  }
+  
+  .custom-sound-card .form-upper-div p-message.ng-star-inserted .ui-message-error span.ui-message-icon.pi.pi-times {
+    display: none;
+  }
+  .custom-form .rig-form1 .custom-flex.pl-sm.ref .ref-div p-message.ng-star-inserted {
+    bottom: -30px;
+    padding-left: 100px;
+}
+.custom-form .rig-form1 .custom-flex.pl-sm.ref .ref-div
+{
+    position: relative;
+}
+
+@media (max-width:1350px)
+{
+    .custom-form .row.ui-g-7.prn-class .checkbox-prn label {
+        min-width: 60px;
+        line-height: 25px
+    }
+    form.custom-form {
+       padding: 0 20px 0 20px !important;
+    }
+    .more-linkks a {
+      font-size: 15.7px;
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px)
+{
+    .card-info-details .full-area {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .card-info-details .full-area img.usr-imgg {
+        float: none !important;
+    }
+    
+    .more-linkks .ui-g-6 {
+        width: 100%;
+    }
+
+    .custom-sound-card .form-upper-div p-message.ng-star-inserted span.ui-message-text {
+        font-size: 11.5px;
+    }
+    .custom-sound-card .form-upper-div p-message.ng-star-inserted .ui-message-error {
+        padding: 10px 7px;
+    }
+    
+    .custom-form .rig-form1 .custom-flex.pl-sm.ref .ref-div p-message.ng-star-inserted {
+    right: -105px;  
+    }
+    section.current-medi-alleries .footer-buttons p-checkbox.ng-untouched.ng-pristine.ng-valid  label {
+        font-size: 15px;
+    }
+    
+}
+
+@media (max-width:1024px)
+{
+ 
+    .custom-form .rig-form1 .custom-flex.pl-sm.ref .ref-div p-message.ng-star-inserted {
+        bottom: 10px;
+        padding: 0;
+        
+    }
+}
+@media (max-width:991px)
+{
+    .card.card-w-title.ui-g-12 form.custom-form{
+        padding: 0 0px;
+    }
+
+    .custom-form .rig-form1 .custom-flex.pl-sm.ref .ref-div p-message.ng-star-inserted {
+        bottom: -36px;
+        right: 0;
+        padding: 0;
+    }
+    .custom-sound-card .form-upper-div p-message.ng-star-inserted {
+       
+        margin: 0px 0 0 -6px;
+    }
+    .erroz.custom-erroz {
+        margin-bottom: 10px;
+    }
+    .card.card-w-title.ui-g-3.custom-user-menu.ng-star-inserted {
+        width: 100%;
+        box-shadow: 0px 1px 4px #888;
+        margin-top: 0;
+        position: absolute;
+        overflow: scroll;
+        max-width: 300px;
+        height: 85vh;
+        top: 60px;
+        z-index: 99999;
+    }
+
+    .card.card-w-title.ui-g-3.custom-user-menu.ng-star-inserted .card-info-details .full-area {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .card.card-w-title.ui-g-3.custom-user-menu.ng-star-inserted .card-info-details .full-area img.usr-imgg {
+        float: none;
+    }
+    
+    .card.card-w-title.ui-g-3.custom-user-menu.ng-star-inserted .card-info-details .more-linkks {
+        padding: 0;
+    }
+    
+    .card.card-w-title.ui-g-3.custom-user-menu.ng-star-inserted .card-info-details .more-linkks div {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sider-panel {
+        display: none;
+    }
+
+    .full-area p {
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width:767px)
+{
+.custom-sound-card .form-upper-div p-message.ng-star-inserted {
+    position: absolute;
+    padding-left: 0;
+   
+    margin-top: -4px;
+}
+.custom-form .rig-form1 .custom-flex.pl-sm.ref .ref-div p-message.ng-star-inserted {
+    bottom: -32px;
+    right: 0;
+    padding: 0;
+    left: auto;
+}
+
+
+}
+
+
+@media (max-width:500px)
+{
+
+// css for mannual add medicine 
+p-dialog.modal-newrx-srch .ng-trigger.ng-trigger-animation .ui-widget-content p {
+        text-align: center;
+        margin: 5px 0 5px 0 !important;
+    } 
+
+
+.custom-sound-card .form-upper-div p-message.ng-star-inserted {
+    position: absolute;
+    padding-left: 0;
+   
+    margin-top: -4px;
+}
+.custom-form .rig-form1 .custom-flex.pl-sm.ref .ref-div p-message.ng-star-inserted {
+    bottom: -30px;
+    right: auto;
+    padding: 0;
+    left: 0;
+    margin-left: 0;
+}
+
+
+}
+
+
+/* end css */
+
+
+body .tabs-main .ui-button.ui-button-text-only .ui-button-text
+{
+    font-weight: 500;
+    font-size: 20px;
+    font-family: Arial;
+    padding: 6px 0;
+}
+
+/* current medications: left sidebar i css*/
+
+#tblCM td i {
+    vertical-align: middle;
+    margin-left: 4px;
+    font-size: 18px;
+    color:#008db1;
+}
+table#tblAllergies td {
+    color: #e61610;
+}
+#tblCM td, #tblAllergies td {
+    font-size: 13px;
+    padding: 2px 0;
+}
+
+
+#tblCM tbody perfect-scrollbar, #tblAllergies tbody perfect-scrollbar {
+    margin-top: 4px;
+}
+
+/* newrx modal css */
+
+p-dialog.modal-newrx-srch .ng-trigger.ng-trigger-animation .ui-dialog-content.ui-widget-content .data-srch-manual {
+    padding-top: 100px;
+}
+p-dialog.modal-newrx-srch .ng-trigger.ng-trigger-animation {
+    width: 350px;
+    
+    background-color: #fff;
+}
+p-dialog.modal-newrx-srch .ng-trigger.ng-trigger-animation p-autocomplete#acSimple {
+    margin-bottom: 10px;
+    display: block;
+}
+
+p-dialog.modal-newrx-srch .ng-trigger.ng-trigger-animation .ui-widget-header {position: absolute;z-index: 9;right: 0;background: none;border: none;top: 5px;}
+
+p-dialog.modal-newrx-srch .ng-trigger.ng-trigger-animation .ui-widget-content {
+    padding: 10px 10px;
+}
+
+p-dialog.modal-newrx-srch .ng-trigger.ng-trigger-animation .ui-widget-content p-autocomplete#acSimple {
+    width: 80%;
+}
+
+p-dialog.modal-newrx-srch .ng-trigger.ng-trigger-animation .ui-widget-content p-autocomplete#acSimple input {
+    font-family: Arial;
+    font-weight: 600;
+    border: 2px solid #c1c1c1;
+    font-size: 14px;
+}
+p-dialog.modal-newrx-srch .ng-trigger.ng-trigger-animation .ui-widget-content button.ui-button {
+    background-color: #033076;
+    border-color: #033076;
+    width: auto;
+}
+
+.data-srch-manual {
+    float: left;
+    width: 100%;
+}
+
+.data-srch-manual .compoun-filled {
+    width: 100%;
+    text-align: right;
+}
+
+.data-srch-manual .compoun-filled label {
+    margin-right: 0px !important;
+}
+
+.data-srch-manual .footer-btns {
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.data-srch-manual .footer-btns span.not-lef {
+    margin-right: 8px;
+}
+
+
+
+
+/* scrollbar css */
+
+#tblCM tbody perfect-scrollbar .ps__rail-y,#tblCM tbody perfect-scrollbar .ps__rail-y:hover,#tblAllergies perfect-scrollbar .ps__rail-y,#tblAllergies perfect-scrollbar .ps__rail-y:hover {
+    opacity: 0.9;
+}
+
+/* footer new rx buttons */
+.footer-buttons.nnewrx {
+    margin-right: 20px;
+    height: 30px;
+}
+
+.footer-buttons ul {
+    margin: 0;
+    float: right;
+}
+
+/* end css */
+
+
+
+/* alert css start */
+
+.tabs-alert-pg {
+    width: 100%;
+    float: left;
+}
+
+.tabs-alert-pg ul.ui-tabview-nav {
+    width: 19%;
+    float: left;
+    box-shadow: 3px -2px 3px -1px #b1afaf;
+    padding: 0px !important;
+    height: auto;
+    margin-top: 40px;
+}
+
+.tabs-alert-pg .ui-tabview-panels div.ui-tabview-panel {
+    padding: 0;
+}
+
+.tabs-alert-pg ul.ui-tabview-nav li.ui-tabview-selected
+{
+    background-color: #2f96b4;
+}
+
+.tabs-alert-pg ul.ui-tabview-nav li.ui-tabview-selected a
+{
+color:#fff;
+}
+
+.tabs-alert-pg ul.ui-tabview-nav li {
+    display: block;
+    width: 100%;
+    background-color: #ececec;
+}
+
+.tabs-alert-pg ul.ui-tabview-nav li a {
+    color: #000;
+    display: block;
+    width: 100%;
+    padding: 15px 15px;
+    position: relative;
+}
+.tabs-alert-pg ul.ui-tabview-nav li a span.badge {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #e61610;
+    width: 40px;
+    padding: 6px;
+    text-align: center;
+    font-size: 15px;
+    font-family: Arial;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.tabs-alert-pg .ui-tabview-panels {
+    width: 78%;
+    float: left;
+    padding-left: 30px;
+}
+
+.tabs-alert-pg .ui-tabview.ui-widget.ui-tabview-top {
+    width: 100%;
+    float: left;
+}
+
+
+
+/* end css */
+
+@media (max-width:767px)
+{
+
+    .tabs-alert-pg ul.ui-tabview-nav li a span.badge {
+       right: 8px;
+       width: 30px;
+       padding: 5px;
+       font-size: 13px;
+    }  
+
+.tabs-alert-pg ul.ui-tabview-nav {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto 20px;
+    float: none !important;
+}
+
+.tabs-alert-pg ul.ui-tabview-nav li {
+    display: block;
+    width: 49% !important;
+    float: left !important;
+    margin: 1px !important;
+}
+.card.card-w-title.ui-g-3.custom-user-menu.ng-star-inserted
+{
+    max-width: 280px;
+}
+
+}
+
+ 
+
+  /* css for 18 sept 2019 */
+
+  //removing masking with index from model medication history 
+   .ui-widget-overlay.ui-dialog-mask {
+    background-color: transparent;
+    z-index: 0 !important;
+}
+
+  p-dialog.modal-singlemed-his .ui-dialog.ui-widget.ui-widget-content {
+    width: 650px;
+}
+
+p-dialog.modal-singlemed-his .ui-dialog-titlebar.ui-widget-header {
+    background-color: #fff;
+}
+
+p-dialog.modal-singlemed-his .ui-dialog-titlebar.ui-widget-header .head-med-his {
+    color: #4a4a4a;
+    text-align: center;
+    font-size: 13px;
+    font-family: Arial;
+}
+
+p-dialog.modal-singlemed-his .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close {
+    color: #333;
+}
+
+ .med-header  .med-table table.med-hist tbody tr td {
+    padding: 0px;
+}
+p-dialog.modal-singlemed-his .ui-dialog.ui-widget.ui-widget-content table.med-hist thead tr th:last-child {
+    width: 150px;
+}
+
+p-dialog.modal-newrx-srch .ui-dialog-footer {
+    border-top: none;
+}
+
+
+/* select allrgy */
+
+
+.data-aller p-dropdown label {
+    font-size: 13px;
+    padding: 3px 0 3px 4px;
+}
+.data-aller p-dropdown .ng-trigger.ng-trigger-overlayAnimation {
+    width: auto !important;
+    z-index: 0;
+    min-width: auto !important;
+}
+
+.data-aller p-dropdown .ng-trigger.ng-trigger-overlayAnimation .ui-dropdown-items-wrapper ul {
+    width: 150px !important;
+    min-width: auto;
+}
+
+
+
+
+/* end css */
+
+
+/* alert printer modal*/
+
+
+
+p-dialog.model-printer-def .ui-dialog-titlebar {
+    padding: 0;
+    background-color: #fff;
+}
+
+
+p-dialog.model-printer-def .ui-dialog-titlebar+.ui-dialog-content.ui-widget-content {
+    border-top: none;
+    padding: 40px 20px;
+}
+
+p-dialog.model-printer-def .ng-trigger.ui-dialog.ui-widget.ui-widget-content {
+    width: 320px;
+}
+
+p-dialog.model-printer-def .ng-trigger.ui-dialog.ui-widget.ui-widget-content h3 {
+    text-align: center;
+    font-family: Arial;
+    font-weight: 600;
+    width: 210px;
+    margin: 0 auto 20px;
+}
+
+p-dialog.model-printer-def a.ui-dialog-titlebar-maximize {
+    display: none;
+}
+
+p-dialog.model-printer-def a.ui-dialog-titlebar-close {
+    position: absolute;
+    right: 10px;
+    z-index: 999;
+    top: 8px;
+}
+
+p-dialog.model-printer-def a.ui-dialog-titlebar-close span {
+    font-size: 20px;
+    color: #6d6c6c;
+}
+
+p-dialog.model-printer-def .ng-trigger.ui-dialog.ui-widget.ui-widget-content p-progressbar {
+    margin: 20px 0 0 0;
+}
+
+p-dialog.model-printer-def .ng-trigger.ui-dialog.ui-widget.ui-widget-content p-progressbar .ui-progressbar.ui-progressbar-determinate {
+    height: 9px;
+    width: 180px;
+    margin: 0 auto;
+}
+
+p-dialog.model-printer-def .ng-trigger.ui-dialog.ui-widget.ui-widget-content p-progressbar .ui-progressbar-label {
+    color: #0000 !important;
+}
+p-dialog.model-printer-def .ng-trigger.ui-dialog.ui-widget.ui-widget-content p-progressbar .ui-progressbar-value-animate {
+    background-color: #2f96b4;
+}
+
+/* account settings css start */
+
+section.acc-sec .group-acc ul li p-checkbox.ng-untouched.ng-pristine label.ui-chkbox-label,section.acc-sec .group-acc ul li p-checkbox label.ui-label-active {
+    font-weight: 600;
+    color: #2f96b4;
+}
+
+section.acc-sec .group-acc ul li p-checkbox label.ng-star-inserted.ui-chkbox-label {
+    font-weight: 600;
+    color: #2f96b4;
+    font-size: 16px;
+}
+
+
+
+/* end css */
+
+
+/* 19 sept 2019  select pharmacy css start */
+
+p-dialog.pharmacy-selection .ui-dialog-titlebar.ui-widget-header {
+    padding: 0;
+}
+
+
+p-dialog.pharmacy-selection .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-maximize {
+    display: none;
+}
+
+p-dialog.pharmacy-selection .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close {
+    position: absolute;
+    z-index: 999;
+    right: 5px;
+    top: 6px;
+}
+
+p-dialog.pharmacy-selection .phar-outer {
+    width: 100%;
+    float: left;
+    padding: 10px;
+}
+
+p-dialog.pharmacy-selection .phar-outer .checkbox-data {
+    float: left;
+    width: 100%;
+}
+
+p-dialog.pharmacy-selection .phar-outer .checklist-pharma {
+    width: 100%;
+    float: left;
+    margin: 12px 0 0 0;
+}
+
+p-dialog.pharmacy-selection .phar-outer .pharmacy-lists {
+    width: 100%;
+    float: left;
+
+}
+
+p-dialog.pharmacy-selection .ui-dialog.ui-widget {
+    width: 500px;
+}
+
+p-dialog.pharmacy-selection .phar-outer p-checkbox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+p-dialog.pharmacy-selection .phar-outer p-checkbox label {
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;}
+
+p-dialog.pharmacy-selection .phar-outer .checklist-pharma ul.checkbox-datalist {
+    padding: 0px;
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+p-dialog.pharmacy-selection .phar-outer .checklist-pharma ul.checkbox-datalist li label {
+    font-size: 12px;
+    
+}
+
+
+p-dialog.pharmacy-selection .phar-outer .checklist-pharma p-checkbox .ui-chkbox.ui-widget {
+    width: 12px;
+    height: 15px;
+}
+
+p-dialog.pharmacy-selection .phar-outer .checklist-pharma p-checkbox .ui-chkbox.ui-widget .ui-chkbox-box.ui-widget {
+    width: 14px;
+    height: 14px;
+}
+
+p-dialog.pharmacy-selection .phar-outer .checklist-pharma p-checkbox .ui-chkbox.ui-widget .ui-chkbox-box.ui-widget span.ui-clickable {
+    font-size: 12px;
+}
+
+p-dialog.pharmacy-selection .phar-outer .checklist-pharma .form-group.pharma-code {
+    width: 100%;
+    float: left;
+}
+
+p-dialog.pharmacy-selection .phar-outer .checklist-pharma .form-group.pharma-code input {
+    float: left;
+    height: 30px;
+    padding-left: 10px;
+}
+
+p-dialog.pharmacy-selection .phar-outer .pharmacy-lists ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 15px 0 0 0;
+}
+
+p-dialog.pharmacy-selection .phar-outer .pharmacy-lists ul li {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+p-dialog.pharmacy-selection .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close span.pi.pi-times {
+    font-size: 25px;
+    color: #a7a7a7;
+}
+
+p-dialog.pharmacy-selection .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close:hover span.pi.pi-times {
+    color: #2f96b4;
+}
+
+
+/* end css */
+
+
+
+// 19 sept 2019 account settings
+
+section.acc-sec ul li .ui-chkbox-box.ui-widget {
+    border-radius: 0px;
+}
+
+
+/* modal Notification Alert warning css start */
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation {
+    width: 60%;
+}
+
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal h3 {
+    font-size: 13px;
+    color: #033076;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .show_val-noti {
+    width: 100%;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal  .btn-notify {
+    width: 100%;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .show_val-noti .notify-med {
+    width: 100%;
+    display: flex;
+    border: 1px solid #d4d4d4;
+    padding: 12px 12px;
+    line-height: 25px;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .show_val-noti .notify-med:first-child {
+    border-bottom: none;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .show_val-noti .alert-tab {
+    color: #c62828;
+    font-family: Arial;
+    font-weight: 500;
+    font-size: 17px;
+    background-color: #ffadad;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .show_val-noti .warn-tab {
+    font-family: Arial;
+    font-weight: 500;
+    font-size: 17px;
+    color: #d39c2f;
+    background-color: #fff3f3;
+    border-color: #eae3e3;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .btn-notify ul {
+    float: right;
+    margin: 20px 0 10px 0;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .btn-notify ul a.res-btn {
+    background-color: #629c44;
+    color: #fff;
+    padding: 8px 30px;
+    text-decoration: none;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .btn-notify ul a.tran-btn {
+    background-color: #033076;
+    color: #fff;
+    padding: 8px 30px;
+    text-decoration: none;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .ui-dialog-titlebar.ui-widget-header {
+    display: block;
+    padding: 0;
+    border: none;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-maximize {
+    display: none;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .btn-notify li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .btn-notify li:not(first-child) {
+    margin-left: 6px;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close {
+    position: absolute;
+    right: 5px;
+    z-index: 99;
+    top: 5px;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close span {
+    font-size: 25px;
+    color: #2f2f2f;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .show_val-noti .alert-tab i {
+    background-color: #c62828;
+    color: #fff;
+    position: relative;
+    margin-right: 8px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .show_val-noti .alert-tab i:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 15px;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .show_val-noti .notify-med span {
+    display: flex;
+    margin-right: 5px;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .show_val-noti .warn-tab span.warning {
+    display: flex;
+    align-items: center;
+}
+
+p-dialog.modal-medvalidation .ng-trigger.ng-trigger-animation .data-valmodal .show_val-noti .warn-tab span.warning i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+
+/* end css */
+
+
+section.current-medi-alleries table .ps__thumb-y {
+   
+    background-color: #c3bebe;
+   
+}
+
+section.current-medi-alleries table .ps__rail-y {
+    opacity: 1 !important;
+    background-color: #e6e1e1;
+}
+
+
+/* reports page content tab css start */
+
+section.reportz-tab {
+    width: 100%;
+    float: left;
+}
+
+section.reportz-tab ul.ui-tabview-nav.ui-widget-header {
+    width: 18%;
+    float: left;
+    font-family: Arial;
+}
+
+section.reportz-tab ul.ui-tabview-nav.ui-widget-header li {
+    display: block;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+section.reportz-tab ul.ui-tabview-nav.ui-widget-header li a {
+    display: block;
+    background-color: #eee;
+    color: #2f96b4;
+    width: 100%;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 12px 10px;
+}
+
+section.reportz-tab .ui-tabview-panels {
+    float: left;
+    width: 82%;
+    padding-left: 20px;
+}
+
+section.reportz-tab ul.ui-tabview-nav.ui-widget-header li.ui-tabview-selected.ui-state-active a {
+    background-color: #2f96b4;
+    color: #fff;
+}
+
+ul.data-bs-report {list-style-type: none;}
+
+ul.data-bs-report li {
+    display: inline-block;
+}
+
+ul.data-bs-report li:not(:first-child) {
+    margin-left: 20px;
+}
+
+.stat-report .search-stat {
+    float: left;
+    position: relative;
+}
+
+.stat-report .search-stat input {
+    height: 35px;
+    padding: 0 20px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #adadad;
+}
+
+.stat-report .search-stat:before {
+    content: "\f002";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    width: 20px;
+    font-size: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 6px;
+    color: #3e3d3d;
+}
+
+.calendr-style {
+    width: 50%;
+}
+
+.calendar-area {
+    width: 100%;
+    float: left;
+    margin: 30px 0 80px 0;
+}
+
+.calendar-area .calendr-style {
+    width: 335px;
+    float: left;
+}
+
+.calendar-area .calendr-style:not(:first-child) {
+    margin-left: 40px;
+}
+
+
+
+.calendar-area .calendr-style p-calendar .day-cal {
+    background-color: #1976d2;
+    padding: 10px 6px;
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+
+.calendar-area .calendr-style p-calendar .cal-data {
+    background-color: #033076;
+    font-family: Arial;
+    text-align: center;
+    padding: 12px 0;
+}
+
+.calendar-area .calendr-style p-calendar .cal-data h4 {
+    margin: 0 0 18px 0;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.calendar-area .calendr-style p-calendar .cal-data h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 50px;
+    line-height: 40px;
+}
+
+.calendar-area .calendr-style p-calendar .cal-data h5 {
+    margin: 10px 0 0 0;
+    color: #fff;
+    font-size: 13px;
+}
+
+
+.calendar-area .calendr-style .ui-datepicker.ui-widget.ui-widget-content {
+    padding: 0;
+}
+
+.calendar-area .calendr-style .ui-datepicker.ui-widget.ui-widget-content .ui-datepicker-header.ui-widget-header {
+    padding: 0;
+}
+
+.calendar-area .calendr-style .ui-datepicker.ui-widget.ui-widget-content .ui-datepicker-header.ui-widget-header .ui-datepicker-title {
+    display: none;
+}
+
+.calendar-area .calendr-style .ui-datepicker.ui-widget.ui-widget-content .ui-datepicker-header.ui-widget-header a.ui-datepicker-prev,.calendar-area .calendr-style .ui-datepicker.ui-widget.ui-widget-content .ui-datepicker-header.ui-widget-header a.ui-datepicker-next {color: #fff;top: 7px;}
+
+
+.calendar-area .calendr-style .ui-datepicker.ui-widget.ui-widget-content ul {
+    list-style-type: none;
+    padding: 0;
+    float: right;
+    margin-right: 15px;
+    font-family: Arial;
+}
+
+.calendar-area .calendr-style .ui-datepicker.ui-widget.ui-widget-content ul li {
+    display: inline-block;
+}
+
+.calendar-area .calendr-style .ui-datepicker.ui-widget.ui-widget-content ul li:not(:first-child) {
+    margin-left: 12px;
+}
+
+.calendar-area .calendr-style .ui-datepicker.ui-widget.ui-widget-content ul li a {
+    padding: 7px 10px;
+    font-weight: 500;
+    color: #000;
+}
+
+.calendar-area .calendr-style .ui-datepicker.ui-widget.ui-widget-content ul li a.ok-cal {
+    background-color: #033076;
+    color: #fff;
+}
+.calendar-area .calendr-style .ui-datepicker.ui-widget.ui-widget-content table.ui-datepicker-calendar a.ui-state-default.ui-state-highlight {
+    border-radius: 50%;
+    background-color: #033076;
+    color: #fff;
+}
+.calendar-area .calendr-style .ui-datepicker.ui-widget.ui-widget-content ul li a.cancel-cal {
+    text-transform: uppercase;
+}
+
+.calendar-area .calendr-style h6 {
+    text-align: center;
+    font-size: 22px;
+    margin: 0 0 10px 0;
+    font-family: Arial;
+    font-weight: 500;
+}
+
+
+/* end css */
+
+
+/* Audit css start */
+
+section.audit-data h4 {
+    margin: 6px 0 0 0;
+    font-weight: 500;
+}
+
+section.audit-data .form-dat-time label {
+    margin-bottom: 8px;
+    display: block;
+}
+
+section.audit-data ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 10px 0 0 0;
+}
+
+section.audit-data ul li:not(:first-child) {
+    margin-top: 5px;
+}
+section.audit-data perfect-scrollbar .ps__thumb-y {
+    /* opacity: 1; */
+    background-color: #dedada;
+}
+
+section.audit-data perfect-scrollbar .ps__rail-y {
+    opacity: 1;
+}
+
+
+.data-tab-audit table {
+    width: 100%;
+    float: left;
+    font-family: Arial;
+    empty-cells: show;
+}
+
+.data-tab-audit table th {
+    background-color: #2f96b4;
+    color: #fff;
+    padding: 0.60em;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.data-tab-audit table td {
+    padding: 15px;
+    border: 1px solid #d6d6d6;
+}
+
+/* end css */
+
+
+/* Media Queries for pendrx */
+@media (max-width:767px)
+{
+
+
+.tabs-alert-pg .ui-tabview-panels .table-resp {
+    overflow: visible;
+}
+
+.tabs-alert-pg .ui-tabview-panels .table-resp thead {
+    display: none;
+}
+
+
+.tabs-alert-pg .ui-tabview-panels .table-resp tbody tr td {
+    display: block;
+    width: 100%;
+    text-align: left !important;
+    padding: 8px 10px  0!important;
+}
+.tabs-alert-pg .ui-tabview-panels .table-resp tbody tr.notif-pend td {
+    padding-bottom: 0px !important;
+    padding-top: 14px !important;
+}
+
+.tabs-alert-pg .ui-tabview-panels .table-resp tbody.alert-btnx tr.notif-pend td
+{
+    padding-bottom: 10px !important;
+    padding-top: 8px !important;
+}
+
+.tabs-alert-pg .ui-tabview-panels .table-resp tbody tr td h3, .tabs-alert-pg .ui-tabview-panels .table-resp tbody tr td span.dt-client {
+    display: inline-block !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+}
+
+.tabs-alert-pg .ui-tabview-panels .table-resp tbody tr td h3 {
+    margin-right: 7px !important;
+}
+
+.tabs-alert-pg .ui-tabview-panels .table-resp tbody tr  td.no-bg {
+    width: 100% !important;
+}
+
+.tabs-alert-pg .ui-tabview-panels .table-resp tbody tr td.no-bg ul.action-pendi {
+    text-align: center !important;
+}
+
+.tabs-alert-pg .ui-tabview-panels .table-resp tbody tr {
+    margin-bottom: 0px !important;
+    display: block;
+}
+
+
+.tabs-alert-pg .ui-tabview-panels .table-resp .ref-table tbody tr
+{
+    margin-bottom: 4px !important;
+    display: block;
+}
+
+.tabs-alert-pg .ui-tabview-panels .table-resp .faild-table tbody tr
+{
+    margin-bottom: 4px !important;
+    display: block;
+}
+
+
+
+.tabs-alert-pg .ui-tabview-panels {
+    width: 100%;
+    float: left;
+    padding-left: 0px;
+}
+
+
+table.tab-pending-rx tbody tr.get-noti.notif-pend {
+    margin: 0;
+}
+
+
+table.tab-pending-rx tbody {
+    margin-bottom: 0px;
+    display: block;
+    padding-bottom: 4px;
+}
+.table-resp.ref-tabb perfect-scrollbar {
+    max-height: 100% !important;
+}
+
+.tabs-alert-pg .ui-tabview-panels .table-resp .ref-table tbody tr h5 {
+    font-size: 15px;
+    color: #333333 !important;
+    margin: 10px 0 0px 0 !important;
+}
+.table-resp.faild-tabb perfect-scrollbar {
+    max-height: 100% !important;
+}
+
+.tabs-alert-pg .ui-tabview-panels .table-resp .faild-table tbody tr h5 {
+    font-size: 15px;
+    color: #333333 !important;
+    margin: 10px 0 0px 0 !important;
+}
+
+
+}
+
+/* end css */
+
+
+/* change patient popup */
+
+p-dialog.show-all-patientz .ui-dialog.ui-widget.ui-widget-content {
+    width: 450px;
+}
+
+p-dialog.show-all-patientz .ui-dialog.ui-widget.ui-widget-content .ui-dialog-titlebar.ui-widget-header {
+    padding: 0;
+    background: #fff;
+    border: none;
+}
+
+p-dialog.show-all-patientz .ui-dialog.ui-widget.ui-widget-content .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-maximize {
+    display: none;
+}
+
+p-dialog.show-all-patientz .ui-dialog.ui-widget.ui-widget-content .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close {
+    position: absolute;
+    right: 5px;
+    z-index: 1;
+    top: 5px;
+}
+
+p-dialog.show-all-patientz .ui-dialog.ui-widget.ui-widget-content .header-patn {
+    padding: 10px 0 10px 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: Arial;
+}
+
+p-dialog.show-all-patientz .ui-dialog.ui-widget.ui-widget-content .header-patn label {
+    font-weight: 600;
+    color: #033076;
+}
+
+p-dialog.show-all-patientz .ui-dialog.ui-widget.ui-widget-content .header-patn input {
+    height: 25px;
+    padding: 0 8px;
+    width: 150px;
+}
+
+p-dialog.show-all-patientz .ui-dialog.ui-widget.ui-widget-content .header-patn select {
+    height: 25px;
+    padding: 0 10px;
+}
+
+p-dialog.show-all-patientz .ui-dialog.ui-widget.ui-widget-content .data-patient table {
+    width: 100%;
+    font-family: Arial;
+}
+
+p-dialog.show-all-patientz .ui-dialog.ui-widget.ui-widget-content .data-patient table th {
+    background-color: #2f96b4;
+    color: #fff;
+    font-weight: 500;
+    padding: 0.6em;
+}
+
+p-dialog.show-all-patientz .ui-dialog.ui-widget.ui-widget-content .data-patient table td {
+    font-weight: 500;
+    padding: 10px;
+    empty-cells: show;
+    border: 1px solid #e4e4e4;
+    display: table-cell;
+    font-size: 13px;
+    min-height: 37px;
+}
+p-dialog.show-all-patientz .ui-dialog.ui-widget.ui-widget-content .data-patient table tr:nth-child(even) {
+    background-color: #eeeeee4a;
+}
+
+/* end css */
+
+
+
+/* model allergy */
+
+section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content {
+    width: 400px;
+}
+
+section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content .headr-curr {
+    background-color: transparent;
+    color: #033076;
+    font-family: Arial;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content .form-group {
+    margin-bottom: 12px;
+}
+
+section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content .form-group label {
+    font-size: 14px;
+    color: #2d2d2d;
+}
+
+
+
+
+section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content .ui-dialog-titlebar.ui-widget-header {
+    PADDING: 0;
+    background-color: #fff;
+}
+
+section.current-medi-alleries p-dialog.selec-all-model .headr-curr {
+    display: block;
+    color: #fff;
+    position: relative;
+  
+  }
+  
+  section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content .ui-widget-header a.ui-dialog-titlebar-maximize {
+    display: none;
+  }
+  
+  section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content .ui-widget-header a.ui-dialog-titlebar-close {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 6px;
+    color: #fff;
+    background-color: #3a3a3a;
+    border-radius: 50px;
+    width: 26px;
+    height: 26px;
+    z-index: 999;
+  }
+  
+  section.current-medi-alleries p-dialog.selec-all-model .headr-curr a {
+    padding: 0px 0px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 50px;
+    width: 26px;
+    position: absolute;
+    height: 26px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  section.current-medi-alleries p-dialog.selec-all-model .headr-curr a i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 13px;
+  }
+  
+  section.current-medi-alleries p-dialog.selec-all-model.ui-widget-content .ui-widget-header a.ui-dialog-titlebar-close span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content .ui-widget-header span#ui-dialog-2-label {
+    height: 25px;
+    line-height: 25px;
+    font-size: 17px;
+    font-family: Arial;
+    font-weight: 500;
+  }
+  
+
+  section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content table thead td span.expnd-arrw {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%);
+    right: 0;
+    margin-top: -8px;
+}
+
+section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content table thead td span.expnd-arrw a i {
+    color: #afabab;
+    font-size: 18px;
+}
+
+section.current-medi-alleries p-dialog.selec-all-model.ui-widget-content table thead td:last-child ul.act-cmed i.act-cmed-icon1 {
+    color: #629c44;
+    font-size: 20px;
+}
+
+section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content table thead td:last-child ul.act-cmed i.act-cmed-icon3 {
+    color: #868686;
+}
+
+
+section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content .ui-widget-header a.ui-dialog-titlebar-close span.pi.pi-times {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+/* Mobile menu css start */
+
+@media (min-width:768px) and (max-width:1199px)
+{
+    
+section.reportz-tab ul.ui-tabview-nav.ui-widget-header {
+    width: 100%;
+}
+section.reportz-tab .ui-tabview-panels {
+    width: 100%;
+    padding: 0px;
+}
+.calendar-area .calendr-style {
+    width: 315px;
+    float: left;
+    margin-bottom: 30px;
+}
+.calendar-area .calendr-style:not(:first-child) {
+    margin-left: 10px;
+}
+section.reportz-tab ul.ui-tabview-nav.ui-widget-header li {
+    display: block;
+    width: 30%;
+    margin-bottom: 0px;
+}
+section.reportz-tab ul.ui-tabview-nav.ui-widget-header li:not(:first-child) {
+    margin-left: 10px;
+}
+
+
+}
+
+@media (min-width:991px) and (max-width:1199px)
+{
+    .tabs-alert-pg ul.ui-tabview-nav {
+        width: 22%;
+     
+    }
+  
+}
+
+
+
+@media screen and (min-width:100px) and (max-width:991px){
+    .tabs-alert-pg .ui-tabview-panels .table-resp tbody tr
+    
+    td.no-bg ul.action-pendi li i.action-pendi-icon2 {
+        display: none;
+    }
+
+  
+    
+    .card.card-w-title.card-w-title.ui-g-12.top-buttons {
+        display: block;
+    }
+
+    .card.card-w-title.card-w-title.ui-g-12.top-buttons {
+        margin-top: 50px;
+    }
+    .favour .card.card-w-title.card-w-title.ui-g-12.top-buttons {
+        margin-top: 0px;
+    }
+    
+    .tabs-alert-pg ul.ui-tabview-nav {
+        width: 22%;
+     
+    }
+    .card.card-w-title.card-w-title.ui-g-12.top-buttons h1 {
+        padding: 20px 0 !important;
+        margin: 0 !important;
+        font-size: 24px !important;
+    }
+    
+    .card.card-w-title.card-w-title.ui-g-12.top-buttons a.main-sidebar-icon {
+        display: none;
+    }
+    .abc .mob-nav .ui-tabview-panels {
+        display: none;
+    }
+    
+    .ABC .mob-nav .ui-tabview-panels {
+        display:block;
+    }
+
+    .mob-nav .ui-tabview-panels {
+        position: fixed;
+        z-index: 99;
+        background-color: #fff;
+        top: 60px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        box-shadow: 0px 0px 5px #a29e9e;
+        max-width: 260px;
+    }
+    
+    .mob-nav .ui-tabview-panels div {
+        width: 100%;
+    }
+    
+    .mob-nav .ui-tabview-panels .setting-mennu {
+        text-align: center;
+    }
+
+}
+
+/* Mobile menus css end  */
+
+
+
+
+
+ /* 24 sept 2019  modal for medication History css start */
+
+
+
+.medpage-data .med-table table.med-hist p-dialog.modal-singlemed-his .ui-dialog-content.ui-widget-content {
+    padding: 0px 0px;
+}
+
+.medpage-data .med-table table.med-hist p-dialog.modal-singlemed-his a.ui-dialog-titlebar-maximize {
+    display: none;
+}
+
+.medpage-data .med-table table.med-hist p-dialog.modal-singlemed-his a.ui-dialog-titlebar-close {
+    position: absolute;
+    right: 12px;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.medpage-data .med-table table.med-hist p-dialog.modal-singlemed-his .ui-dialog-titlebar.ui-widget-header {
+    padding: 8px 15px;
+}
+.medpage-data .med-table table.med-hist p-dialog.modal-singlemed-his table.history-table th {
+    padding: 6px 10px;
+}
+
+.medpage-data .med-table table.med-hist p-dialog.modal-singlemed-his table.history-table tr td {
+    padding: 10px 10px;
+}
+table.history-table {
+    width: 100%;
+}
+
+  /* end css  */
+
+
+  /* newrx medication add manualy form css */
+
+  .form-custom {
+    width: 100%;
+    float: left;
+}
+
+.form-custom .btn-manual {
+    margin: 10px 0 10px 0;
+}
+
+.form-custom .btn-manual button.btn-manuall {
+    background-color: #0b3375;
+    font-family: Arial;
+    color: #fff;
+    border: 1px solid #0b3375;
+    padding: 8px 15px;
+    font-size: 13px;
+}
+p-dialog.form_manualadd .ng-trigger.ng-trigger-animation.ui-widget.ui-widget-content {
+    width: 50%;
+}
+
+p-dialog.modal-newrx-srch  p-dialog.form_manualadd .ng-trigger.ng-trigger-animation.ui-widget.ui-widget-content .ui-dialog-content.ui-widget-content {
+    min-height: auto;
+    background: transparent;
+    border:none;
+    padding-right: 30px;
+}
+p-dialog.modal-newrx-srch .ng-trigger.ng-trigger-animation .ui-widget-content p {
+    text-align: right;
+    margin: 0;
+}
+
+p-dialog.modal-newrx-srch p-dialog.form_manualadd .ng-trigger.ng-trigger-animation.ui-dialog.ui-widget.ui-widget-content {
+    min-height: auto;
+    background-color: #f5e4e4;
+    border: 1px solid #c7c7c7;
+}
+
+p-dialog.modal-newrx-srch p-dialog.form_manualadd .ng-trigger.ng-trigger-animation.ui-widget.ui-widget-content .ui-dialog-content.ui-widget-content .notify-med.warn-tab {
+    display: flex;
+    align-items: center;
+    color: #d2992a;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+p-dialog.modal-newrx-srch p-dialog.form_manualadd .ng-trigger.ng-trigger-animation.ui-widget.ui-widget-content .ui-dialog-content.ui-widget-content .notify-med.warn-tab span.warning {
+    font-size: 22px;
+    margin-right: 7px;
+}
+
+p-dialog.modal-newrx-srch p-dialog.form_manualadd .ng-trigger.ng-trigger-animation.ui-dialog.ui-widget.ui-widget-content a.ui-dialog-titlebar-maximize {
+    display: none;
+}
+
+p-dialog.modal-newrx-srch p-dialog.form_manualadd .ng-trigger.ng-trigger-animation.ui-dialog.ui-widget.ui-widget-content .ui-dialog-titlebar-close {
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    color: #d2992a;
+    transform: translateX(-50%);
+}
+
+
+@media (max-width:767px)
+{
+    //modal manualy add middle position css
+p-dialog.form_manualadd .ng-trigger.ng-trigger-animation.ui-widget.ui-widget-content {
+    width: 90% !important;
+    padding: 0;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    -webkit-transform: translateX(-50%)!important;
+}
+p-dialog.modal-newrx-srch p-dialog.form_manualadd .ng-trigger.ng-trigger-animation.ui-widget.ui-widget-content .ui-dialog-content.ui-widget-content {
+    padding: 6px 30px 6px 10px;
+}
+p-dialog.modal-newrx-srch p-dialog.form_manualadd .ng-trigger.ng-trigger-animation.ui-dialog.ui-widget.ui-widget-content .ui-dialog-titlebar-close {
+    top: 0;
+    right: 0;
+   -webkit-transform: translateX(-50%);
+    transform: translateX(0%);
+}
+
+}
+
+/* end css */
+
+
+/* sucess prescription sent */
+
+
+p-dialog.mod_prescrib .ui-widget.ui-widget-content {
+    width: 300px;
+    height: 130px;
+}
+
+p-dialog.mod_prescrib .ui-widget.ui-widget-content .ui-dialog-content.ui-widget-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top:none;
+}
+
+p-dialog.mod_prescrib .ui-widget.ui-widget-content .ui-dialog-content.ui-widget-content .prescr {
+    max-width: 98%;
+    text-align: center;
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+p-dialog.mod_prescrib .ui-widget.ui-widget-content .ui-dialog-titlebar.ui-widget-header {
+    display: block;
+    background: white;
+    padding: 0;
+}
+
+p-dialog.mod_prescrib .ui-widget.ui-widget-content .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-maximize {
+    display: none;
+}
+
+p-dialog.mod_prescrib .ui-widget.ui-widget-content .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-corner-all {
+    position: absolute;
+    right: 3px;
+    top: 5px;
+    z-index: 99;
+}
+
+p-dialog.mod_prescrib .ui-widget.ui-widget-content .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close.ui-corner-all span.pi.pi-times {
+    font-size: 22px;
+    color: #4e4e4e;
+}
+
+
+//new modal for error prescriptions 
+
+p-dialog.mod_errpres .ui-dialog {
+    width: 320px;
+}
+
+p-dialog.mod_errpres .ui-dialog-titlebar.ui-widget-header {
+    display: block;
+    background: #fff;
+    padding: 0;
+}
+
+p-dialog.mod_errpres .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-maximize {
+    display: none;
+}
+
+p-dialog.mod_errpres .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close {
+    position: absolute;
+    z-index: 99;
+    right: 4px;
+    top: 4px;
+}
+
+p-dialog.mod_errpres .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close span {
+    font-size: 22px;
+    color: #717070;
+}
+
+p-dialog.mod_errpres .ui-dialog .prescr h4 {
+    margin: 15px 0 0 0;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+p-dialog.mod_errpres .ui-dialog .prescr ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+p-dialog.mod_errpres .ui-dialog .prescr ul li {
+    font-weight: 500;
+    font-family: Arial;
+}
+
+p-dialog.mod_errpres .ui-dialog .prescr ul li.warn {
+    color: #c52c2c;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+p-dialog.mod_errpres .ui-dialog .prescr ul li:not(:first-child) {
+    margin: 7px 0 0 0;
+}
+
+p-dialog.mod_errpres .ui-dialog .prescr ul li button.ui-button {
+    width: auto;
+    background-color: #033076;
+    border-color: #033076;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: 400;
+    border-radius: 0px;
+    margin: 10px 0 0 0;
+}
+
+p-dialog.mod_errpres .ui-dialog .prescr ul li:last-child {
+    text-align: center;
+}
+
+
+
+/* end css */
+
+@media (max-width:991px)
+{
+    section.reportz-tab ul.ui-tabview-nav.ui-widget-header {
+        width: 100%;
+    }
+    section.reportz-tab ul.ui-tabview-nav.ui-widget-header li {
+        display: block;
+        width: 31.83%;
+    }
+    section.reportz-tab .ui-tabview-panels {
+        float: left;
+        width: 100%;
+        padding-left: 0;
+    }
+    .calendar-area .calendr-style:not(:first-child) {
+        margin: 20px auto;
+    }
+    .calendar-area .calendr-style {
+        width: 315px;
+        float: none;
+        margin: 0 auto;
+    }
+    section.audit-data .ui-g-5 {
+        width: 100%;
+    }
+    
+    section.audit-data .ui-g-7 {
+        width: 100%;
+    }
+
+
+}
+
+
+@media (max-width:500px)
+{
+
+//select allergies modal
+section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content {
+    width: 300px;
+    left: 0;
+    margin: 0 auto;
+}
+section.current-medi-alleries p-dialog.selec-all-model .ui-widget-content .ui-widget-header a.ui-dialog-titlebar-close {
+   
+    right: 0px;
+}
+.data-aller input {
+    width: 70px;
+}
+
+section.reportz-tab ul.ui-tabview-nav.ui-widget-header {
+    width: 100%;
+}
+section.reportz-tab .ui-tabview-panels {
+    float: left;
+    width: 100%;
+    padding-left: 0;
+}
+ul.data-bs-report {
+   padding: 0;
+}
+ul.data-bs-report li:not(:first-child) {
+    margin-left: 8px;
+}
+section.reportz-tab ul.ui-tabview-nav.ui-widget-header li {
+    display: block;
+    width: 100%;
+}
+
+//alerts table
+
+.tabs-alert-pg ul.ui-tabview-nav li {
+    margin-left: 4px;
+    min-width: 119px;
+}
+
+
+}
+
+
+@media (max-width:500px)
+{
+.calendar-area .calendr-style {
+    width: 290px;
+    float: none;
+    margin: 0 auto;
+    transform: translate(-15px);
+}
+section.audit-data .ui-g-7 .ui-g-3 {
+    width: 50%;
+}
+.tab-reports div.ui-tabview-panel {
+    padding: 0px;
+}
+.tab-responsv {
+    width: 100%;
+    overflow: scroll;
+}
+p-dialog.modal-newrx-srch .ng-trigger.ng-trigger-animation {
+    width: 310px !important;
+    background-color: #fff;
+    left: 0 !important;
+    right: 0px !important;
+    margin: 0 auto !important;
+}
+.tabs-alert-pg .ui-tabview-panels .table-resp tbody.alert-btnx tr.notif-pend td span {
+    display: block;
+    margin-bottom: 14px;
+}
+
+}
+@media (max-width: 374px)
+{
+.calendar-area .calendr-style {
+    width: 290px;
+    float: none;
+    margin: 0 auto;
+    transform: translate(-37px);
+}
+section.audit-data .ui-g-5 .form-dat-time.ui-g-6 {
+    width: 100%;
+    padding: 0px;
+}
+
+}
+
+
+// css for modal med & allergies
+
+.pos-rel
+{
+    position: relative;
+}
+p-dialog.show-curd-med .ui-dialog.ui-widget.ui-widget-content .ui-dialog-titlebar.ui-widget-header {
+    padding: 0px;
+    background: #fff;
+}
+
+p-dialog.show-curd-med .ui-dialog.ui-widget.ui-widget-content .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-maximize {
+    display: none;
+}
+
+p-dialog.show-curd-med .ui-dialog.ui-widget.ui-widget-content .ui-dialog-content.ui-widget-content {
+    border-top: none;
+    height: 100% !important;
+    padding: 0px;
+}
+
+p-dialog.show-curd-med .ui-dialog.ui-widget.ui-widget-content .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 9999;
+    background-color: #333;
+    border-radius: 50%;
+    padding: 5px;
+    width: 25px;
+    height: 25px;
+}
+
+p-dialog.show-curd-med .ui-dialog.ui-widget.ui-widget-content .ui-dialog-titlebar.ui-widget-header a.ui-dialog-titlebar-close span {
+    font-size: 16px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    color: #fff;
+}
+p-dialog.show-curd-med .ui-dialog.ui-widget.ui-widget-content {
+    left: 3px !important;
+    right: 0px !important;
+    top: 0px !important;
+    position: absolute;
+    width: 100%;
+}
+
+
+p-dialog.selec-all-model .ng-trigger.ui-dialog.ui-widget.ui-widget-content {
+    width: 400px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 27px !important;
+}
+
+p-dialog.selec-all-model .ng-trigger.ui-dialog.ui-widget.ui-widget-content .ui-dialog-content.ui-widget-content {
+    height: auto !important;
+    padding: 0 14px 0px 6px !important;
+}

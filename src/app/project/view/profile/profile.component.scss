@@ -1,0 +1,65 @@
+table#tblCM th{background-color:#033076; color:#FFF; text-align: left; padding: 10px;}
+table#tblAllergies th{background-color:#e61610; color:#FFF; text-align: left; padding: 10px;}
+.card-left.card-info-details img.usr-imgg {
+    width: 110px;
+    float: right;
+    object-fit: contain;
+    height: 110px;
+    border: 1px solid #b9b9b9;
+}
+
+.card-left.card-info-details p {
+    margin: 0 0 0px;
+    line-height: 22px;
+}
+
+.more-linkks {
+    display: block;
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.more-linkks a
+{
+    color: #006ce5;
+    text-decoration: underline;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+
+table#tblCM th span.arr-med-all,table#tblAllergies th span.arr-med-all {
+    float: right;
+}
+
+
+table#tblCM th span.arr-med-all a, table#tblAllergies th span.arr-med-all a {
+    padding: 10px;
+    color: #fff;
+}
+
+
+.full-area p {
+    font-size: 14.4px;
+}
+
+/* 18 sept 2019 */
+
+
+
+@media (max-width:767px)
+{
+    .more-linkks .ui-g-6 {
+        width: 100%;
+    }
+    
+    .more-linkks .ui-g-6 a {
+        font-size: 18px !important;
+    }
+    
+    .more-linkks {
+        margin: 10px 0 0 0;
+    }
+}
+

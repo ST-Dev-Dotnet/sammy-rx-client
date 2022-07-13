@@ -1,0 +1,11 @@
+ <!--Side bar for patient list-->
+ <!-- <p-sidebar class="custom-sidebar" [(visible)]="display" _ngcontent-xol-c2 class="ng-tns-c3-1" position="right"> -->
+                <h1>Patient List for Today</h1>
+                <a href="" class="ui-sidebar-close"></a>
+                <div *ngFor="let patient of patients">
+                        <img src="{{patient.imageURL}}"
+                        style="height: 50px; width: 50px; object-fit: contain;">
+                  <span>{{patient.name}}</span> 
+                </div>
+            <!-- </p-sidebar> -->
+    <!------------------------>

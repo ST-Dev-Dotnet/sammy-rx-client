@@ -1,0 +1,532 @@
+<div class="ui-g">
+    <div class="card card-w-title ui-g-12 padding-no">
+        <section class="alerts-pg">
+           
+            <p-tabView class="tabs-alert-pg" >
+                <p-tabPanel>
+                    <ng-template pTemplate="header">Pending RX <span class="badge val-pend-rx">4</span></ng-template>
+                    <ng-template pTemplate="content">
+
+                            <div class="table-resp">
+                        <table class="tab-pending-rx" mdbTable mdbTableScroll scrollX="true" Width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Doctor</th>
+                                    <th>Pharmacy</th>
+                                    <th>Date</th>
+                                    <th>Medication</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody class="alert-btnx">
+                                    
+                                <tr class="get-noti">
+                                    <td rowspan="2" ><h3>John Doe</h3> <span class="dt-client">02/24/44</span></td>
+                                    <td>Robert Alexander, DPM</td>
+                                    <td>CVS</td>
+                                    <td>01/12/18</td>
+                                    <td>Tylenol 325mg tablet</td>
+                                    
+                                   <td rowspan="2" class="no-bg alert-btnx">
+                                                    <ul class="action-pendi">
+                                                        <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                        <li><a href="#" (click)="print_dialog()"><i aria-hidden="true" class="fa fa-print action-pendi-icon2"></i></a></li>
+                                                        <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                        <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                    </ul>
+                                                    </td>
+                                    
+                                </tr>
+                                <tr class="get-noti notif-pend">
+                                <td colspan="4"><span class="noti-line"> <a href="#" (click)="val_data_med()">Warning! Allergy Alert: Penicillin</a></span> <a href="#" class="btn-noti">Resolve</a> </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr class="notif-pend">
+                                        <td rowspan="2" ><h3>John Doe</h3> <span class="dt-client">02/24/44</span></td>
+                                        <td>Robert Alexander, DPM</td>
+                                        <td>CVS</td>
+                                        <td>01/12/18</td>
+                                        <td>Tylenol 325mg tablet</td>
+                                        <td rowspan="2" class="no-bg">
+                                                        <ul class="action-pendi">
+                                                            <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                            <li><a href="#" (click)="print_dialog()"><i aria-hidden="true" class="fa fa-print action-pendi-icon2"></i></a></li>
+                                                            <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                            <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                        </ul>
+                                                        </td>
+                                    </tr>
+                                    <tr class="get-noti"> </tr>
+
+                            </tbody>
+                            <tbody>
+                                    <tr class="notif-pend">
+                                            <td rowspan="2" ><h3>John Doe</h3> <span class="dt-client">02/24/44</span></td>
+                                            <td>Robert Alexander, DPM</td>
+                                            <td>CVS</td>
+                                            <td>01/12/18</td>
+                                            <td>Tylenol 325mg tablet</td>
+                                            <td rowspan="2" class="no-bg">
+                                                            <ul class="action-pendi">
+                                                                <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                                <li><a href="#" (click)="print_dialog()"><i aria-hidden="true" class="fa fa-print action-pendi-icon2"></i></a></li>
+                                                                <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                                <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                            </ul>
+                                                            </td>
+                                        </tr>
+                                        <tr class="get-noti"> </tr>
+                            </tbody>
+                            <tbody>
+                                        <tr class="notif-pend">
+                                                <td rowspan="2" ><h3>John Doe</h3> <span class="dt-client">02/24/44</span></td>
+                                                <td>Robert Alexander, DPM</td>
+                                                <td>CVS</td>
+                                                <td>01/12/18</td>
+                                                <td>Tylenol 325mg tablet</td>
+                                                <td rowspan="2" class="no-bg">
+                                                                <ul class="action-pendi">
+                                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                                    <li><a href="#" (click)="print_dialog()"><i aria-hidden="true" class="fa fa-print action-pendi-icon2"></i></a></li>
+                                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                                </ul>
+                                                                </td>
+                                            </tr>
+                                            <tr class="get-noti"> </tr>
+                            </tbody> <tbody>
+                                            <tr class="notif-pend">
+                                                    <td rowspan="2" ><h3>John Doe</h3> <span class="dt-client">02/24/44</span></td>
+                                                    <td>Robert Alexander, DPM</td>
+                                                    <td>CVS</td>
+                                                    <td>01/12/18</td>
+                                                    <td>Tylenol 325mg tablet</td>
+                                                    <td rowspan="2" class="no-bg">
+                                                                    <ul class="action-pendi">
+                                                                        <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                                        <li><a href="#" (click)="print_dialog()"><i aria-hidden="true" class="fa fa-print action-pendi-icon2"></i></a></li>
+                                                                        <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                                        <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                                    </ul>
+                                                                    </td>
+                                                </tr>
+                                                <tr class="get-noti"> </tr>
+</tbody> <tbody>
+                                                <tr class="notif-pend">
+                                                        <td rowspan="2" ><h3>John Doe</h3> <span class="dt-client">02/24/44</span></td>
+                                                        <td>Robert Alexander, DPM</td>
+                                                        <td>CVS</td>
+                                                        <td>01/12/18</td>
+                                                        <td>Tylenol 325mg tablet</td>
+                                                        <td rowspan="2" class="no-bg">
+                                                                        <ul class="action-pendi">
+                                                                            <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                                            <li><a href="#" (click)="print_dialog()"><i aria-hidden="true" class="fa fa-print action-pendi-icon2"></i></a></li>
+                                                                            <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                                            <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                                        </ul>
+                                                                        </td>
+                                                    </tr>
+                                                    <tr class="get-noti"> </tr>
+</tbody> <tbody>
+                                                    <tr class="notif-pend">
+                                                            <td rowspan="2" ><h3>John Doe</h3> <span class="dt-client">02/24/44</span></td>
+                                                            <td>Robert Alexander, DPM</td>
+                                                            <td>CVS</td>
+                                                            <td>01/12/18</td>
+                                                            <td>Tylenol 325mg tablet</td>
+                                                            <td rowspan="2" class="no-bg">
+                                                                            <ul class="action-pendi">
+                                                                                <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                                                <li><a href="#" (click)="print_dialog()"><i aria-hidden="true" class="fa fa-print action-pendi-icon2"></i></a></li>
+                                                                                <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                                                <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                                            </ul>
+                                                                            </td>
+                                                        </tr>
+                                                        <tr class="get-noti"> </tr>
+</tbody>
+                               
+                            
+                        </table>
+
+                        <p-dialog class="modal-medvalidation" [(visible)]="display_medvalid"
+                        [modal]="true" [dismissableMask]="true" [responsive]="true" [minY]="70" [maximizable]="true"
+                        [baseZIndex]="10000">
+
+                        <div class="data-valmodal">
+                            <h3>Patient : <span class="patient_nme">Debbie Lieber</span></h3>
+                            <div class="show_val-noti">
+                                <div class="notify-med alert-tab"><span class="alert"><i class="fa fa-exclamation" aria-hidden="true"></i>Allergy
+                                        Alert!</span>Penicillin Drug: Amoxicillin 125mg Chewable
+                                    Tablet </div>
+                                <div class="notify-med warn-tab"><span class="warning"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Interaction
+                                    Warning:</span> Drug1 and Drug2 </div>
+
+                            </div>
+
+                            <div class="btn-notify">
+                                <ul>
+                                    <li><a href="#" class="res-btn">Resolve</a></li>
+                                    <li><a href="#" class="tran-btn">Transmit</a></li>
+                                </ul>
+                            </div>
+
+
+
+                        </div>
+
+
+                    </p-dialog>
+
+                    </div>
+
+                    <p-dialog class="model-printer-def" [(visible)]="display_printdialog" [modal]="true"
+                    [responsive]="true" [dismissableMask]="true" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+               <h3> A copy of the prescription has been sent to your default printer</h3>
+               <p-progressBar [value]="50"></p-progressBar>
+
+                </p-dialog>
+                    </ng-template>
+                </p-tabPanel> 
+                <p-tabPanel>
+                        <ng-template pTemplate="header">Refills<span class="badge val-refills">5</span></ng-template>
+                    <ng-template pTemplate="content">
+
+
+        <div class="table-resp ref-tabb">
+                <perfect-scrollbar style="width:100%; max-height: 300px;"
+                styleClass="scroll-visible">
+                <table class="tab-pending-rx ref-table" mdbTable mdbTableScroll scrollX="true" Width="100%">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Pharmacy</th>
+                                <th>Medication</th>
+                               <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                            <tr class="">
+                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                <td>CVS</td>
+                                <td>Tylenol 325 mg tablet</td>
+                               <td class="no-bg">
+                                                <ul class="action-reflis">
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-check action-refil-icon1"></i></a></li>
+                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-refil-icon2"></i></a></li> </ul>
+                                                </td>
+                                
+                            </tr>
+                                                    
+    
+                           
+                        </tbody>
+                    </table>
+                    </perfect-scrollbar>
+            </div>
+
+                         
+        
+                    </ng-template>
+                </p-tabPanel>
+                <p-tabPanel>
+                        <ng-template pTemplate="header">Prior Auth<span class="badge val-prior">2</span></ng-template>
+                    <ng-template pTemplate="content">
+                        Complex Content to Lazy Load 3
+                    </ng-template>
+                </p-tabPanel>
+                <p-tabPanel>
+                        <ng-template pTemplate="header">Failed RX<span class="badge val-faildrx">10</span></ng-template>
+                    <ng-template pTemplate="content">
+                            
+                                    <div class="table-resp faild-tabb">
+                                            <table class="tab-pending-rx faild-table" mdbTable mdbTableScroll scrollX="true" Width="100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Date</th>
+                                                            <th>Medication</th>
+                                                            <th>Failure</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            
+                                                        <tr class="">
+                                                            <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                                            <td><p style="font-weight: 600">01/12/18</p></td>
+                                                            <td>Tylenol 325 mg tablet</td>
+                                                            <td>Invalid Connection</td>
+                                                           <td class="no-bg">
+                                                                            <ul class="action-faild">
+                                                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                   </ul>
+                                                                            </td>
+                                                            
+                                                        </tr>
+                                                        <tr class="">
+                                                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                                                <td><p style="font-weight: 600">01/15/20</p></td>
+                                                                <td>Tylenol 325 mg tablet</td>
+                                                                <td>Error</td>
+                                                               <td class="no-bg">
+                                                                                <ul class="action-faild">
+                                                                                        <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                                                        <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                                                        <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                       </ul>
+                                                                                </td>
+                                                                
+                                                            </tr>
+                                                            <tr class="">
+                                                                    <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                                                    <td><p style="font-weight: 600">01/15/20</p></td>
+                                                                    <td>Tylenol 325 mg tablet</td>
+                                                                    <td>Invalid Connection</td>
+                                                                   <td class="no-bg">
+                                                                                    <ul class="action-faild">
+                                                                                            <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                                                            <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                                                            <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                        </ul>
+                                                        </td>
+                                                        
+                                                        </tr>
+                                                                <tr class="">
+                                                                        <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                                                        <td><p style="font-weight: 600">01/15/20</p></td>
+                                                                        <td>Tylenol 325 mg tablet</td>
+                                                                        <td>Pharmacy Rejected</td>
+                                                                       <td class="no-bg">
+                                                                                        <ul class="action-faild">
+                                                                                                <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                                                                <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                                                                <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                            </ul>
+                                                            </td>
+                                                            
+                                                            </tr>
+                                                                    <tr class="">
+                                                                            <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                                                            <td><p style="font-weight: 600">01/15/20</p></td>
+                                                                            <td>Tylenol 325 mg tablet</td>
+                                                                            <td>Error </td>
+                                                                           <td class="no-bg">
+                                                                                            <ul class="action-faild">
+                                                                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                                                                    <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                                   </ul>
+                                                                                            </td>
+                                                                            
+                                                                        </tr>
+                                                                        <tr class="">
+                                                                                <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                                                                <td><p style="font-weight: 600">01/15/20</p></td>
+                                                                                <td>Tylenol 325 mg tablet</td>
+                                                                                <td>Invalid Connection</td>
+                                                                               <td class="no-bg">
+                                                                                                <ul class="action-faild">
+                                                                                                        <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                                                                        <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                                                                        <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                                       </ul>
+                                                                                                </td>
+                                                                                
+                                                                            </tr>
+                                                                            <tr class="">
+                                                                                    <td><h3>John Doe <span class="dt-client">02/24/44</span></h3><h5>Robert Alexander,DPM</h5></td>
+                                                                                    <td><p style="font-weight: 600">01/15/20</p></td>
+                                                                                    <td>Tylenol 325 mg tablet</td>
+                                                                                    <td>Invalid Connection</td>
+                                                                                   <td class="no-bg">
+                                                                                                    <ul class="action-faild">
+                                                                                                            <li><a href="#"><i aria-hidden="true" class="fa fa-paper-plane action-pendi-icon1"></i></a></li>
+                                                                                                            <li><a href="#"><i aria-hidden="true" class="fa fa-pencil action-pendi-icon3"></i></a></li>
+                                                                                                            <li><a href="#"><i aria-hidden="true" class="fa fa-trash action-pendi-icon4"></i></a></li>
+                                                                           </ul>
+                                                                                                    </td>
+                                                                                    
+                                                                                </tr>
+                                                                                
+                                
+                                                       
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                            <div class="faildrx-tab-btns">
+                            
+                            <ul>
+                                <li><a href="#">Resend All</a> </li>
+                                
+                            </ul>
+                            
+                            </div>
+                            
+                                                           
+                    </ng-template>
+                </p-tabPanel>
+            </p-tabView>
+  </section>
+    </div>
+</div>

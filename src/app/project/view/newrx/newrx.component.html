@@ -1,0 +1,1491 @@
+<!-- Top bar for mobile html start -->
+
+<div class="layout-topbar">
+
+    <div class="layout-topbar-content">
+        <!-- <a href="#" id="menu-btn" class="menu-btn" (click)="app.onMobileMenuButton($event)">        
+          <i class="fa fa-bars"></i>     
+      </a>  -->
+
+        <button (clickOutside)="onClickedOutside($event)" (click)="showMyContainer=!showMyContainer"
+            class="user-icon mobile-user-icon"><i class="fa fa-user-circle" aria-hidden="true"></i></button>
+
+
+        <button (clickOutside)="onClickedOutsideMenu($event)" (click)="menuSettings()"
+            class="user-icon mobile-top-icon"><i class="fa fa-align-right" aria-hidden="true"></i></button>
+            <!--  -->
+
+
+        <button (clickOutside)="toggle_plist($event)"  (click)="showMyContainerSidebar=!showMyContainerSidebar" class="main-sidebar-icon"><i class="fa fa-bars"
+                aria-hidden="true"></i></button>
+
+        <!-- <button (click)="showMyContainerSidebar=!showMyContainerSidebar" class="user-icon mobile-top-icon"><i class="fa fa-align-right" aria-hidden="true"></i></button> -->
+        <div *ngIf="showMyContainerSidebar" class="card card-w-title ui-g-3 patient-listz">
+            <app-sidebarpatient></app-sidebarpatient>
+
+        </div>
+        <!-- <a [routerLink]="['/documentation']" class="topbar-link" (click)="app.hideMobileMenu($event)">Get Started</a> -->
+    </div>
+
+</div>
+
+<!-- Top bar for mobile html end -->
+
+<div class="ui-fluid">
+    <div class="ui-g">
+        <div class="card card-w-title card-w-title ui-g-12 top-buttons">
+
+            <h1 style="color: #008db1;font-size: 24px;font-weight: 600;margin: 10px 0 0px 15px;">Soundshore Podiatry
+                Practice</h1>
+
+            <!--Side bar for patient list-->
+            <p-sidebar class="custom-sidebar " [(visible)]="display" position="right">
+                <h1>Patient List for Today</h1>
+                <a href="" class="ui-sidebar-close"></a>
+                <div class="patient-detail">
+                    <div *ngFor="let patient of patients">
+                        <img src="{{patient.imageURL}}" style="height: 50px; width: 50px; object-fit: contain;">
+                        <span>{{patient.name}}</span>
+                    </div>
+                </div>
+            </p-sidebar>
+            <a type="button" (click)="display = true" class="main-sidebar-icon"><i class="fa fa-users"
+                    aria-hidden="true"></i></a>
+            <!------------------------>
+
+            <!--------Header buttons-------->
+            <!-- [className]="!showMyContainerHeader ? 'abc':'ABC'" -->
+            <div *ngIf="showMyContainerHeader">
+                <div class="mob-nav">
+                    <p-tabView class="tabs-main"> 
+                        <div > 
+                        <div class="ui-g-2"> 
+                            <button pButton type="button" (click)="rxFunClick()"
+                                [ngClass]="{'active': showContainerNewRx == true}" label="New Rx"
+                                class="ui-button-text ui-clickable ui-g-1 custom-ui-btn newrxbtn"></button>
+                        </div>
+                        <div class="ui-g-3">
+                            <button pButton type="button" id="btn-newrx" (click)="currentMedsAllergiesClick1()"
+                                [ngClass]="{'active': showContainerMedAllergies == true}"
+                                label="Current Meds & Allergies" class="ui-g-1 custom-ui-btn"></button>
+                        </div>
+                        <div class="ui-g-2">
+                            <button pButton (click)="favoritesClick()"
+                                [ngClass]="{'active': showContainerFavorites == true}" type="button" label="Favorites"
+                                class="ui-g-1 custom-ui-btn"></button>
+                        </div>
+                        <div class="ui-g-2 alertz-tab">
+                            <button pButton type="button" (click)="alertsClick()"
+                                [ngClass]="{'active': showContainerAlerts == true}" label="Alerts"
+                                class="ui-g-1 custom-ui-btn"><span class="badge_no">4</span></button>
+                        </div>
+                        <div class="ui-g-2 ">
+                            <button pButton type="button" (click)="reportsClick()"
+                                [ngClass]="{'active': showContainerReports == true}" label="Reports"
+                                class="ui-g-1 custom-ui-btn"></button>
+                        </div>
+                    </div>
+                        <div class="ui-g-1 menu-sett">
+                            <div class="setting-mennu">
+                                <a href="#" 
+                                    (click)="showSettingDiv=!showSettingDiv"><img
+                                        src="../../../assets/images/setting-icon.jpg"
+                                        style="margin-left :14px; height: 40px; width: 40px;"></a>
+                                <div *ngIf="showSettingDiv" class="setting-menu"> 
+                                    <ul>
+                                        <li><a href="#" (click)="showAccount()"
+                                                [ngClass]="{'active': accountPage == true}">Account Settings</a></li>
+                                        <li><a href="#" (click)="showPrescriber()"
+                                                [ngClass]="{'active': prescriberPag == true}">Prescriber Settings</a>
+                                        </li>
+                                        <li><a href="#" (click)="showPermissions()"
+                                                [ngClass]="{'active': permissionsPage == true}">Permissions</a></li>
+                                        <li><a href="#" (click)="showPharmacy()"
+                                                [ngClass]="{'active': pharmacysettingsPage == true}">Pharmacy
+                                                Settings</a></li>
+                                        <li><a href="#" (click)="showPDR()" [ngClass]="{'active': pdrPage == true}">PDR
+                                            </a>
+                                        </li>
+                                        <li><a href="#" (click)="showPDMP()"
+                                                [ngClass]="{'active': pdmpwebsitePage == true}">PDMP Website</a></li>
+                                    </ul> 
+                                </div>
+
+                            </div>
+                        </div>
+                    </p-tabView>
+                </div>
+            </div>
+            <!------------------------>
+
+        </div>
+        <div class="custom-sound-card" (click)="myDivNew()">
+
+            <!--Left menu with image-->
+            <!-- <div *ngIf="!mobile">  -->
+
+            <div *ngIf="!showMyContainer" class="card card-w-title ui-g-3 sidebar-profile custom-user-menu">
+                <div>
+                    <div class="">
+                        <div class="card-left card-info-details">
+                            <div class="ui-g-5 full-area">
+                                <img src="{{patientProfile.imageURL}}" class="usr-imgg" />
+                            </div>
+                            <div class="ui-g-7 full-area">
+                                <p>{{patientProfile.name}}(1)</p>
+                                <p>{{patientProfile.phoneNumber}}</p>
+                                <p>{{patientProfile.address}}</p>
+                                <p><span>{{patientProfile.city}}</span>
+                                    <span> {{patientProfile.state}}</span>
+                                    <span>{{patientProfile.pinCode}}</span></p>
+                                <!-- <p>Oceanside, NY 11572</p> -->
+                            </div>
+
+                            <div class="text-center more-linkks">
+                                <div class="ui-g-6">
+                                    <a href="#" (click)="patient_srch()">Change Patient</a>
+
+                                    <p-dialog class="show-all-patientz" [dismissableMask]="true"
+                                        [(visible)]="display_patients" [modal]="true" [responsive]="true" [minY]="70"
+                                        [maximizable]="true" [baseZIndex]="10000">
+
+                                        <div class="header-patn">
+                                            <label>Patient Search</label><input type="text" />
+                                            <select>
+                                                <option>Patient1</option>
+                                                <option>Patient2</option>
+                                                <option>Patient3</option>
+                                                <option>Patient4</option>
+                                                <option>Patient5</option>
+                                                <option>Patient6</option>
+                                            </select>
+                                        </div>
+                                        <div class="data-patient">
+                                            <perfect-scrollbar style="width:100%; max-height: 260px;"
+                                                styleClass="scroll-visible">
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>First Name</th>
+                                                            <th>Last Name</th>
+                                                            <th>DOB</th>
+                                                            <th>Chart#</th>
+                                                        </tr>
+
+                                                    </thead>
+
+                                                    <tbody>
+
+                                                        <tr>
+                                                            <td>Ellen</td>
+                                                            <td>Thompson</td>
+                                                            <td>01/25/1995</td>
+                                                            <td>12345</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>John</td>
+                                                            <td>Anderson</td>
+                                                            <td>01/15/1985</td>
+                                                            <td>12345</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+
+                                                    </tbody>
+
+                                                </table>
+                                            </perfect-scrollbar>
+                                        </div>
+                                    </p-dialog>
+
+                                </div>
+                                <div class="ui-g-6">
+                                    <a href="#" (click)="show_pharmalist()">Select Pharmacy</a>
+
+
+                                    <p-dialog class="pharmacy-selection" [(visible)]="display_pharmalist"
+                                        [dismissableMask]="true" [modal]="true" [responsive]="true" [minY]="70"
+                                        [maximizable]="true" [baseZIndex]="10000">
+
+                                        <div class="phar-outer">
+                                            <div class="checkbox-data">
+                                                <div class="form-group">
+                                                    <p-checkbox value=""
+                                                        label="Levins Pharmacy 364 Long  Beach Road, Oceanside,NY">
+                                                    </p-checkbox>
+                                                </div>
+                                            </div>
+
+                                            <div class="checklist-pharma">
+                                                <ul class="checkbox-datalist">
+                                                    <li>
+                                                        <p-checkbox value="" label="Include Mail Order"></p-checkbox>
+                                                    </li>
+                                                    <li>
+                                                        <p-checkbox value="" label="Search by Patient"></p-checkbox>
+                                                    </li>
+                                                    <li>
+                                                        <p-checkbox value="" label="Search by doctor location">
+                                                        </p-checkbox>
+                                                    </li>
+                                                </ul>
+                                                <div class="form-group pharma-code">
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+
+                                            <div class="pharmacy-lists">
+                                                <ul>
+                                                    <li>CVS Pharmacy 3557 Long Beach Road, Oceanside,NY 11572</li>
+                                                    <li>Levins Pharmacy 364 Long Beach Road, Oceanside,NY 11572</li>
+                                                </ul>
+
+                                            </div>
+
+
+
+                                        </div>
+
+
+
+                                    </p-dialog>
+
+                                </div>
+                                <div class="ui-g-6">
+                                    <a href="#" (click)="showmedhis()"
+                                        [ngClass]="{'active': showMedhistory == true}">Medication History</a>
+
+
+
+                                </div>
+                                <div class="ui-g-6">
+                                    <a href="">Dosing</a>
+                                </div>
+                                <div class="ui-g-6">
+                                    <a href="">Med Hub</a>
+                                </div>
+                                <div class="ui-g-6">
+                                    <a href="">PDR</a>
+                                </div>
+                            </div>
+                            <div class="scroll-table">
+                                <div class="ui-g-12">
+
+                                    <table id="tblCM">
+                                        <thead>
+                                            <th>Current Medications <span class="arr-med-all" id="mod-med">
+                                                    <a href="#" (click)="currentMedsAllergiesClick()"
+                                                        [ngClass]="{'active': showContainerMedAllergies == true}"><i
+                                                            aria-hidden="true"
+                                                            class="fa fa-chevron-right"></i></a></span></th>
+                                        </thead>
+                                        <tbody>
+                                            <perfect-scrollbar style="width:100%; max-height: 150px;"
+                                                styleClass="scroll-visible">
+                                                <div *ngFor="let currentMed of patientProfile.currentMedications">
+                                                    <tr>
+                                                        <td>{{currentMed.name}}<i class="fa fa-info-circle"
+                                                                aria-hidden="true"></i></td>
+                                                    </tr>
+                                                </div>
+                                            </perfect-scrollbar>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="ui-g-12">
+
+                                    <table id="tblAllergies">
+                                        <thead>
+                                            <th>Allergies <span class="arr-med-all" id="mod-allerg"><a href="#"
+                                                        (click)="currentMedsAllergiesClick()"
+                                                        [ngClass]="{'active': showContainerMedAllergies == true}"><i
+                                                            aria-hidden="true"
+                                                            class="fa fa-chevron-right"></i></a></span></th>
+
+                                        </thead>
+                                        <tbody>
+                                            <perfect-scrollbar style="width:100%; max-height: 120px;">
+                                                <div *ngFor="let allergy of patientProfile.allergies">
+                                                    <tr>
+                                                        <td>{{allergy.name}}</td>
+                                                    </tr>
+                                                </div>
+                                            </perfect-scrollbar>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <!-- </div> -->
+            <div class="sider-panel">
+                <button (click)="showMyContainer=!showMyContainer" class="user-icon"><i class="fa fa-chevron-right"
+                        aria-hidden="true"></i></button>
+            </div>
+
+            <!------------------------>
+<div [className]="!showMyContainer == true ? 'card card-w-title ui-g-9 pos-rel hello' : 'card card-w-title ui-g-12 pos-rel hello'">
+            <!------New RX form------>
+            <div *ngIf="showContainerNewRx" >
+                <div class="ui-g">
+                    <div>
+                        <form class="custom-form" [formGroup]="newRxForm" (ngSubmit)="onSubmit()">
+                            <p-panel class="cur-med-content">
+
+                                <div class="margin-b">
+                                    <div class="row ui-g-3 date-check">
+                                        <label>Date : </label>
+                                        <div class="custom-field">10/14/2019</div>
+                                    </div>
+                                    <div class="row ui-g-5 cus-width">
+                                        <label> Prescribing Doctor: </label>
+                                        <a href="" class="custom-field">Robert Alexander</a>
+                                    </div>
+                                    <div class="row ui-g-4 cus-width">
+                                        <label>Pharmacy Benefit Plan: </label>
+                                        <a href="" class="custom-field">Medicare</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-upper-div">
+                                        <div class="ui-g-6 lef-form1">
+                                            <div class="row ui-g-12 link-srchmed">
+                                                <label>Medication</label>
+                                                <p-dialog [dismissableMask]="true" class="modal-newrx-srch"
+                                                    [(visible)]="displayPopup" [modal]="true" [responsive]="true"
+                                                    [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+
+                                                    <p-autoComplete id="acSimple" [(ngModel)]="medcations"
+                                                        [ngModelOptions]="{standalone: true}"
+                                                        [suggestions]="filterMedications"
+                                                        (completeMethod)="filterMedication($event)" field="name"
+                                                        [size]="30" placeholder="Medications" [minLength]="1">
+                                                    </p-autoComplete>
+                                                    <!-- <span style="margin-left:10px">Medications:
+                                                        {{medcations ? medcations.name||medcations : 'none'}}</span> -->
+
+                                                    <div class="data-srch-manual" *ngIf="verified_data">
+                                                        <div class="compoun-filled">
+                                                            <div class="form-group">
+                                                                <label>Name Compound</label>
+                                                                <input type="text" class="form-control" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="footer-btns">
+
+                                                            <span class="not-lef">
+                                                                <p-checkbox _ngcontent-myc-c2=""
+                                                                    label="Save as Favorites" value=""
+                                                                    class="ng-untouched ng-pristine ng-valid">
+                                                                    <div class="ui-chkbox ui-widget">
+                                                                        <div class="ui-helper-hidden-accessible"><input
+                                                                                type="checkbox" name="undefined"
+                                                                                value="">
+                                                                        </div>
+                                                                        <div
+                                                                            class="ui-chkbox-box ui-widget ui-corner-all ui-state-default">
+                                                                            <span
+                                                                                class="ui-chkbox-icon ui-clickable"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!----><label
+                                                                        class="ng-star-inserted ui-chkbox-label">Save as
+                                                                        Favorites</label>
+                                                                </p-checkbox>
+                                                            </span> <button pButton type="button"
+                                                                label="Finished"></button>
+                                                        </div>
+                                                        <!-- <button type="button" pButton icon="pi pi-check" (click)="displayPopup=false" label="Yes"></button>
+<button type="button" pButton icon="pi pi-close" (click)="displayPopup=false" label="No" class="ui-button-secondary"></button> -->
+
+
+                                                    </div>
+
+
+                                                    <div class="form-custom" *ngIf="verifyAddMedication">
+                                                        <div class="btn-manual">
+                                                            <div>
+                                                                <button pButton type="button" class="btn-manuall"
+                                                                    (click)="manualadd_med()" label="Item not found add
+                                                                    manually"></button>
+                                                            </div>
+
+                                                            <p-dialog [dismissableMask]="true" class="form_manualadd"
+                                                                [(visible)]="modal_manualadd" [modal]="true"
+                                                                [responsive]="true" [minY]="70" [maximizable]="true"
+                                                                [baseZIndex]="10000">
+                                                                <div class="notify-med warn-tab"><span
+                                                                        class="warning"><i aria-hidden="true"
+                                                                            class="fa fa-exclamation-triangle"></i></span>
+                                                                    This medication will not be part of the
+                                                                    contraindications checking since it is being add
+                                                                    manually
+                                                                </div>
+                                                                <p><button pButton type="button" label="Aknowledged"
+                                                                        class="btn-aknw"></button></p>
+                                                            </p-dialog>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </p-dialog>
+
+
+                                                <a href="#" style="color:#006ce5;font-size: 17px; font-weight: 500;"
+                                                    (click)="showPopup()" icon="pi pi-info-circle " label="Show">Search
+                                                    Medication
+                                                </a>
+                                            </div>
+                                            <div class="row ui-g-12 set-errors">
+                                                <label>Quantity </label>
+                                                <p-dropdown
+                                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all ui-g-6 w-130 custom-select"
+                                                    formControlName="quantity" [options]="quantity"></p-dropdown>
+                                                <div
+                                                    [className]="!newRxForm.controls['quantity'].valid && submitted?'row ui-g-12 erroz custom-erroz custom-erroz-display-block' : 'row ui-g-12 erroz custom-erroz custom-erroz-display'">
+                                                    <p-message severity="error" text="Quantity is required"
+                                                        *ngIf="!newRxForm.controls['quantity'].valid && submitted">
+                                                    </p-message>
+                                                </div>
+                                            </div>
+
+                                            <div class="row ui-g-12 set-errors">
+                                                <label for="">Form </label>
+                                                <p-dropdown
+                                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all ui-g-6 w-130 custom-select"
+                                                    formControlName="form" [options]="form"></p-dropdown>
+                                                <div
+                                                    [className]="!newRxForm.controls['form'].valid && submitted?'row ui-g-12 erroz custom-erroz custom-erroz-display-block' : 'row ui-g-12 erroz custom-erroz custom-erroz-display'">
+                                                    <p-message severity="error" text="Form is required"
+                                                        *ngIf="!newRxForm.controls['form'].valid && submitted">
+                                                    </p-message>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="row ui-g-12 set-errors">
+                                                <label for="">Route </label>
+                                                <p-dropdown
+                                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all ui-g-6 w-130 custom-select"
+                                                    formControlName="route" [options]="route"></p-dropdown>
+                                                <div
+                                                    [className]="!newRxForm.controls['route'].valid && submitted?'row ui-g-12 erroz custom-erroz custom-erroz-display-block' : 'row ui-g-12 erroz custom-erroz custom-erroz-display'">
+                                                    <p-message severity="error" text="Route is required"
+                                                        *ngIf="!newRxForm.controls['route'].valid && submitted">
+                                                    </p-message>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <div class="ui-g-6 rig-form1">
+
+                                            <div class="row ui-g-12 pl-sm custom-dropdown set-errors">
+                                                <label>Frequency</label>
+                                                <p-dropdown
+                                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all ui-g-6 w-130 custom-select"
+                                                    formControlName="frequency" [options]="frequency"></p-dropdown>
+                                                <div
+                                                    [className]="!newRxForm.controls['frequency'].valid && submitted?'row ui-g-12 erroz custom-erroz custom-erroz-display-block' : 'row ui-g-12 erroz custom-erroz custom-erroz-display'">
+                                                    <p-message severity="error" text="Frequency is required"
+                                                        *ngIf="!newRxForm.controls['frequency'].valid && submitted">
+                                                    </p-message>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row ui-g-12 pl-sm set-errors">
+                                                <label>Days Supply </label>
+                                                <p-dropdown
+                                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all ui-g-6 w-130 custom-select"
+                                                    formControlName="daysSupply" [options]="daysSupply"></p-dropdown>
+                                                <div
+                                                    [className]="!newRxForm.controls['daysSupply'].valid && submitted?'row ui-g-12 erroz custom-erroz custom-erroz-display-block' : 'row ui-g-12 erroz custom-erroz custom-erroz-display'">
+                                                    <p-message severity="error" text="DaysSupply is required"
+                                                        *ngIf="!newRxForm.controls['daysSupply'].valid && submitted">
+                                                    </p-message>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="row ui-g-12 custom-flex pl-sm ref set-errors">
+                                                <div class="row ui-g-4 pl-0 ref-div">
+                                                    <label for="">Refills </label>
+                                                    <p-dropdown
+                                                        class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all ui-g-6 w-130 custom-select"
+                                                        formControlName="refills" [options]="refills"></p-dropdown>
+
+                                                    <p-message severity="error" text="Refills is required"
+                                                        *ngIf="!newRxForm.controls['refills'].valid && submitted">
+                                                    </p-message>
+
+                                                </div>
+
+                                                <div class="row ui-g-7 prn-class">
+                                                    <div class="ui-g-5 checkbox-prn">
+                                                        <label for="">PRN </label>
+                                                        <p-checkbox [(ngModel)]="prn"
+                                                            [ngModelOptions]="{standalone: true}" binary="true"
+                                                            class="p-checkbox-box"></p-checkbox>
+                                                    </div>
+                                                    <div class="ui-g-3 checkbox-prn">
+                                                        <label for="">DAW </label>
+                                                        <p-checkbox [(ngModel)]="daw"
+                                                            [ngModelOptions]="{standalone: true}" binary="true"
+                                                            class="p-checkbox-box"></p-checkbox>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="row ui-g-12 pl-0 full-input">
+                                            <div class="row ui-g-4">
+                                                <h1>Additional Sig</h1>
+                                                <p>Will appear on Rx label</p>
+                                            </div>
+                                            <div class="row ui-g-3">
+                                                <p-checkbox [(ngModel)]="includeFavorites"
+                                                    [ngModelOptions]="{standalone: true}" value=""
+                                                    label="Include in Favorites"></p-checkbox>
+                                            </div>
+                                            <div class="row ui-g-12">
+                                                <input formControlName="additionalSig"
+                                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all max-w-100"
+                                                    role="textbox" placeholder="" type="text">
+                                                <!-- <p-message severity="error" text="AdditionalSig is required" *ngIf="!newRxForm.controls['additionalSig'].valid && submitted"></p-message> -->
+                                            </div>
+                                        </div>
+                                        <div class="row ui-g-12 pl-0 full-input">
+                                            <div class="row ui-g-4">
+                                                <h1>Pharmacist Message</h1>
+                                                <p>Will not appear on Rx Label - no sig allowed</p>
+                                            </div>
+                                            <div class="row ui-g-3">
+                                                <p-checkbox [(ngModel)]="includeFavorites1Chk"
+                                                    [ngModelOptions]="{standalone: true}" value=""
+                                                    label="Include in Favorites"></p-checkbox>
+                                            </div>
+                                            <div class="row ui-g-12">
+                                                <input formControlName="includeFavorites1"
+                                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all max-w-100"
+                                                    role="textbox" placeholder="" type="text">
+                                                <!-- <p-message severity="error" text="Include Favorites is required" *ngIf="!newRxForm.controls['includeFavorites1'].valid && submitted"></p-message> -->
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="ui-g-12 float-right btnz-formz-newrx">
+                                            <div class="footer-buttons nnewrx">
+                                                <ul>
+                                                    <li>
+                                                        <p-checkbox [(ngModel)]="saveFavorites"
+                                                            [ngModelOptions]="{standalone: true}" value=""
+                                                            label="Save as Favorite"></p-checkbox>
+                                                    </li>
+                                                    <li>
+                                                        <p-checkbox [(ngModel)]="print"
+                                                            [ngModelOptions]="{standalone: true}" value=""
+                                                            label="Print"></p-checkbox>
+                                                    </li>
+                                                </ul>
+
+
+                                            </div>
+                                            <ul>
+                                                <li> <button pButton type="submit" label="Save and new"
+                                                        style="margin-bottom:10px" (click)="onSubmit()"></button></li>
+                                                <li>
+                                                    <button pButton type="button" (click)="success_prescrib()"
+                                                        label="Review" style="margin-bottom:10px"></button>
+                                                </li>
+                                                <li> <button pButton type="button" (click)="error_prescrib()"
+                                                        label="Transmit" style="margin-bottom:10px"></button>
+                                                </li>
+                                            </ul>
+
+
+
+                                        </div>
+                                        <p-dialog [dismissableMask]="true" class="mod_prescrib"
+                                            [(visible)]="show_succ_presc" [modal]="true" [responsive]="true" [minY]="70"
+                                            [maximizable]="true" [baseZIndex]="10000">
+                                            <div class="prescr">
+                                                You have sucessfully sent 5 prescriptions!!!
+                                            </div>
+                                        </p-dialog>
+                                        <p-dialog [dismissableMask]="true" class="mod_errpres"
+                                            [(visible)]="show_error_presc" [modal]="true" [responsive]="true"
+                                            [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+                                            <div class="prescr">
+                                                <h4>Uhh Oh Trouble! Not all of your Prescriptions were submitted!</h4>
+                                                <ul>
+                                                    <li>1 Rx will be faxed to the pharmacy</li>
+                                                    <li class="warn">3 Prescriptions failed to be submitted</li>
+                                                    <li><button pButton type="button" (click)="close_error()"
+                                                            label="OK"></button></li>
+                                                </ul>
+                                            </div>
+                                        </p-dialog>
+
+                                        
+
+                                    </div>
+
+                                </div>
+                            </p-panel>
+                        </form>
+
+                       
+
+                    </div>
+                </div>
+                
+            </div>
+            <!------------------------>
+
+            <!------Favorites form------>
+            <div *ngIf="showContainerFavorites">
+                <app-favorites></app-favorites>
+            </div>
+            <!------------------------>
+
+            <!------Current Meds & Allergies form------>
+            <div *ngIf="showContainerMedAllergies">
+                <app-currentmedsallergies></app-currentmedsallergies>
+            </div>
+            <!------------------------>
+
+            <!------Alerts form------>
+            <div *ngIf="showContainerAlerts">
+                <app-alerts></app-alerts>
+            </div>
+            <!------------------------>
+
+            <!------Reports form------>
+            <div *ngIf="showContainerReports" >
+                <app-reports></app-reports>
+            </div>
+            <!------------------------>
+
+            <!------Settings------>
+            <div *ngIf="accountPage">
+                <app-account></app-account>
+            </div>
+
+            <div *ngIf="pdmpwebsitePage">
+                <app-pdmpwebsite></app-pdmpwebsite>
+            </div>
+
+            <div *ngIf="pdrPage">
+                <app-pdr></app-pdr>
+            </div>
+
+            <div *ngIf="permissionsPage" >
+                <app-permissions></app-permissions>
+            </div>
+
+            <div *ngIf="pharmacysettingsPage">
+                <app-pharmacysettings></app-pharmacysettings>
+            </div>
+
+            <div *ngIf="prescriberPage">
+                <app-prescriber></app-prescriber>
+            </div>
+
+            <div *ngIf="showMedhistory">
+                <app-medicationhistory></app-medicationhistory>
+            </div>
+
+            <p-dialog class="show-curd-med" [dismissableMask]="true"
+            [(visible)]="display_curedmed" [modal]="true" [responsive]="true" [minY]="70"
+            [maximizable]="true" [baseZIndex]="10000">
+<section class="current-medi-alleries">
+
+<div class="card card-w-title ui-g-12 view-curr-all">
+
+<div class="ui-g-6 curr-med" ng-controller="myCtrl">
+<div class="headr-curr">
+Current Medications <a href="#" (click)="get_newrx()"><i aria-hidden="true"
+class="fa fa-plus"></i></a>
+
+</div>
+<table mdbTable mdbTableScroll scrollX="true" maxWidth="100">
+<perfect-scrollbar style="width:100%; max-height: 600px;"
+styleClass="scroll-visible">
+
+<tbody>
+    <tr>
+        <td>
+            <p><span class="tab-nme">Amoxicillin125 mg Chewable
+                    Tablet</span>
+                <span class="direc">As directed</span>, <span
+                    class="val-refil">0</span> Refills
+                <span class="pat-nme">Robert Alexander DPM</span>
+                <span class="dt-filld">Date Filled: 04/20/20</span></p>
+        </td>
+        <td>
+            <ul class="act-cmed">
+                <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                        href="#"><i _ngcontent-nyx-c10="" aria-hidden="true"
+                            class="fa fa fa-repeat act-cmed-icon1"></i></a>
+                </li>
+                <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                        href="#" class="dc-btn">D/C</a></li>
+                <li><a href="#"><i aria-hidden="true"
+                            class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+            </ul>
+
+            
+        </td>
+    </tr>
+    <tr>
+            <td>
+                <p><span class="tab-nme">Metformin 500 mg Tablet</span>
+                    <span class="direc">As directed</span>, <span
+                        class="val-refil">1</span> Refills
+                    <span class="pat-nme">Unknown Prescriber</span>
+                    <span class="dt-filld">Date Filled: 04/20/20</span></p>
+            </td>
+            <td>
+                    <ul class="act-cmed">
+                            <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                    href="#"><i _ngcontent-nyx-c10="" aria-hidden="true"
+                                        class="fa fa fa-repeat act-cmed-icon1"></i></a>
+                            </li>
+                            <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                    href="#" class="dc-btn">D/C</a></li>
+                            <li><a href="#" ><i aria-hidden="true"
+                                        class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                        </ul>
+
+                 </td>
+        </tr>
+        <tr>
+                <td>
+                    <p><span class="tab-nme">Metformin 500 mg Tablet</span>
+                        <span class="direc">As directed</span>, <span
+                            class="val-refil">1</span> Refills
+                        <span class="pat-nme">Unknown Prescriber</span>
+                        <span class="dt-filld">Date Filled: 04/20/20</span></p>
+                </td>
+                <td>
+                        <ul class="act-cmed">
+                                <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                        href="#"><i _ngcontent-nyx-c10="" aria-hidden="true"
+                                            class="fa fa fa-repeat act-cmed-icon1"></i></a>
+                                </li>
+                                <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                        href="#" class="dc-btn">D/C</a></li>
+                                <li><a href="#" ><i aria-hidden="true"
+                                            class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                            </ul>
+
+                     </td>
+            </tr>
+            <tr>
+                    <td>
+                        <p><span class="tab-nme">Metformin 500 mg Tablet</span>
+                            <span class="direc">As directed</span>, <span
+                                class="val-refil">1</span> Refills
+                            <span class="pat-nme">Unknown Prescriber</span>
+                            <span class="dt-filld">Date Filled: 04/20/20</span></p>
+                    </td>
+                    <td>
+                            <ul class="act-cmed">
+                                    <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                            href="#"><i _ngcontent-nyx-c10="" aria-hidden="true"
+                                                class="fa fa fa-repeat act-cmed-icon1"></i></a>
+                                    </li>
+                                    <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                            href="#" class="dc-btn">D/C</a></li>
+                                    <li><a href="#" ><i aria-hidden="true"
+                                                class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                                </ul>
+
+                         </td>
+                </tr>
+                <tr>
+                        <td>
+                            <p><span class="tab-nme">Metformin 500 mg Tablet</span>
+                                <span class="direc">As directed</span>, <span
+                                    class="val-refil">1</span> Refills
+                                <span class="pat-nme">Unknown Prescriber</span>
+                                <span class="dt-filld">Date Filled: 04/20/20</span></p>
+                        </td>
+                        <td>
+                                <ul class="act-cmed">
+                                        <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                href="#"><i _ngcontent-nyx-c10="" aria-hidden="true"
+                                                    class="fa fa fa-repeat act-cmed-icon1"></i></a>
+                                        </li>
+                                        <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                href="#" class="dc-btn">D/C</a></li>
+                                        <li><a href="#" ><i aria-hidden="true"
+                                                    class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                                    </ul>
+
+                             </td>
+                    </tr>
+                    <tr>
+                            <td>
+                                <p><span class="tab-nme">Metformin 500 mg Tablet</span>
+                                    <span class="direc">As directed</span>, <span
+                                        class="val-refil">1</span> Refills
+                                    <span class="pat-nme">Unknown Prescriber</span>
+                                    <span class="dt-filld">Date Filled: 04/20/20</span></p>
+                            </td>
+                            <td>
+                                    <ul class="act-cmed">
+                                            <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                    href="#"><i _ngcontent-nyx-c10="" aria-hidden="true"
+                                                        class="fa fa fa-repeat act-cmed-icon1"></i></a>
+                                            </li>
+                                            <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                    href="#" class="dc-btn">D/C</a></li>
+                                            <li><a href="#" ><i aria-hidden="true"
+                                                        class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                                        </ul>
+
+                                 </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                    <p><span class="tab-nme">Metformin 500 mg Tablet</span>
+                                        <span class="direc">As directed</span>, <span
+                                            class="val-refil">1</span> Refills
+                                        <span class="pat-nme">Unknown Prescriber</span>
+                                        <span class="dt-filld">Date Filled: 04/20/20</span></p>
+                                </td>
+                                <td>
+                                        <ul class="act-cmed">
+                                                <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                        href="#"><i _ngcontent-nyx-c10="" aria-hidden="true"
+                                                            class="fa fa fa-repeat act-cmed-icon1"></i></a>
+                                                </li>
+                                                <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                        href="#" class="dc-btn">D/C</a></li>
+                                                <li><a href="#" ><i aria-hidden="true"
+                                                            class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                                            </ul>
+
+                                     </td>
+                            </tr>
+                            <tr>
+                                    <td>
+                                        <p><span class="tab-nme">Metformin 500 mg Tablet</span>
+                                            <span class="direc">As directed</span>, <span
+                                                class="val-refil">1</span> Refills
+                                            <span class="pat-nme">Unknown Prescriber</span>
+                                            <span class="dt-filld">Date Filled: 04/20/20</span></p>
+                                    </td>
+                                    <td>
+                                            <ul class="act-cmed">
+                                                    <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                            href="#"><i _ngcontent-nyx-c10="" aria-hidden="true"
+                                                                class="fa fa fa-repeat act-cmed-icon1"></i></a>
+                                                    </li>
+                                                    <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                            href="#" class="dc-btn">D/C</a></li>
+                                                    <li><a href="#" ><i aria-hidden="true"
+                                                                class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                                                </ul>
+    
+                                         </td>
+                                </tr>
+                                <tr>
+                                        <td>
+                                            <p><span class="tab-nme">Metformin 500 mg Tablet</span>
+                                                <span class="direc">As directed</span>, <span
+                                                    class="val-refil">1</span> Refills
+                                                <span class="pat-nme">Unknown Prescriber</span>
+                                                <span class="dt-filld">Date Filled: 04/20/20</span></p>
+                                        </td>
+                                        <td>
+                                                <ul class="act-cmed">
+                                                        <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                                href="#"><i _ngcontent-nyx-c10="" aria-hidden="true"
+                                                                    class="fa fa fa-repeat act-cmed-icon1"></i></a>
+                                                        </li>
+                                                        <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                                href="#" class="dc-btn">D/C</a></li>
+                                                        <li><a href="#" ><i aria-hidden="true"
+                                                                    class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                                                    </ul>
+        
+                                             </td>
+                                    </tr>
+                                    <tr>
+                                            <td>
+                                                <p><span class="tab-nme">Metformin 500 mg Tablet</span>
+                                                    <span class="direc">As directed</span>, <span
+                                                        class="val-refil">1</span> Refills
+                                                    <span class="pat-nme">Unknown Prescriber</span>
+                                                    <span class="dt-filld">Date Filled: 04/20/20</span></p>
+                                            </td>
+                                            <td>
+                                                    <ul class="act-cmed">
+                                                            <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                                    href="#"><i _ngcontent-nyx-c10="" aria-hidden="true"
+                                                                        class="fa fa fa-repeat act-cmed-icon1"></i></a>
+                                                            </li>
+                                                            <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                                    href="#" class="dc-btn">D/C</a></li>
+                                                            <li><a href="#" ><i aria-hidden="true"
+                                                                        class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                                                        </ul>
+            
+                                                 </td>
+                                        </tr>
+                                        <tr>
+                                                <td>
+                                                    <p><span class="tab-nme">Metformin 500 mg Tablet</span>
+                                                        <span class="direc">As directed</span>, <span
+                                                            class="val-refil">1</span> Refills
+                                                        <span class="pat-nme">Unknown Prescriber</span>
+                                                        <span class="dt-filld">Date Filled: 04/20/20</span></p>
+                                                </td>
+                                                <td>
+                                                        <ul class="act-cmed">
+                                                                <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                                        href="#"><i _ngcontent-nyx-c10="" aria-hidden="true"
+                                                                            class="fa fa fa-repeat act-cmed-icon1"></i></a>
+                                                                </li>
+                                                                <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10=""
+                                                                        href="#" class="dc-btn">D/C</a></li>
+                                                                <li><a href="#" ><i aria-hidden="true"
+                                                                            class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                                                            </ul>
+                
+                                                     </td>
+                                            </tr>
+</tbody>
+</perfect-scrollbar>
+</table>
+</div>
+
+<div class="ui-g-6 aller">
+
+<div class="headr-all">
+Allergies <a href="#" (click)="show_aller_selection()"><i aria-hidden="true"
+class="fa fa-plus"></i></a>
+</div>
+
+<table mdbTable mdbTableScroll scrollX="true" maxWidth="50">
+<perfect-scrollbar style="width:100%; max-height: 600px;"
+styleClass="scroll-visible">
+<tbody>
+<tr>
+<td>
+    <h4>Penicillin</h4>
+    <span> Severe</span>
+<span>Directed</span>
+<td>
+    <ul class="act-cmed">
+<li><a href="#"><i aria-hidden="true" class="fa fa-pencil act-cmed-icon4 edi"></i></a></li>
+        <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10="" href="#"><i
+                    _ngcontent-nyx-c10="" aria-hidden="true"
+                    class="fa fa-trash act-cmed-icon4 "></i></a></li>
+        
+                    <li><a href="#"><i aria-hidden="true"
+                        class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+    </ul>
+
+    </td>
+</tr>
+<tr>
+    <td>
+        <h4>Penicillin</h4>
+        <span> Severe</span>
+   <span>Directed</span>
+    <td>
+        <ul class="act-cmed">
+<li><a href="#"><i aria-hidden="true" class="fa fa-pencil act-cmed-icon4 edi"></i></a></li>
+            <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10="" href="#"><i
+                        _ngcontent-nyx-c10="" aria-hidden="true"
+                        class="fa fa-trash act-cmed-icon4 "></i></a></li>
+            
+                        <li><a href="#"><i aria-hidden="true"
+                            class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+        </ul>
+
+        </td>
+</tr>
+
+<tr>
+        <td>
+            <h4>Penicillin</h4>
+            <span> Severe</span>
+       <span>Directed</span>
+        <td>
+            <ul class="act-cmed">
+<li><a href="#"><i aria-hidden="true" class="fa fa-pencil act-cmed-icon4 edi"></i></a></li>
+                <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10="" href="#"><i
+                            _ngcontent-nyx-c10="" aria-hidden="true"
+                            class="fa fa-trash act-cmed-icon4 "></i></a></li>
+                
+                            <li><a href="#"><i aria-hidden="true"
+                                class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+            </ul>
+
+            </td>
+    </tr>
+
+    <tr>
+            <td>
+                <h4>Penicillin</h4>
+                <span> Severe</span>
+           <span>Directed</span>
+            <td>
+                <ul class="act-cmed">
+<li><a href="#"><i aria-hidden="true" class="fa fa-pencil act-cmed-icon4 edi"></i></a></li>
+                    <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10="" href="#"><i
+                                _ngcontent-nyx-c10="" aria-hidden="true"
+                                class="fa fa-trash act-cmed-icon4 "></i></a></li>
+                    
+                                <li><a href="#"><i aria-hidden="true"
+                                    class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                </ul>
+
+                </td>
+        </tr>
+
+        <tr>
+                <td>
+                    <h4>Penicillin</h4>
+                    <span> Severe</span>
+               <span>Directed</span>
+                <td>
+                    <ul class="act-cmed">
+<li><a href="#"><i aria-hidden="true" class="fa fa-pencil act-cmed-icon4 edi"></i></a></li>
+                        <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10="" href="#"><i
+                                    _ngcontent-nyx-c10="" aria-hidden="true"
+                                    class="fa fa-trash act-cmed-icon4 "></i></a></li>
+                        
+                                    <li><a href="#"><i aria-hidden="true"
+                                        class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                    </ul>
+
+                    </td>
+            </tr>
+
+            <tr>
+                    <td>
+                        <h4>Penicillin</h4>
+                        <span> Severe</span>
+                   <span>Directed</span>
+                    <td>
+                        <ul class="act-cmed">
+<li><a href="#"><i aria-hidden="true" class="fa fa-pencil act-cmed-icon4 edi"></i></a></li>
+                            <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10="" href="#"><i
+                                        _ngcontent-nyx-c10="" aria-hidden="true"
+                                        class="fa fa-trash act-cmed-icon4 "></i></a></li>
+                            
+                                        <li><a href="#"><i aria-hidden="true"
+                                            class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                        </ul>
+
+                        </td>
+                </tr>
+
+                <tr>
+                        <td>
+                            <h4>Penicillin</h4>
+                            <span> Severe</span>
+                       <span>Directed</span>
+                        <td>
+                            <ul class="act-cmed">
+<li><a href="#"><i aria-hidden="true" class="fa fa-pencil act-cmed-icon4 edi"></i></a></li>
+                                <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10="" href="#"><i
+                                            _ngcontent-nyx-c10="" aria-hidden="true"
+                                            class="fa fa-trash act-cmed-icon4 "></i></a></li>
+                                
+                                            <li><a href="#"><i aria-hidden="true"
+                                                class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                            </ul>
+
+                            </td>
+                    </tr>
+
+                    <tr>
+                            <td>
+                                <h4>Penicillin</h4>
+                                <span> Severe</span>
+                           <span>Directed</span>
+                            <td>
+                                <ul class="act-cmed">
+<li><a href="#"><i aria-hidden="true" class="fa fa-pencil act-cmed-icon4 edi"></i></a></li>
+                                    <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10="" href="#"><i
+                                                _ngcontent-nyx-c10="" aria-hidden="true"
+                                                class="fa fa-trash act-cmed-icon4 "></i></a></li>
+                                    
+                                                <li><a href="#"><i aria-hidden="true"
+                                                    class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                                </ul>
+
+                                </td>
+                        </tr>
+
+                        <tr>
+                                <td>
+                                    <h4>Penicillin</h4>
+                                    <span> Severe</span>
+                               <span>Directed</span>
+                                <td>
+                                    <ul class="act-cmed">
+    <li><a href="#"><i aria-hidden="true" class="fa fa-pencil act-cmed-icon4 edi"></i></a></li>
+                                        <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10="" href="#"><i
+                                                    _ngcontent-nyx-c10="" aria-hidden="true"
+                                                    class="fa fa-trash act-cmed-icon4 "></i></a></li>
+                                        
+                                                    <li><a href="#"><i aria-hidden="true"
+                                                        class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                                    </ul>
+    
+                                    </td>
+                            </tr>
+
+                            <tr>
+                                    <td>
+                                        <h4>Penicillin</h4>
+                                        <span> Severe</span>
+                                   <span>Directed</span>
+                                    <td>
+                                        <ul class="act-cmed">
+        <li><a href="#"><i aria-hidden="true" class="fa fa-pencil act-cmed-icon4 edi"></i></a></li>
+                                            <li _ngcontent-nyx-c10=""><a _ngcontent-nyx-c10="" href="#"><i
+                                                        _ngcontent-nyx-c10="" aria-hidden="true"
+                                                        class="fa fa-trash act-cmed-icon4 "></i></a></li>
+                                            
+                                                        <li><a href="#"><i aria-hidden="true"
+                                                            class="fa fa-chevron-right act-cmed-icon3"></i></a></li>
+                                        </ul>
+        
+                                        </td>
+                                </tr>
+                            
+</tbody>
+</perfect-scrollbar>
+</table>
+
+</div>
+
+<p-dialog class="selec-all-model" [(visible)]="display_allergy" [modal]="true"
+[responsive]="true" [minY]="70" [dismissableMask]="true" [maximizable]="true" [baseZIndex]="10000">
+<div class="ui-g-12 curr-med">
+<div class="headr-curr"> Select Allergy</div>
+<div class="srch-all">
+<i aria-hidden="true" class="fa fa-search"></i>
+<input type="text" value="" class="form-control srch-ico" />
+</div>
+
+<div class="data-aller">
+<div class="ui-g-5">
+<div class="form-group">
+    <p-checkbox value="New York" label="Aspirin"></p-checkbox>
+</div>
+</div>
+<div class="ui-g-4">
+<p-dropdown [options]="items" placeholder="Select Item" [virtualScroll]="true" [itemSize]="31" [filter]="false"></p-dropdown>  
+</div>
+<div class="ui-g-3"><input type="text" class="form-control"
+    placeholder="Symptom" /></div>
+</div>
+<div class="data-aller">
+<div class="ui-g-5">
+<div class="form-group">
+    <p-checkbox value="New York" label="New York"></p-checkbox>
+</div>
+</div>
+<div class="ui-g-4">
+<p-dropdown
+    placeholder="Select Item" [virtualScroll]="true" [itemSize]="31"
+    [filter]="false"></p-dropdown>
+</div>
+<div class="ui-g-3"><input type="text" class="form-control"
+    placeholder="Symptom" /></div>
+</div>
+<div class="data-aller">
+<div class="ui-g-5">
+<div class="form-group">
+    <p-checkbox value="New York" label="New York"></p-checkbox>
+</div>
+</div>
+<div class="ui-g-4">
+<p-dropdown 
+    placeholder="Select Item" [virtualScroll]="true" [itemSize]="31"
+    [filter]="false"></p-dropdown>
+</div>
+<div class="ui-g-3"><input type="text" class="form-control"
+    placeholder="Symptom" /></div>
+</div>
+<div class="data-aller">
+<div class="ui-g-5">
+<div class="form-group">
+    <p-checkbox value="New York" label="New York"></p-checkbox>
+</div>
+</div>
+<div class="ui-g-4">
+<p-dropdown 
+    placeholder="Select Item" [virtualScroll]="true" [itemSize]="31"
+    [filter]="false"></p-dropdown>
+</div>
+<div class="ui-g-3"><input type="text" class="form-control"
+    placeholder="Symptom" /></div>
+</div>
+<div class="data-aller">
+<div class="ui-g-5">
+<div class="form-group">
+    <p-checkbox value="New York" label="New York"></p-checkbox>
+</div>
+</div>
+<div class="ui-g-4">
+<p-dropdown 
+    placeholder="Select Item" [virtualScroll]="true" [itemSize]="31"
+    [filter]="false"></p-dropdown>
+</div>
+<div class="ui-g-3"><input type="text" class="form-control"
+    placeholder="Symptom" /></div>
+</div>
+<div class="data-aller">
+<div class="ui-g-5">
+<div class="form-group">
+    <p-checkbox value="New York" label="New York"></p-checkbox>
+</div>
+</div>
+<div class="ui-g-4">
+<p-dropdown 
+    placeholder="Select Item" [virtualScroll]="true" [itemSize]="31"
+    [filter]="false"></p-dropdown>
+</div>
+<div class="ui-g-3"><input type="text" class="form-control"
+    placeholder="Symptom" /></div>
+</div>
+<div class="data-aller">
+<div class="ui-g-5">
+<div class="form-group">
+    <p-checkbox value="New York" label="New York"></p-checkbox>
+</div>
+</div>
+<div class="ui-g-4">
+<p-dropdown 
+    placeholder="Select Item" [virtualScroll]="true" [itemSize]="31"
+    [filter]="false"></p-dropdown>
+</div>
+<div class="ui-g-3"><input type="text" class="form-control"
+    placeholder="Symptom" /></div>
+</div>
+<div class="data-aller">
+<div class="ui-g-5">
+<div class="form-group">
+    <p-checkbox value="New York" label="New York"></p-checkbox>
+</div>
+</div>
+<div class="ui-g-4">
+<p-dropdown 
+    placeholder="Select Item" [virtualScroll]="true" [itemSize]="31"
+    [filter]="false"></p-dropdown>
+</div>
+<div class="ui-g-3"><input type="text" class="form-control"
+    placeholder="Symptom" /></div>
+</div>
+<div class="data-aller">
+<div class="ui-g-5">
+<div class="form-group">
+    <p-checkbox value="New York" label="New York"></p-checkbox>
+</div>
+</div>
+<div class="ui-g-4">
+<p-dropdown 
+    placeholder="Select Item" [virtualScroll]="true" [itemSize]="31"
+    [filter]="false"></p-dropdown>
+</div>
+<div class="ui-g-3"><input type="text" class="form-control"
+    placeholder="Symptom" /></div>
+</div>
+<div class="ft-btnz">
+<div class="othr-field">
+<div class="form-group">
+    <label>Other:</label>
+    <input type="text" class="form-control" />
+</div>
+
+</div>
+<div class="btn-save">
+<a href="#" class="save-aller">Save</a>
+</div>
+
+</div>
+
+</div>
+
+
+
+</p-dialog>
+
+
+
+</div>
+</section>
+</p-dialog>
+
+</div>
+        </div>

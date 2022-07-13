@@ -1,0 +1,1262 @@
+// // body {
+// //     .ui-widget-content {
+// //         p {
+// //             line-height: 1.5;
+// //             margin: 0;
+// //         }
+// //     }
+
+// //     .ui-panel {
+// //         padding: 0;
+// //         border: 0 none;
+
+// //         .ui-panel-titlebar {
+// //             border: $panelHeaderBorder;
+// //             padding: $panelHeaderPadding;
+// //             background-color: $panelHeaderBgColor;
+// //             color: $panelHeaderTextColor;
+// //             @include border-radius-top($borderRadius);
+// //             @include border-radius-bottom(0);
+
+// //             .ui-panel-title {
+// //                 vertical-align: middle;
+// //                 font-weight: $panelHeaderFontWeight;
+// //             }
+
+// //             .ui-panel-titlebar-icon {
+// //                 margin: 0;
+// //                 position: relative;
+// //                 font-size: $fontSize;
+// //                 color: $panelHeaderIconColor;
+// //                 border: 1px solid transparent;
+// //                 @include transition($panelHeaderIconTransition);
+
+// //                 &:hover {
+// //                     color: $panelHeaderIconHoverColor;
+// //                 }
+// //             }
+// //         }
+
+// //         .ui-panel-content {
+// //             padding: $panelContentPadding;
+// //             border: $panelContentBorder;
+// //             background-color: $panelContentBgColor;
+// //             color: $panelContentTextColor;
+// //             padding: $panelContentPadding;
+// //             border-top: 0 none;
+// //         }
+
+// //         .ui-panel-footer {
+// //             padding: $panelFooterPadding;
+// //             border: $panelFooterBorder;
+// //             background-color: $panelFooterBgColor;
+// //             color: $panelFooterTextColor;
+// //             border-top: 0 none;
+// //             margin: 0;
+// //         }
+// //     }
+
+// //     .ui-fieldset {
+// //         border: $panelContentBorder;
+// //         background-color: $panelContentBgColor;
+// //         color: $panelContentTextColor;
+
+// //         .ui-fieldset-legend {
+// //             a {
+// //                 padding: $panelHeaderPadding;
+// //                 border: $panelHeaderBorder;
+// //                 color: $panelHeaderTextColor;
+// //                 background-color: $panelHeaderBgColor;
+// //                 @include border-radius($borderRadius);
+// //                 @include transition($panelHeaderTransition);
+
+// //                 .ui-fieldset-toggler {
+// //                     float: none;
+// //                     display: inline-block;
+// //                     vertical-align: middle;
+// //                     margin-right: .5em;
+// //                     color: $panelHeaderIconColor;
+// //                 }
+    
+// //                 .ui-fieldset-legend-text{
+// //                     padding: 0;
+// //                 }
+// //             }
+// //         }
+
+// //         &.ui-fieldset-toggleable {
+// //             .ui-fieldset-legend {
+// //                 a {
+// //                     &:hover {
+// //                         background-color: $panelHeaderHoverBgColor;
+// //                         border: $panelHeaderHoverBorder;
+// //                         color: $panelHeaderHoverTextColor;
+    
+// //                         .ui-fieldset-toggler {
+// //                             color: $panelHeaderHoverIconColor;
+// //                         }
+// //                     }
+// //                 }
+// //             }
+// //         }
+
+// //         .ui-fieldset-content {
+// //             padding: 0;
+// //         }
+// //     }
+
+// //     .ui-accordion {
+// //         .ui-accordion-header {
+// //             margin-bottom: $accordionSpacing;
+
+// //             a {
+// //                 padding: $panelHeaderPadding;
+// //                 border: $panelHeaderBorder;
+// //                 color: $panelHeaderTextColor;
+// //                 background-color: $panelHeaderBgColor;
+// //                 color: $panelHeaderTextColor;
+// //                 font-weight: $panelHeaderFontWeight;
+// //                 @include transition($panelHeaderTransition);
+
+// //                 .ui-accordion-toggle-icon {
+// //                     color: $panelHeaderIconColor;
+// //                 }
+// //             }
+
+// //             &:not(.ui-state-active):not(.ui-state-disabled):hover {
+// //                 a {
+// //                     background-color: $panelHeaderHoverBgColor;
+// //                     border: $panelHeaderHoverBorder;
+// //                     color: $panelHeaderHoverTextColor;
+
+// //                     .ui-accordion-toggle-icon {
+// //                         color: $panelHeaderHoverIconColor;
+// //                     }
+// //                 }
+// //             }
+
+// //             &:not(.ui-state-disabled).ui-state-active {
+// //                 a {
+// //                     background-color: $panelHeaderActiveBgColor;
+// //                     border: $panelHeaderActiveBorder;
+// //                     color: $panelHeaderActiveTextColor;
+                    
+// //                     .ui-accordion-toggle-icon {
+// //                         color: $panelHeaderActiveIconColor;
+// //                     }
+// //                 }
+
+// //                 &:hover {
+// //                     a {
+// //                         border: $panelHeaderActiveHoverBorder;
+// //                         background-color: $panelHeaderActiveHoverBgColor;
+// //                         color: $panelHeaderActiveHoverTextColor;
+                        
+// //                         .ui-accordion-toggle-icon {
+// //                             color: $panelHeaderActiveHoverIconColor;
+// //                         }
+// //                     }
+// //                 }
+// //             }
+// //         }
+
+// //         .ui-accordion-content {
+// //             padding: $panelContentPadding;
+// //             border: $panelContentBorder;
+// //             background-color: $panelContentBgColor;
+// //             color: $panelContentTextColor;
+// //             padding: $panelContentPadding;
+// //         }
+// //     }
+
+// //     .ui-tabview {
+// //         &.ui-tabview-top,
+// //         &.ui-tabview-bottom,
+// //         &.ui-tabview-left,
+// //         &.ui-tabview-right {
+// //             border: 0 none;
+
+// //             .ui-tabview-nav {
+// //                 padding: 0;
+// //                 background: $tabsNavBgColor;
+// //                 border: $tabsNavBorder;
+
+// //                 li {
+// //                     border: $panelHeaderBorder;
+// //                     background-color: $panelHeaderBgColor;
+// //                     @include transition($panelHeaderTransition);
+
+// //                     a {
+// //                         float: none;
+// //                         display: inline-block;
+// //                         color: $panelHeaderTextColor;
+// //                         padding: $panelHeaderPadding;
+// //                         font-weight: $panelHeaderFontWeight;
+
+// //                         .ui-tabview-left-icon {
+// //                             margin-right: $inlineSpacing;
+// //                         }
+
+// //                         .ui-tabview-right-icon {
+// //                             margin-left: $inlineSpacing;
+// //                         }
+// //                     }
+
+// //                     .ui-tabview-close {
+// //                         color: $panelHeaderIconColor;
+// //                         margin: 0 $inlineSpacing 0 0;
+// //                         vertical-align: middle;
+// //                     }
+
+// //                     &:not(.ui-state-active):not(.ui-state-disabled):hover {
+// //                         background-color: $panelHeaderHoverBgColor;
+// //                         border: $panelHeaderHoverBorder;
+                        
+// //                         a {
+// //                             color: $panelHeaderHoverTextColor;
+// //                         }
+
+// //                         .ui-tabview-close {
+// //                             color: $panelHeaderHoverTextColor;
+// //                         }
+// //                     }
+
+// //                     &.ui-state-active {
+// //                         background-color: $panelHeaderActiveBgColor;
+// //                         border: $panelHeaderActiveBorder;
+
+// //                         a {
+// //                             color: $panelHeaderActiveTextColor;
+// //                         }
+
+// //                         .ui-tabview-close {
+// //                             color: $panelHeaderActiveIconColor;
+// //                         }
+
+// //                         &:hover {
+// //                             border: $panelHeaderActiveHoverBorder;
+// //                             background-color: $panelHeaderActiveHoverBgColor;
+
+// //                             a {
+// //                                 color: $panelHeaderActiveHoverTextColor;
+                                
+// //                                 .ui-tabview-left-icon, .ui-tabview-right-icon{
+// //                                     color: $panelHeaderActiveHoverIconColor;
+// //                                 }
+// //                             }
+// //                         }
+// //                     }
+
+// //                     &.ui-tabview-selected {
+// //                         a {
+// //                             cursor: pointer;
+// //                         }
+// //                     }
+// //                 }
+// //             }
+// //         }
+
+// //         &.ui-tabview-top {
+// //             .ui-tabview-nav {
+// //                 margin-bottom: -1px;
+
+// //                 li {
+// //                     margin-right: $tabHeaderSpacing;
+// //                 }
+// //             }
+// //         }
+
+// //         &.ui-tabview-bottom {
+// //             .ui-tabview-nav {
+// //                 margin-top: -1px;
+
+// //                 li {
+// //                     margin-right: $tabHeaderSpacing;
+// //                 }
+// //             }
+// //         }
+
+// //         &.ui-tabview-left {
+// //             .ui-tabview-nav {
+// //                 margin-right: -px;
+
+// //                 li {
+// //                     margin-bottom: $tabHeaderSpacing;
+// //                 }
+// //             }
+// //         }
+
+// //         &.ui-tabview-right {
+// //             .ui-tabview-nav {
+// //                 margin-right: -1px;
+
+// //                 li {
+// //                     margin-bottom: $tabHeaderSpacing;
+// //                 }
+// //             }
+// //         }     
+
+// //         .ui-tabview-panels {
+// //             background-color: $panelContentBgColor;
+// //             padding: $panelContentPadding;
+// //             border: $panelContentBorder;
+// //             color: $panelContentTextColor;
+
+// //             .ui-tabview-panel {
+// //                 padding: 0;
+// //             }
+// //         }
+// //     }
+
+// //     .ui-toolbar {
+// //         background-color: $panelHeaderBgColor;
+// //         border: $panelHeaderBorder;
+// //         padding: $panelHeaderPadding;
+
+// //         button {
+// //             vertical-align: middle;
+// //         }
+
+// //         .ui-toolbar-separator {
+// //             vertical-align: middle;
+// //             color: $panelHeaderIconColor;
+// //             margin: 0 $inlineSpacing;
+// //         }
+// //     }
+
+// //     .ui-card {
+// //         background-color: $panelContentBgColor;
+// //         color: $panelContentTextColor;
+// //         @include shadow($cardShadow);
+// //     } 
+// // }
+// /* Purchase the Designer API to get full access to the theme engine. */
+
+// body {
+//     .ui-widget-content {
+//         p {
+//             line-height: 1.5;
+//             margin: 0;
+//         }
+//     }
+
+//     .ui-tabview {
+//         &.ui-tabview-top,
+//         &.ui-tabview-bottom,
+//         &.ui-tabview-left,
+//         &.ui-tabview-right {
+//             border: 0 none;
+
+//             .ui-tabview-nav {
+//                 padding: 0;
+//                 background: $tabsNavBgColor;
+
+//                 li {
+//                     border: $panelHeaderBorder;
+//                     background-color: $panelHeaderBgColor;
+
+//                     a {
+//                         float: none;
+//                         display: inline-block;
+//                         color: $panelHeaderTextColor;
+//                         padding: $panelHeaderPadding;
+
+//                         .ui-tabview-left-icon {
+//                             color: $panelHeaderIconColor;
+//                             margin-right: $inlineSpacing;
+//                         }
+
+//                         .ui-tabview-right-icon {
+//                             color: $panelHeaderIconColor;
+//                             margin-left: $inlineSpacing;
+//                         }
+//                     }
+
+//                     .ui-tabview-close {
+//                         color: $panelHeaderIconColor;
+//                         margin: 0 $inlineSpacing 0 -1 * $inlineSpacing;
+//                     }
+
+//                     &:not(.ui-state-active):not(.ui-state-disabled):hover {
+//                         background-color: $panelHeaderHoverBgColor;
+//                         border: $panelHeaderHoverBorder;
+                        
+//                         a {
+//                             color: $panelHeaderHoverTextColor;
+
+//                             .ui-tabview-left-icon, .ui-tabview-right-icon{
+//                                 color: $panelHeaderIconHoverColor;
+//                             }
+//                         }
+
+//                         .ui-tabview-close {
+//                             color: $panelHeaderHoverTextColor;
+//                         }
+//                     }
+
+//                     &.ui-state-active {
+//                         background-color: $panelHeaderActiveBgColor;
+//                         border: $panelHeaderActiveBorder;
+
+//                         a {
+//                             color: $panelHeaderActiveTextColor;
+
+//                             .ui-tabview-left-icon, .ui-tabview-right-icon{
+//                                 color: $panelHeaderActiveIconColor;
+//                             }
+//                         }
+
+//                         .ui-tabview-close {
+//                             color: $panelHeaderActiveIconColor;
+//                         }
+
+//                         &:hover {
+//                             border: $panelHeaderActiveHoverBorder;
+//                             background-color: $panelHeaderActiveHoverBgColor;
+
+//                             a {
+//                                 color: $panelHeaderActiveHoverTextColor;
+                                
+//                                 .ui-tabview-left-icon, .ui-tabview-right-icon{
+//                                     color: $panelHeaderActiveHoverIconColor;
+//                                 }
+//                             }
+//                         }
+//                     }
+
+//                     &.ui-tabview-selected {
+//                         a {
+//                             cursor: pointer;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+
+//         &.ui-tabview-top {
+//             .ui-tabview-nav {
+//                 margin-bottom: -1px;
+
+//                 li {
+//                     margin-right: $tabHeaderSpacing;
+//                 }
+//             }
+//         }
+
+//         &.ui-tabview-bottom {
+//             .ui-tabview-nav {
+//                 margin-top: -1px;
+
+//                 li {
+//                     margin-right: $tabHeaderSpacing;
+//                 }
+//             }
+//         }
+
+//         &.ui-tabview-left {
+//             .ui-tabview-nav {
+//                 margin-right: -px;
+
+//                 li {
+//                     margin-bottom: $tabHeaderSpacing;
+//                 }
+//             }
+//         }
+
+//         &.ui-tabview-right {
+//             .ui-tabview-nav {
+//                 margin-right: -1px;
+
+//                 li {
+//                     margin-bottom: $tabHeaderSpacing;
+//                 }
+//             }
+//         }     
+
+//         .ui-tabview-panels {
+//             background-color: $panelContentBgColor;
+//             padding: $panelContentPadding;
+//             //border: $panelContentBorder;
+//             color: $panelContentTextColor;
+
+//             .ui-tabview-panel {
+//                 padding: 0;
+//             }
+//         }
+//     }
+// }
+
+
+
+
+
+// $color_1: #43caca;
+// $color_2: white;
+// $color_3: #FFF;
+// $color_4: #053f64;
+// $background_color_1: #0b3375;
+// $background_color_2: #c52c2c;
+// $background_color_3: red;
+// $background_color_4: #053f64;
+
+// form.custom-form {
+// 	border-left: 1px solid #333;
+// 	width: 100%;
+// 	float: left;
+// 	padding: 0 50px 0 70px;
+// }
+// .custom-form {
+// 	.row.ui-g-6 {
+// 		display: flex;
+// 		align-items: center;
+// 	}
+// 	.row.ui-g-3 {
+// 		display: flex;
+// 		align-items: center;
+// 	}
+// 	.row.ui-g-4 {
+// 		display: flex;
+// 		align-items: center;
+// 	}
+// 	label {
+// 		min-width: 100px;
+// 		font-size: 16px;
+// 		font-weight: 600;
+// 	}
+// 	.row.ui-g-7.prn-class {
+// 		display: block;
+// 		margin: 0;
+// 		.checkbox-prn {
+// 			width: 100% !important;
+// 			max-width: 100px;
+// 			display: block;
+// 			height: 40px;
+// 			margin-bottom: 10px;
+// 			margin-left: 40px !important;
+// 		}
+// 	}
+// 	a {
+// 		text-decoration: underline;
+// 		padding-left: 10px;
+// 		color: $color_1;
+// 	}
+// 	.margin-b {
+// 		margin-bottom: 30px;
+// 		width: 100%;
+// 		float: left;
+// 	}
+// 	.row.ui-g-12 {
+// 		.row.ui-g-4 {
+// 			display: block;
+// 		}
+// 	}
+// }
+
+// .ui-fluid {
+// 	.custom-form {
+// 		.ui-inputtext {
+// 			width: 200px;
+// 			height: 40px;
+// 			border: 1px solid #d8d8d8;
+// 			font-weight: 600;
+// 			color: #a6a6a6;
+// 			font-size: 16px;
+// 		}
+// 		select {
+// 			position: relative;
+// 			-webkit-appearance: menulist;
+// 		}
+// 	}
+// }
+// select.ui-picklist-filter.ui-inputtext.ui-widget.ui-corner-all.ui-g-2 {
+// 	max-width: 45px;
+// }
+// p-checkbox.p-checkbox-box {
+// 	float: right;
+// }
+// .w-45 {
+// 	max-width: 45px;
+// 	width: 100%;
+// }
+// .w-100 {
+// 	max-width: 100px;
+// 	width: 100%;
+// }
+// .w-130 {
+// 	max-width: 130px;
+// 	width: 100%;
+// }
+// .row.ui-g-6.custom-flex {
+// 	align-items: flex-start;
+// }
+// .form-upper-div {
+// 	width: 100%;
+// 	float: left;
+// }
+// #tblCM {
+// 	thead {
+// 		th {
+// 			background-color: $background_color_1;
+// 			color: $color_2;
+// 			width: 10%;
+// 			text-align: left;
+// 			padding: 10px;
+// 		}
+// 	}
+// 	tbody {
+// 		perfect-scrollbar {
+// 			width: 100%;
+// 		}
+// 	}
+// }
+// #tblAllergies {
+// 	thead {
+// 		th {
+// 			background-color: $background_color_2;
+// 			color: $color_2;
+// 			width: 10%;
+// 			text-align: left;
+// 			padding: 10px;
+// 		}
+// 	}
+// 	tbody {
+// 		perfect-scrollbar {
+// 			width: 100%;
+// 		}
+// 	}
+// }
+// span.badge_no {
+// 	float: right;
+// 	vertical-align: middle;
+// 	padding: 6px 10px;
+// 	background-color: $background_color_3;
+// 	border-radius: 4px;
+// 	max-width: 52px;
+// 	width: 100%;
+// 	color: $color_3;
+// }
+// .float-right {
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: flex-end;
+// 	ul {
+// 		display: flex;
+//         list-style: none;
+//         padding-left:0;
+// 		li {
+// 			margin: 0 4px;
+// 		}
+// 	}
+// 	button {
+// 		background-color: $background_color_4;
+//         border: none;
+// 		border-radius: 6px;
+// 		 font-size: 16px;
+// 		 min-width: 140px;
+// 		 width: 100%;
+// 	}
+// }
+// p-checkbox {
+// 	label.ui-chkbox-label {
+// 		color: $color_4;
+// 	}
+// }
+// .custom-sound-card {
+// 	a {
+// 		text-decoration: underline;
+// 	}
+// }
+// .text-center {
+// 	text-align: center;
+// }
+
+
+// .scroll-table {
+// 	padding: 20px 0;
+// 	float: left;
+// 	width: 100%;
+// 	table {
+// 		margin-bottom: 66px;
+// 	}
+// }
+// .card-left {
+//     border-right: 1px solid #989898;
+//     float: left;
+// }
+// body .ui-button.ui-button-text-only .ui-button-text{font-size: 16px; font-weight: 600;}
+// .pl-0 {padding-left: 0!important;}
+// .ui-fluid .custom-form input.max-w-100 {
+//     max-width: 100%;
+//     width: 100%;
+// }
+// .custom-form .row.ui-g-12 .row.ui-g-4 h1 {
+//     font-weight: 600;
+//     font-size: 16px;
+//     margin-bottom: 0;
+// }
+// .custom-form .row.ui-g-12 .row.ui-g-4 p {
+//     margin: 0;
+// }
+// .footer-buttons p-checkbox label.ui-chkbox-label {
+//     color: #053f64;
+//     font-weight: bold;
+// }
+// .custom-field {
+//     font-weight: 600;
+//     font-size: 16px;
+// }
+// body .pl-sm {
+//     padding-left: 185px;
+// }
+//  perfect-scrollbar .ps__rail-y {
+//     opacity: 1;
+// }
+// body .ui-tabview .ui-tabview-panels span.ui-button-text.ui-clickable {
+//     font-size: 15px;
+// }
+// button.user-icon {
+//     background: transparent;
+//     border: none;
+//     font-size: 20px;
+//     color: #053f64;
+//     cursor: pointer;
+//     position: relative;
+//     top: 40px;
+//     left: 15px;
+//     width: 100%;
+//     text-align: left;
+// }
+// button.user-icon:focus {
+//     outline: none;
+// }
+// .custom-sound-card {
+//     width: 100%;
+//     float: left;
+// }
+// button.user-icon.mobile-user-icon {
+//     display: none;
+// }
+// .card.card-w-title.ui-g-12 form.custom-form {
+//     padding: 0 120px;
+//     border-left: none;
+// }
+
+// button.user-icon.mobile-top-icon {
+//     left: 0;
+//     position: relative;
+//     color: #d8d8d8;
+//     top: 6px;
+//     width: auto;
+//     display: inline-block;
+//     font-size: 22px;
+//     display: none;
+// }
+// .top-buttons{position: relative;}
+// a.main-sidebar-icon {
+//     position: absolute;
+//     right: 20px;
+//     top: 10px;
+//     font-size: 30px;
+//     color: #053f64;
+//     cursor: pointer;
+// }
+// a.main-sidebar-icon:hover{color: #43caca;}
+// .layout-wrapper .layout-topbar{display: none;}
+
+
+
+
+// @media screen and (min-width:1366px) and (max-width:1440px) {
+// 	form.custom-form{padding: 0 20px;}
+// 	.row.ui-g-6.custom-flex {
+// 		.row.ui-g-4 {
+// 			width: 180px !important;
+// 		}
+// 	}
+// 	.custom-form {
+// 		.row.ui-g-3.prn-class {
+// 			width: 210px;
+// 		}
+//     }
+//     .custom-form .row.ui-g-5 {
+//         padding-left: 130px;
+// 	}
+// 	body .pl-sm {
+// 		padding-left: 50px;
+// 	}
+// 	.custom-form label, .ui-fluid .custom-form .ui-inputtext, .custom-field{font-size: 14px;}
+// 	.scroll-table {
+// 		padding: 29px 0;
+//     }
+//     button.user-icon {
+//         top: 37px;
+//         left: 5px;
+//     }
+//     body .ui-button.ui-button-text-only .ui-button-text{font-size: 15px;}
+// }
+// @media screen and (min-width:992px) and (max-width:1024px){
+// 	.form-upper-div .pl-sm {
+// 		padding-left: 0;
+// 	}
+// 	form.custom-form {
+// 		padding: 0 20px;
+// 	}
+//     .custom-form label, .ui-fluid .custom-form .ui-inputtext, .custom-field{font-size: 14px;}
+//     .custom-form .row.ui-g-12 .row.ui-g-4 {
+//         width: 45%;
+//     }
+//     .custom-form .row.ui-g-3 {
+//         width: 35%;
+//     }
+//     button.user-icon {
+//         top: 35px;
+//         left: 5px;
+//         width: 100%;
+//         text-align: left;
+//     }
+//     .float-right ul{padding-left: 0;}
+//     .float-right button {
+//         min-width: auto;
+//     }
+//     .scroll-table table {
+//         margin-bottom: 55px;
+//     }
+//     body .ui-tabview .ui-tabview-panels .ui-g-2 {
+//         width: 30%;
+//         text-align: center;
+//     }
+// }
+
+// @media screen and (min-width:768px) and (max-width:991px){
+//    body .ui-tabview .ui-tabview-panels .ui-g-2 {
+//     width: 50%;
+//     text-align: center;
+// }
+// .custom-user-menu .card-left .text-center {
+//     text-align: left;
+//     padding-left: 100px;
+// }
+// .custom-user-menu .card-left {
+//     border-right: none;
+// }
+// }
+
+// @media screen and (min-width:100px) and (max-width:991px){
+// 	form.custom-form{padding:0 20px;}
+// 	.custom-form .row.ui-g-4, .custom-form .row.ui-g-6 {
+// 		width: 100%;
+// 	}
+// 	body .pl-sm {
+// 		padding-left: .5em;
+// 	}
+// 	.custom-flex .row.ui-g-4 {
+// 		width: 25%;
+// 	}
+// 	.custom-form .row.ui-g-3{width:100%;}
+// 	form.custom-form .row.ui-g-5, form.custom-form .ui-g-7 {
+// 		width: 100%;
+// 	}
+//     .float-right ul{padding-left:0;}
+//     button.user-icon.mobile-user-icon {
+//         left: 0;
+//         position: relative;
+//         color: #d8d8d8;
+//         top: 6px;
+//         width: auto;
+//         display: inline-block;
+//         font-size: 22px;
+//     }
+//     button.user-icon {
+//         display: none;
+//     }
+//     body .layout-wrapper .layout-topbar .layout-topbar-content .menu-btn {
+//         margin: 0 10px;
+//         float: right;
+//     }
+//     body .layout-wrapper .layout-topbar .layout-topbar-content .menu-btn:focus {
+//         outline: none;
+//         box-shadow: none;
+//     }
+//     .layout-wrapper .layout-topbar .card.card-w-title.ui-g-3 {
+//         margin: 22px auto 0;
+//         box-shadow: 0px 0px 15px #a0a0a07a;
+//         width:100%;
+//     }
+//     .card.card-w-title.ui-g-12 form.custom-form{padding:0 20px;}
+//     .custom-user-menu .card-left .ui-g-6 img {
+//         float: none !important;
+//         margin: 0 auto;
+//         display: table;
+//     }
+//     .custom-form .row.ui-g-7.prn-class {
+//         display: block;
+//         margin: 0;
+//         max-width: 200px;
+//     }
+//     .custom-form .row.ui-g-7.prn-class .checkbox-prn{margin-left: 0!important;}
+//     .scroll-table table {
+//         margin-bottom: 20px;
+//     }
+//     .layout-wrapper .layout-topbar .card.card-w-title.ui-g-3 button {
+//         width: 100%;
+//     }
+//     .card.card-w-title.card-w-title.ui-g-12.top-buttons {
+//         display: none;
+//     }
+//     body .layout-wrapper .layout-sidebar{position: relative;}
+//     body button.user-icon.mobile-top-icon {
+//         display: inline-block;
+//     }
+//     body .layout-wrapper .layout-topbar{display: block;}
+//     body .layout-wrapper .layout-content {
+//         padding: 84px 24px 24px;
+//     }
+    
+// }
+
+// @media screen and (min-width:100px) and (max-width:767px){
+// 	.ui-fluid .custom-form .ui-inputtext{width:100%;;}
+// 	.custom-sound-card .card.card-w-title.ui-g-9 {
+// 		width: 100%;
+// 	}
+// 	.custom-form label, .ui-fluid .custom-form .ui-inputtext, .custom-field{font-size: 14px;}
+// 	select.ui-picklist-filter.ui-inputtext.ui-widget.ui-corner-all.ui-g-2 {
+// 		min-width: 47px;
+// 	}
+// 	.custom-flex .row.ui-g-4 {
+// 		width: 35%;
+// 	}
+	
+// 	.custom-form .row.ui-g-7.prn-class .checkbox-prn{margin-left: 60px !important;}
+// 	.w-100, .w-130 {
+// 		max-width: 100%;
+//     }
+//     .card.card-w-title.ui-g-3 {
+//         width: 100%;
+//     }
+//     body .ui-tabview .ui-tabview-panels .ui-g-2 {
+//         width: 100%;
+//         text-align: center;
+//     }
+//     .card.card-w-title.card-w-title.ui-g-12 h1 {
+//         text-align: center;
+//         padding-top: 15px;
+//     }
+//     .float-right ul {
+//         padding-left: 0;
+//         display: block;
+//         float: left;
+//         width: 100%;
+//     }
+//     .custom-form .row.ui-g-12 .row.ui-g-4 h1{text-align: left;}
+//     form.custom-form{border-left: none;}
+//     .card-left{border-right:none;}
+//     .scroll-table table {
+//         margin-bottom: 0;
+//     }
+//     .card.card-w-title.ui-g-12 form.custom-form .margin-b .row.ui-g-4 label {
+//         min-width: auto;
+//         padding-right: 10px;
+//     }
+//     .custom-sound-card a{padding-left:0;}
+   
+// }
+
+
+
+
+
+
+
+
+// /*-------------------------------*/
+// /*     Sidebar nav styles        */
+// /*-------------------------------*/
+
+// .sidebar-nav {
+//     position: absolute;
+//     top: 0;
+//     width: 220px;
+//     margin: 0;
+//     padding: 0;
+//     list-style: none;
+// }
+
+// .sidebar-nav li {
+//     position: relative; 
+//     line-height: 20px;
+//     display: inline-block;
+//     width: 100%;
+// }
+
+// .sidebar-nav li:before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     z-index: -1;
+//     height: 100%;
+//     width: 3px;
+//     background-color: #1c1c1c;
+//     -webkit-transition: width .2s ease-in;
+//       -moz-transition:  width .2s ease-in;
+//        -ms-transition:  width .2s ease-in;
+//             transition: width .2s ease-in;
+
+// }
+// .sidebar-nav li:first-child a {
+//     color: #fff;
+//     background-color: #1a1a1a;
+// }
+// .sidebar-nav li:nth-child(2):before {
+//     background-color: #ec1b5a;   
+// }
+// .sidebar-nav li:nth-child(3):before {
+//     background-color: #79aefe;   
+// }
+// .sidebar-nav li:nth-child(4):before {
+//     background-color: #314190;   
+// }
+// .sidebar-nav li:nth-child(5):before {
+//     background-color: #279636;   
+// }
+// .sidebar-nav li:nth-child(6):before {
+//     background-color: #7d5d81;   
+// }
+// .sidebar-nav li:nth-child(7):before {
+//     background-color: #ead24c;   
+// }
+// .sidebar-nav li:nth-child(8):before {
+//     background-color: #2d2366;   
+// }
+// .sidebar-nav li:nth-child(9):before {
+//     background-color: #35acdf;   
+// }
+// .sidebar-nav li:hover:before,
+// .sidebar-nav li.open:hover:before {
+//     width: 100%;
+//     -webkit-transition: width .2s ease-in;
+//       -moz-transition:  width .2s ease-in;
+//        -ms-transition:  width .2s ease-in;
+//             transition: width .2s ease-in;
+
+// }
+
+// .sidebar-nav li a {
+//     display: block;
+//     color: #ddd;
+//     text-decoration: none;
+//     padding: 10px 15px 10px 30px;    
+// }
+
+// .sidebar-nav li a:hover,
+// .sidebar-nav li a:active,
+// .sidebar-nav li a:focus,
+// .sidebar-nav li.open a:hover,
+// .sidebar-nav li.open a:active,
+// .sidebar-nav li.open a:focus{
+//     color: #fff;
+//     text-decoration: none;
+//     background-color: transparent;
+// }
+
+// .sidebar-nav > .sidebar-brand {
+//     height: 65px;
+//     font-size: 20px;
+//     line-height: 44px;
+// }
+// .sidebar-nav .dropdown-menu {
+//     position: relative;
+//     width: 100%;
+//     padding: 0;
+//     margin: 0;
+//     border-radius: 0;
+//     border: none;
+//     background-color: #222;
+//     box-shadow: none;
+// }
+
+
+
+// /*-------------------------------*/
+// /*       Hamburger-Cross         */
+// /*-------------------------------*/
+
+// .hamburger {
+//   position: fixed;
+//   top: 20px;  
+//   z-index: 999;
+//   display: block;
+//   width: 32px;
+//   height: 32px;
+//   margin-left: 15px;
+//   background: transparent;
+//   border: none;
+// }
+// .hamburger:hover,
+// .hamburger:focus,
+// .hamburger:active {
+//   outline: none;
+// }
+// .hamburger.is-closed:before {
+//   content: '';
+//   display: block;
+//   width: 100px;
+//   font-size: 14px;
+//   color: #fff;
+//   line-height: 32px;
+//   text-align: center;
+//   opacity: 0;
+//   -webkit-transform: translate3d(0,0,0);
+//   -webkit-transition: all .35s ease-in-out;
+// }
+// .hamburger.is-closed:hover:before {
+//   opacity: 1;
+//   display: block;
+//   -webkit-transform: translate3d(-100px,0,0);
+//   -webkit-transition: all .35s ease-in-out;
+// }
+
+// .hamburger.is-closed .hamb-top,
+// .hamburger.is-closed .hamb-middle,
+// .hamburger.is-closed .hamb-bottom,
+// .hamburger.is-open .hamb-top,
+// .hamburger.is-open .hamb-middle,
+// .hamburger.is-open .hamb-bottom {
+//   position: absolute;
+//   left: 0;
+//   height: 4px;
+//   width: 100%;
+// }
+// .hamburger.is-closed .hamb-top,
+// .hamburger.is-closed .hamb-middle,
+// .hamburger.is-closed .hamb-bottom {
+//   background-color: #1a1a1a;
+// }
+// .hamburger.is-closed .hamb-top { 
+//   top: 5px; 
+//   -webkit-transition: all .35s ease-in-out;
+// }
+// .hamburger.is-closed .hamb-middle {
+//   top: 50%;
+//   margin-top: -2px;
+// }
+// .hamburger.is-closed .hamb-bottom {
+//   bottom: 5px;  
+//   -webkit-transition: all .35s ease-in-out;
+// }
+
+// .hamburger.is-closed:hover .hamb-top {
+//   top: 0;
+//   -webkit-transition: all .35s ease-in-out;
+// }
+// .hamburger.is-closed:hover .hamb-bottom {
+//   bottom: 0;
+//   -webkit-transition: all .35s ease-in-out;
+// }
+// .hamburger.is-open .hamb-top,
+// .hamburger.is-open .hamb-middle,
+// .hamburger.is-open .hamb-bottom {
+//   background-color: #1a1a1a;
+// }
+// .hamburger.is-open .hamb-top,
+// .hamburger.is-open .hamb-bottom {
+//   top: 50%;
+//   margin-top: -2px;  
+// }
+// .hamburger.is-open .hamb-top { 
+//   -webkit-transform: rotate(45deg);
+//   -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+// }
+// .hamburger.is-open .hamb-middle { display: none; }
+// .hamburger.is-open .hamb-bottom {
+//   -webkit-transform: rotate(-45deg);
+//   -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+// }
+// .hamburger.is-open:before {
+//   content: '';
+//   display: block;
+//   width: 100px;
+//   font-size: 14px;
+//   color: #fff;
+//   line-height: 32px;
+//   text-align: center;
+//   opacity: 0;
+//   -webkit-transform: translate3d(0,0,0);
+//   -webkit-transition: all .35s ease-in-out;
+// }
+// .hamburger.is-open:hover:before {
+//   opacity: 1;
+//   display: block;
+//   -webkit-transform: translate3d(-100px,0,0);
+//   -webkit-transition: all .35s ease-in-out;
+// }
+
+// /*-------------------------------*/
+// /*            Overlay            */
+// /*-------------------------------*/
+
+// .overlay {
+//     position: fixed;
+//     display: none;
+//     width: 100%;
+//     height: 100%;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background-color: rgba(250,250,250,.8);
+//     z-index: 1;
+// }
+
+
+
+
+
+
+
+// // form.custom-form {border-left: 1px solid #333;width: 100%;float: left; padding:0 20px;}
+// // .custom-form .row.ui-g-6, .custom-form .row.ui-g-3, .custom-form .row.ui-g-4 {display: flex; align-items: center;}
+// // .custom-form label {min-width: 100px;}
+// // .card.card-w-title.ui-g-3 {border-right: 1px solid #989898;}
+// // .ui-fluid .custom-form .ui-inputtext {width: 200px;height: 40px;border: 1px solid #d8d8d8;}
+// // .custom-form .row.ui-g-3.prn-class {display: block; margin: 0;}
+// // .custom-form .row.ui-g-3.prn-class .checkbox-prn {width: 100% !important; max-width: 100px;display: block; height: 40px; margin-bottom: 10px; margin-left: 0 !important;}
+// // .ui-fluid .custom-form select {position: relative; -webkit-appearance: menulist;}
+// // select.ui-picklist-filter.ui-inputtext.ui-widget.ui-corner-all.ui-g-2 {max-width: 45px;}
+
+// // .custom-form a {text-decoration: underline;padding-left: 10px;color: #43caca;}
+// // p-checkbox.p-checkbox-box {float: right;}
+// // .w-45 {max-width: 45px;width: 100%;}
+// // .w-90 {max-width: 90px;width: 100%;}
+// // .w-130 {max-width: 130px;width: 100%;}
+// // .row.ui-g-6.custom-flex {align-items: flex-start;}
+// // .custom-form .margin-b { margin-bottom: 30px;width: 100%; float: left;padding-left: 70px;}
+// // .form-upper-div {width: 100%;float: left;padding-left: 70px;}
+// // .custom-form .row.ui-g-12 .row.ui-g-4 {padding-left: 50px; display: block;}
+// // .custom-form .row.ui-g-5 {padding-left: 150px;}
+
+
+// // #tblCM thead th{background-color:#0b3375; color: white; width: 10%; text-align: left; padding: 10px;}
+// // #tblCM tbody perfect-scrollbar{width:100%;}
+
+
+// // #tblAllergies thead th{background-color:#c52c2c; color: white; width: 10%; text-align: left; padding: 10px;}
+// // #tblAllergies tbody perfect-scrollbar{width: 100%;}
+
+// // span.badge_no{float: right; vertical-align: middle; padding: 6px 10px; background-color: red; border-radius: 4px; max-width: 52px; width: 100%; color: #FFF; }
+
+// // .float-right {display: flex;align-items: center;justify-content: flex-end;}
+// // .float-right ul {display: flex;list-style: none;}
+// // .float-right button {background-color: #053f64; border: none;}
+// // .float-right ul li {margin: 0 4px;}
+// // p-checkbox label.ui-chkbox-label {color: #053f64;}
+// // .custom-sound-card a {text-decoration: underline;}
+// // .text-center {text-align: center;}
+
+
+
+// // @media screen and (min-width:1366px) and (max-width:1440px){
+// //     .row.ui-g-6.custom-flex .row.ui-g-4 {width: 180px !important;}
+// //     .custom-form .row.ui-g-3.prn-class {width: 210px;}
+// // }

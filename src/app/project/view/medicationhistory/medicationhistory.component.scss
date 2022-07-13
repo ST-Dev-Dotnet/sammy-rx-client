@@ -1,0 +1,119 @@
+.medpage-data {
+    padding-left: 15px;
+}
+
+
+.med-header {
+    background-color: #033076;
+    padding: 15px 30px;
+}
+.med-header {
+    display: flex;
+    align-items: center;
+}
+
+
+.med-header .head-med-his {
+    font-family: Arial;
+    color: #fff;
+    text-align: left;
+    font-weight: 600;
+}
+
+.med-header a.ui-dialog-titlebar-maximize {
+    display: none;
+}
+
+.med-header a.ui-dialog-titlebar-close {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #fff;
+}
+
+.med-header .head-med-his {
+    font-size: 17px;
+}
+
+
+.med-header .srch-med-his form.mod-srch-medhis {
+    width: 100%;
+    max-width: 240px;
+    float: right;
+}
+
+.med-header .srch-med-his form.mod-srch-medhis input {
+    height: 30px;
+    font-family: Arial;
+    font-weight: 500;
+}
+
+
+
+ .medpage-data  .med-table table.med-hist {
+    width: 100%;
+    border-spacing: 0;
+}
+
+ .medpage-data  .med-table table.med-hist thead th {
+    font-size: 18px;
+    color: #2f96b4;
+    font-family: Arial;
+    font-weight: 700;
+    text-align: left;
+}
+
+ .medpage-data  .med-table table.med-hist tbody tr td {
+    font-size: 15px;
+    font-family: Arial;
+    font-weight: 500;
+    border-top: 1px solid #d4d4d4;
+}
+
+.medpage-data  .med-table table.med-hist>tbody>tr:first-child td
+{
+    border-top: none;
+}
+
+
+ .medpage-data  .med-table table.med-hist tbody tr td  ul.act-medhis {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+ .medpage-data  .med-table table.med-hist tbody tr td ul.act-medhis li {
+    display: inline-block;
+    padding: 8px;
+    margin: 0;
+}
+
+ .medpage-data .med-table table.med-hist>thead>tr>th {
+    border-bottom: 1px solid #d4d4d4;
+    padding: 15px 10px;
+}
+.medpage-data .med-table table.med-hist>tbody>tr>td
+{
+    padding: 6px 10px;
+}
+.medpage-data table.history-tablet>thead>tr>td:last-child {
+    width: 110px;
+}
+
+
+ .medpage-data .med-table table.med-hist tbody tr td ul.act-medhis li a i.act-cmed-icon0 {
+     color:#a713b9;
+ }
+ .medpage-data .med-table table.med-hist tbody tr td ul.act-medhis li a {
+    color: #2f96b4;
+    font-size: 26px;
+}
+
+
+
+.medpage-data table.history-tablet>thead>tr>td {
+    border-bottom: 1px solid #d4d4d4;
+    padding: 15px 10px;
+}

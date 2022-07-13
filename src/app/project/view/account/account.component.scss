@@ -1,0 +1,35 @@
+section.acc-sec {
+    width: 90%;
+    float: left;
+    padding: 0 0 0 30px;
+}
+
+section.acc-sec h3 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+section.acc-sec ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section.acc-sec ul li:not(:first-child) {
+    margin-top: 14px;
+}
+
+section.acc-sec ul li {
+    font-family: Arial;
+    font-weight: 400;
+}
+
+section.acc-sec .group-acc {
+    margin: 0 0 20px 20px;
+}
+
+section.acc-sec .group-acc h4 {
+    color: #033076;
+    font-size: 17px;
+    margin: 0;
+}
+

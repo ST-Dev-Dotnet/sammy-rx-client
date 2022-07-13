@@ -1,0 +1,64 @@
+<div class="layout-sidebar" [ngClass]="{'layout-sidebar-active':app.mobileMenuActive}">
+  <ul class="layout-menu" (click)="app.hideMobileMenu($event)">
+    <li>
+      <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="pi pi-fw pi-home"></i>
+        <span>Sample</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/forms']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="pi pi-fw pi-check"></i>
+        <span>Forms</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/data']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="pi pi-fw pi-list"></i>
+        <span>Data</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/panels']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="pi pi-fw pi-table"></i>
+        <span>Panel</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/overlays']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="pi pi-fw pi-window-maximize"></i>
+        <span>Overlay</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/menus']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="pi pi-fw pi-bars"></i>
+        <span>Menu</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/charts']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="pi pi-fw pi-chart-bar"></i>
+        <span>Charts</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/file']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="pi pi-fw pi-folder"></i>
+        <span>File</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/messages']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="pi pi-fw pi-comment"></i>
+        <span>Messages</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/misc']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <i class="pi pi-fw pi-cog"></i>
+        <span>Misc</span>
+      </a>
+    </li>
+  </ul>
+</div>

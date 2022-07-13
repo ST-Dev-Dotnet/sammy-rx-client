@@ -1,0 +1,442 @@
+/* Alerts page css */
+
+.tabs-alert-pg .ui-tabview-panels div.ui-tabview-panel {
+    padding: 0;
+}
+
+.padding-no
+{
+    padding: 0px;
+}
+
+table.tab-pending-rx {
+  width: 100%;
+  border-spacing: 0;
+}
+
+table.tab-pending-rx tr th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+
+table.tab-pending-rx tr.get-noti.notif-pend td {
+    border: none;
+}
+
+
+section.alerts-pg table.tab-pending-rx thead {
+    background-color: #053f64;
+}
+
+section.alerts-pg table.tab-pending-rx thead th {
+    color: #fff;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr td {
+    padding: 10px;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr td {
+    border-top: 1px solid #d2d2d2;
+    text-align: center;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr:first-child td {
+    border-top: 1px solid #d2d2d2;
+}
+
+.tabs-alert-pg .ui-tabview-panels div.ui-tabview-panel {
+    padding: 0;
+}
+section.alerts-pg table.tab-pending-rx tbody tr td h3+span.dt-client {
+    display: block;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr td ul {
+    padding: 0;
+    margin: 0;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr td ul li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr td ul li:not(:first-child) {
+    margin-left: 12px;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr td ul.action-pendi li i {
+    font-size: 20px;
+}
+
+
+section.alerts-pg table.tab-pending-rx tbody tr td ul.action-pendi i.action-pendi-icon1 {
+    color: #32a90c;
+    transform: rotate(50deg);
+    font-size: 18px;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr td ul.action-pendi i.action-pendi-icon2 {
+    color: #a713b9;
+    font-size: 24px;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr td ul.action-pendi li {
+    vertical-align: middle;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr td ul.action-pendi i.action-pendi-icon3 {
+    color: #128a90;
+    font-size: 20px;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr td ul.action-pendi i.action-pendi-icon4 {
+    color: #e61610;
+    font-size: 22px;
+}
+
+
+section.alerts-pg table.tab-pending-rx tbody tr.noti-warning td {
+    border: none;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr.noti-warning td a {
+    border: 1px solid #ef5454;
+    padding: 4px 25px;
+    background-color: #ef5454;
+    color: #fff;
+    border-radius: 4px;
+}
+
+
+
+section.alerts-pg table.tab-pending-rx tbody tr.get-noti td a.btn-noti {
+    background-color: #de8b8b;
+    color: #060606;
+    padding: 3px 20px;
+    border-radius: 5px;
+    margin-left: 5px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+section.alerts-pg table.tab-pending-rx tbody tr.get-noti td span.noti-line a {
+    color: #e61610;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr td h3 {
+    margin: 0;
+    font-size: 14px;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr td span.dt-client {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+section.alerts-pg table.tab-pending-rx.ref-table h5 {
+    margin: 4px 0 0 0;
+    font-weight: 400;
+    color: #9a9a9a;
+}
+
+section.alerts-pg table.tab-pending-rx.ref-table tbody tr td,section.alerts-pg table.tab-pending-rx.faild-table tbody tr td {
+    border-bottom:1px solid #d2d2d2;
+   border-top:none;
+}
+
+section.alerts-pg table.tab-pending-rx.ref-table td {
+    padding: 5px !important;
+}
+
+section.alerts-pg table.tab-pending-rx.ref-table td p:first-child {
+    margin: 10px 0 1px 0;
+}
+
+section.alerts-pg table.tab-pending-rx.ref-table td p:last-child {
+    margin-top: 0px;
+}
+
+
+table.tab-pending-rx.ref-table ul.action-reflis i {
+    font-size: 25px;
+}
+
+table.tab-pending-rx.ref-table ul.action-reflis i.action-refil-icon1 {
+    color: #629c44;
+}
+
+table.tab-pending-rx.ref-table ul.action-reflis i.action-refil-icon2 {
+    color: #e61610;
+}
+
+table.tab-pending-rx.ref-table ul.action-reflis i.action-refil-icon3 {
+    color: #ffb74d;
+}
+
+
+.ref-tab-btns {
+    width: 100%;
+    float: left;
+    padding: 20px 0 0 0;
+}
+
+.ref-tab-btns ul {
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+
+.ref-tab-btns ul li {
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 8px;
+}
+
+.ref-tab-btns ul li a {
+    background-color: #033076;
+    padding: 10px 10px;
+    color: #fff;
+    font-family: Arial;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+.ref-tab-btns ul li:last-child a {
+    background-color: #ffb74d;
+}
+
+
+.faildrx-tab-btns{
+    width: 100%;
+    float: left;
+    padding: 20px 0 0 0;
+}
+
+.faildrx-tab-btns ul {
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+
+.faildrx-tab-btns ul li {
+    display: inline-block;
+    list-style-type: none;
+   
+}
+
+.faildrx-tab-btns ul li a {
+    background-color: #033076;
+    padding: 10px 10px;
+    color: #fff;
+    font-family: Arial;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+
+/* css for alerts last tab - failed */
+
+section.alerts-pg table.tab-pending-rx.faild-table tbody tr td ul.action-faild i.action-pendi-icon1 {
+    color: #32a90c;
+    transform: rotate(50deg);
+    font-size: 22px;
+}
+
+section.alerts-pg table.tab-pending-rx.faild-table tbody tr td ul.action-faild li {
+    vertical-align: middle;
+}
+
+section.alerts-pg table.tab-pending-rx.faild-table tbody tr td ul.action-faild i.action-pendi-icon3 {
+    color: #128a90;
+    font-size: 22px;
+}
+
+section.alerts-pg table.tab-pending-rx.faild-table tbody tr td ul.action-faild i.action-pendi-icon4 {
+    color: #f00;
+    font-size: 22px;
+}
+
+section.alerts-pg table.tab-pending-rx tbody tr td h5 {
+    margin: 5px 0 0 0;
+    color: #b3b2b2;
+    font-weight: 400;
+}
+section.alerts-pg table.tab-pending-rx tbody tr td p {
+    margin: 4px;
+}
+
+
+
+@media (max-width:1199px)
+{
+    table.tab-pending-rx td.no-bg {
+        width: 110px;
+    }
+    table.tab-pending-rx .get-noti td.no-bg {
+        width: !important;
+    }
+    
+    ul.action-pendi li {
+      height: 30px;
+    }
+    section.alerts-pg table.tab-pending-rx tbody tr td h3 {
+        margin: 0;
+        font-size: 12px;
+    }
+    ul.action-pendi {
+        max-width: 65px;
+    }
+}
+
+
+
+@media (max-width:991px)
+{
+    section.alerts-pg table.tab-pending-rx.ref-table tbody tr td,section.alerts-pg table.tab-pending-rx.faild-table tbody tr td {
+        border-bottom:none;
+       border-top:none;
+    }
+    table.tab-pending-rx tr.get-noti.notif-pend td {
+        border: none;
+    }
+    section.alerts-pg table.tab-pending-rx tbody tr:first-child td {
+        border-top:none;
+    }
+
+
+    
+    ul.action-pendi {
+        max-width: 100% !important;
+    }
+    section.alerts-pg .tabs-alert-pg ul.ui-tabview-nav {
+        width: 100%;
+        float: left;
+        text-align: center;
+        margin-bottom: 5px;
+    box-shadow: none;
+    }
+    .tabs-alert-pg ul.ui-tabview-nav li {
+        display: inline-block;
+        width: auto;
+        float: none;
+        margin-left: 10px;
+    }
+    .tabs-alert-pg .ui-tabview-panels {
+        width: 100%;
+       padding-left: 0;
+    }
+    .table-resp {
+        width: 100%;
+        overflow-x: scroll;
+    }
+    
+    section.alerts-pg table.tab-pending-rx thead th:last-child {
+        width: 150px;
+    }
+    
+    section.alerts-pg table.tab-pending-rx thead th {
+        min-width: 150px;
+    }
+}
+
+@media (min-width:768px)
+{
+    section.alerts-pg table.tab-pending-rx tbody tr td.no-bg {
+        background-color: transparent !important;
+    }
+    
+    section.alerts-pg table.tab-pending-rx tbody tr.get-noti td {
+        background-color: #14b3b30a;
+        border-top: none;
+    }
+}
+
+@media (max-width:767px)
+{
+    section.alerts-pg table.tab-pending-rx tbody tr td.no-bg.alert-btnx
+    {
+        background-color: #fbedec;
+    }
+
+    section.alerts-pg table.tab-pending-rx tbody.alert-btnx tr.get-noti td {
+        background-color: #fbedec;
+        border-top: none;
+    }
+    section.alerts-pg table.tab-pending-rx tbody tr td
+    {
+        background-color: #ebebeb ;
+    }
+
+    section.alerts-pg table.tab-pending-rx tbody tr.get-noti td {
+        background-color: #ebebeb;
+        border-top: none;
+    }
+
+    table.tab-pending-rx tbody.alert-btnx {
+        position: relative;
+    }
+    
+    table.tab-pending-rx tbody.alert-btnx tr.get-noti.notif-pend {
+        position: absolute;
+        bottom: 46px;
+        width: 100%;
+        left: 5px;
+    }
+    
+    table.tab-pending-rx tbody.alert-btnx tr.get-noti td.no-bg {
+        padding-top: 70px !important;
+    }
+    
+    table.tab-pending-rx tbody.alert-btnx tr.get-noti.notif-pend td {
+        padding: 2px 6px !important;
+    }
+
+    .tabs-alert-pg .ui-tabview-panels .table-resp table.tab-pending-rx.ref-table tr {
+        margin-bottom: 4px !important;
+    }
+    .tabs-alert-pg .ui-tabview-panels .table-resp table.tab-pending-rx.ref-table tr h5 {
+        margin-bottom: 14px !important;
+    }
+    section.alerts-pg table.tab-pending-rx.ref-table td {
+        padding: 8px 0 6px 10px !important;
+    }
+    section.alerts-pg table.tab-pending-rx.ref-table td.no-bg {
+        padding: 8px 0 8px 10px !important;
+    }
+    section.alerts-pg table.tab-pending-rx.ref-table td ul.action-reflis {
+        text-align: center;
+    }
+    
+    .tabs-alert-pg .ui-tabview-panels .table-resp table.tab-pending-rx.faild-table tr {
+        margin-bottom: 4px !important;
+    }
+    .tabs-alert-pg .ui-tabview-panels .table-resp table.tab-pending-rx.faild-table tr h5 {
+        margin-bottom: 14px !important;
+    }
+    section.alerts-pg table.tab-pending-rx.faild-table td {
+        padding: 8px 0 6px 10px !important;
+    }
+    section.alerts-pg table.tab-pending-rx.faild-table td.no-bg {
+        padding: 8px 0 8px 10px !important;
+    }
+    section.alerts-pg table.tab-pending-rx.faild-table td ul.action-faild {
+        text-align: center;
+    }
+    .faildrx-tab-btns {
+        margin-bottom: 20px;
+    }
+    
+
+}
+
+@media (max-width:480px)
+{
+
+
+}

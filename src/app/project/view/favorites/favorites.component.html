@@ -1,0 +1,65 @@
+<section class="favour">
+    <div class="ui-fluid">
+        <div class="ui-g">
+            <div class="card card-w-title card-w-title ui-g-12 top-buttons">
+                <div>
+                    <div class="form-upper-div">
+                        <div class="row ui-g-6 search-area">
+
+                            <input pInputText class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all"
+                                role="textbox" placeholder="Search..." type="text" class="">
+
+                        </div>
+                        <div class="row ui-g-6 chk-compound">
+                            <p-checkbox value="" label="Show Compounds"></p-checkbox>
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+                    <div class="ui-g-12 table-fav-prescrib">
+                        <table mdbTable mdbTableScroll scrollX="true" Width="100%">
+                            <thead>
+                                <th>
+                                    <h3>Favorite Prescriptions</h3>
+                                    <p-checkbox value="" label="Show All Doctors"></p-checkbox>
+                                </th>
+                            </thead>
+                            <tbody>
+                                <perfect-scrollbar style="width:100%; max-height: 170px;">
+                                        <div *ngFor="let favPrescription of favorites.favoritePrescriptions">
+                                    <tr>
+                                        <td>{{favPrescription.name}}</td>
+                                        <td><span class="lit-text-grey">{{favPrescription.refills}} <input class="star" type="checkbox"  (change)="addFavourite($event, favPrescription.id)"/></span></td>
+                                    </tr>
+                                </div>
+                                </perfect-scrollbar>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="ui-g-12 table-fav-used-machines">
+                        <table mdbTable mdbTableScroll scrollX="true" Width="100%">
+                            <thead>
+                                <th>
+                                    <h3>Frequently Used Medications</h3>
+                                    <p-checkbox value="" label="Show All Doctors"></p-checkbox>
+                                </th>
+                            </thead>
+                            <tbody>
+                                <perfect-scrollbar style="width:100%; max-height: 170px;">
+                                        <div *ngFor="let favUsedMedications of favorites.frequentlyUsedMedications">
+                                    <tr>
+                                            <td>{{favUsedMedications.name}}</td>
+                                            <td><span class="lit-text-grey">{{favUsedMedications.refills}} <input class="star" type="checkbox"/></span></td>
+                                    </tr>
+                                    </div>
+                                </perfect-scrollbar>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+<div class="layout-editor">
+    <!-- <a class="layout-editor-button" (click)="onEditorButtonClick()">
+        <i class="pi pi-cog"></i>
+    </a> -->
+
+    <div class="layout-editor-panel" [ngClass]="{'layout-editor-panel-active': app.editorActive}">
+        <div class="ui-g">
+            <div class="ui-g-10 ui-g-nopad">
+                <h1>Sass Editor</h1>
+            </div>
+            <div class="ui-g-2 ui-g-nopad close-button-container">
+                <a class="layout-editor-close-button" (click)="app.onEditorCloseButtonClick()">
+                    <i class="pi pi-times"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="ui-g">
+            <div class="ui-g-6 ui-g-nopad">
+                <button pButton type="button" label="Update" [icon]="getUpdateButtonIconClass()" (click)="compile($event,false)" class="ui-button-info"></button>
+            </div>
+            <div class="ui-g-6 ui-g-nopad">
+                <button pButton type="button" label="Reset" icon="pi pi-replay" (click)="reset($event)" class="ui-button-warning"></button>
+            </div>
+        </div>
+        
+        <div class="highlights-container" >
+            <pre #highlightsCode contenteditable="true" [innerHTML]="highlightsHtml()"></pre>
+        </div>
+    </div>
+</div>

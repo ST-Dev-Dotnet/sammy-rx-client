@@ -1,0 +1,475 @@
+<div class="ui-g">
+    <div class="card card-w-title ui-g-12">
+        <section class="reportz-tab">
+            <p-tabView class="tab-reports">
+                <p-tabPanel>
+                    <ng-template pTemplate="header">Basic Reports </ng-template>
+                    <ng-template pTemplate="content">
+                        <ul class="data-bs-report">
+                            <li>
+                                <div class="day-dat">
+                                    <select>
+                                        <option>January</option>
+                                        <option>Feburary</option>
+                                        <option>March</option>
+                                        <option>April</option>
+                                    </select>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="year-dat">
+                                    <select>
+                                        <option>1998</option>
+                                        <option>1999</option>
+                                        <option>2000</option>
+                                        <option>2001</option>
+                                        <option>2002</option>
+                                        <option>2003</option>
+                                        <option>2004</option>
+                                        <option>2005</option>
+                                        <option>2006</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="doctors-dat">
+                                    <select>
+                                        <option>All Doctors</option>
+                                        <option>Heello1</option>
+                                        <option>Heello2</option>
+                                        <option>Heello3</option>
+                                        <option>Heello4</option>
+                                        <option>Heello5</option>
+
+                                    </select>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <p-chart type="bar" [data]="data"></p-chart>
+
+                    </ng-template>
+                </p-tabPanel>
+
+                <p-tabPanel>
+                    <ng-template pTemplate="header">Statistical Reports </ng-template>
+                    <ng-template pTemplate="content">
+                        <div class="stat-report">
+                            <div class="search-stat">
+                                <input type="text" class="form-control" placeholder="medication" />
+                            </div>
+
+
+                            <div class="calendar-area">
+                                <div class="calendr-style calen_1">
+                                    <h6>From</h6>
+
+                                    <p-calendar [(ngModel)]="fromDate" [inline]="true" [showWeek]="false">
+                                        <p-header>
+
+                                            <div class="day-cal">{{fromDate | date: 'EEEE'}}</div>
+                                            <div class="cal-data">
+                                                <h4>{{fromDate | date: 'MMM'}}</h4>
+                                                <h3>{{fromDate | date: 'd'}}</h3>
+                                                <h5>{{fromDate | date: 'y'}}</h5>
+                                            </div>
+                                        </p-header>
+                                        <p-footer>
+                                            <ul>
+                                                <li><a href="#" class="cancel-cal">cancel</a></li>
+                                                <li><a href="#" class="ok-cal">Ok</a></li>
+                                            </ul>
+                                        </p-footer>
+                                    </p-calendar>
+
+
+
+                                </div>
+                                <div class=" calendr-style calen_2">
+                                    <h6>To</h6>
+                                    <p-calendar [(ngModel)]="todate" [inline]="true" [showWeek]="false">
+                                        <p-header>
+
+                                            <div class="day-cal">{{todate | date: 'EEEE'}}</div>
+                                            <div class="cal-data">
+                                                <h4>{{todate | date: 'MMM'}}</h4>
+                                                <h3>{{todate | date: 'd'}}</h3>
+                                                <h5>{{todate | date: 'y'}}</h5>
+                                            </div>
+                                        </p-header>
+                                        <p-footer>
+                                            <ul>
+                                                <li><a href="#" class="cancel-cal">cancel</a></li>
+                                                <li><a href="#" class="ok-cal">Ok</a></li>
+                                            </ul>
+                                        </p-footer>
+                                    </p-calendar>
+
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </ng-template>
+                </p-tabPanel>
+
+                <p-tabPanel>
+                    <ng-template pTemplate="header">Audit Log </ng-template>
+                    <ng-template pTemplate="content">
+                        <section class="audit-data">
+                            <div class="ui-g-5">
+                                <div class="form-dat-time ui-g-6">
+                                    <div class="form-grid ui-g-12">
+                                        <label>Start</label>
+                                        <p-calendar [(ngModel)]="date1" [showIcon]="true"></p-calendar>
+                                    </div>
+                                    <div class="form-grid ui-g-12"> <label>Start Time</label>
+                                        <p-calendar [(ngModel)]="date2" [timeOnly]="true"></p-calendar>
+                                    </div>
+                                </div>
+                                <div class="form-dat-time ui-g-6">
+                                    <div class="form-grid ui-g-12">
+                                        <label>End</label>
+                                        <p-calendar [(ngModel)]="date3" [showIcon]="true"></p-calendar>
+                                    </div>
+                                    <div class="form-grid ui-g-12"> <label>End Time</label>
+                                        <p-calendar [(ngModel)]="date4" [timeOnly]="true"></p-calendar>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="ui-g-7">
+                                <div class="ui-g-3">
+                                    <h4>Users</h4>
+                                    <perfect-scrollbar style="width:100%; max-height: 130px;"
+                                        styleClass="scroll-visible">
+                                        <ul>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                        </ul>
+                                    </perfect-scrollbar>
+                                </div>
+                                <div class="ui-g-3">
+                                    <h4>Providers</h4>
+                                    <perfect-scrollbar style="width:100%; max-height: 130px;"
+                                        styleClass="scroll-visible">
+                                        <ul>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                        </ul>
+                                    </perfect-scrollbar>
+                                </div>
+                                <div class="ui-g-3">
+                                    <h4>Event</h4>
+                                    <perfect-scrollbar style="width:100%; max-height: 130px;"
+                                        styleClass="scroll-visible">
+                                        <ul>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                        </ul>
+                                    </perfect-scrollbar>
+                                </div>
+                                <div class="ui-g-3">
+                                    <h4>Station</h4>
+                                    <perfect-scrollbar style="width:100%; max-height: 130px;"
+                                        styleClass="scroll-visible">
+                                        <ul>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                            <li>
+                                                <p-checkbox inputId="ny"></p-checkbox>
+                                            </li>
+                                        </ul>
+                                    </perfect-scrollbar>
+                                </div>
+
+
+                            </div>
+
+                            <div class="ui-g-12 data-tab-audit">
+                                <div class="tab-responsv">
+                                <table>
+                                <thead>
+                                    <tr>
+                                       <th>date </th>
+                                       <th>Time</th>
+                                       <th>User</th>
+                                       <th>Provider</th>
+                                       <th>Event</th>
+                                       <th>Station</th>
+                                       <th>Old Value</th>
+                                       <th>New Value</th>
+                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                    </tr>
+                                    <tr>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                    </tr>
+                                    <tr>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                    </tr>
+                                    <tr>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                    </tr>
+                                    <tr>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                    </tr>
+                                    <tr>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                    </tr>
+                                    <tr>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                    </tr>
+                                    <tr>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
+                                    </tr>
+                            
+                         
+                                </tbody>
+                                </table>
+                                </div>
+                               
+                            </div>
+                        </section>
+
+                    </ng-template>
+                </p-tabPanel>
+
+
+            </p-tabView>
+        </section>
+    </div>
+</div>

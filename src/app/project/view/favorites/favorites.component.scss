@@ -1,0 +1,299 @@
+.form-upper-div {
+	width: 100%;
+	float: left;
+}
+
+section.favour {
+    padding: 0px 0;
+}
+
+.favour .form-upper-div {
+    display: flex;
+    align-items: center;
+}
+
+section.favour .form-upper-div {
+    padding: 0px 0 0;
+    width: 100%;
+    float: left;
+}
+
+section.favour .form-upper-div .search-area input[type="text"] {
+    width: 100%;
+    max-width: 250px;
+    border: 1px solid #bdbdbd;
+    border-radius: 0px;
+    height: 40px;
+}
+
+section.favour .form-upper-div .chk-compound p-checkbox {
+    float: right;
+    margin-right: 20px;
+}
+
+
+.table-fav-prescrib th {
+    background-color: #053f64;
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.table-fav-prescrib th h3 {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    color: #fff;
+    FONT-WEIGHT: 600;
+    font-size: 15px;
+}
+
+.table-fav-prescrib th p-checkbox {
+    float: right;
+    color: #fff;
+    font-size: 13px;
+}
+
+.table-fav-prescrib tbody .ng-star-inserted {
+    display: inline-flex;
+    width: 50%;
+}
+.table-fav-prescrib tbody .ng-star-inserted tr {
+    width: 100%;
+    display: inline-flex;
+}
+
+.table-fav-prescrib tbody .ng-star-inserted tr td {
+    width: 50%;
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table-fav-prescrib tbody tr td:last-child span {display: block;text-align: center;}
+
+.table-fav-prescrib tbody tr:nth-child(1) td, .table-fav-prescrib tbody tr:nth-child(2) td {
+    border-top: none;
+}
+.table-fav-prescrib tbody tr td:last-child span input.star:before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    padding: 0px;
+    margin: -2px;
+    color: #fbc429;
+}
+
+.table-fav-prescrib tbody tr td:last-child span input {
+    position: relative;
+}
+
+
+
+.table-fav-used-machines th {
+    background-color: #053f64;
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.table-fav-used-machines th h3 {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.table-fav-used-machines th p-checkbox {
+    float: right;
+    color: #fff;
+    font-size: 13px;
+}
+
+.table-fav-used-machines tbody .ng-star-inserted {
+    display: inline-flex;
+    width: 50%;
+}
+
+.table-fav-used-machines tbody .ng-star-inserted tr {
+    width: 100%;
+    display: inline-flex;
+}
+
+.table-fav-used-machines tbody .ng-star-inserted tr td {
+    width: 50%;
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table-fav-used-machines tbody tr td:last-child span {display: block;text-align: center;}
+
+.table-fav-used-machines tbody tr:nth-child(1) td, .table-fav-used-machines tbody tr:nth-child(2) td {
+    border-top: none;
+}
+.table-fav-used-machines tbody tr td:last-child span input.star:before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    padding: 0px;
+    margin: -2px;
+    color: #fbc429;
+}
+
+.table-fav-used-machines  tbody tr td:last-child span input {
+    position: relative;
+}
+
+
+
+span.lit-text-grey {
+    color: #ababab;
+    font-size: 13px;
+}
+span.lit-text-grey i {
+    font-size: 20px;
+    vertical-align: middle;
+    color: #f7b90c;
+    margin-left: 7px;
+}
+
+@media(max-width:991px)
+{
+    section.favour .form-upper-div {
+        padding: 0;
+}
+}
+
+
+@media(max-width:767px)
+{
+    section.favour .form-upper-div {
+        padding: 0px 0 0;
+    }
+
+    .table-fav-prescrib tbody .ng-star-inserted {
+        width: 100%;
+     }
+
+     .table-fav-used-machines tbody .ng-star-inserted {
+        width: 100%;
+    }
+
+    .table-fav-prescrib tbody tr {
+    border-top: 1px solid #dee2e6;
+    }
+    .table-fav-prescrib tbody tr td
+    {
+        border:none;   
+    }
+
+    section.favour .form-upper-div .chk-compound p-checkbox {
+        float: right;
+        margin-right: 15px;
+    }
+    .form-upper-div .chk-compound {
+        padding: 15px 0 0 0;
+    }
+
+}
+@media(max-width:480px)
+{
+    .table-fav-prescrib tbody .ng-star-inserted{
+       width: 100%;
+    }
+
+    .table-fav-used-machines tbody .ng-star-inserted {
+        width: 100%;
+    }
+
+.table-fav-prescrib tbody tr td:last-child {
+    padding: 5px 10px 10px;
+}
+.table-fav-prescrib tbody tr td:last-child span {
+  
+    text-align: left;
+}
+
+.table-fav-prescrib th h3 {
+    
+    margin: 0 0 10px 0;
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+}
+.table-fav-prescrib th p-checkbox {
+    float: left;
+    font-size: 12px;
+    display: block;
+}
+
+.table-fav-used-machines th h3 {
+    
+    margin: 0 0 10px 0;
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+}
+.table-fav-used-machines th p-checkbox {
+    float: left;
+    font-size: 12px;
+    display: block;
+}
+
+.table-fav-used-machines tbody tr td
+{
+    width: 100%;
+    display: block;
+    border:none;
+    padding: 10px 10px 0;
+}
+.table-fav-used-machines tbody tr td:last-child {
+    padding: 5px 10px 10px;
+}
+.table-fav-used-machines tbody tr td:last-child span {
+  
+    text-align: left;
+}
+
+}
+
+@media(max-width:420px)
+{
+.form-upper-div .search-area {
+    width: 100%;
+}
+
+section.favour .form-upper-div .search-area input[type=text] {
+    width: 100%;
+    max-width: 100%;
+}
+.form-upper-div .chk-compound {
+    padding: 0px 0 10px 0;
+    text-align: center;
+    width: 100%;
+}
+section.favour .form-upper-div .chk-compound p-checkbox {
+    float: none;
+    margin-right: 0px;
+    text-align: center;
+}
+
+}
+
+
+.star {
+    visibility:hidden;
+    font-size:30px;
+    cursor:pointer;
+}
+.star:before {
+   content: "\2605";
+   visibility:visible;
+  
+}
+.star:checked:before {
+   content: "\2606";
+}

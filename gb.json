@@ -1,0 +1,59 @@
+{
+  "newrx": 
+  [
+    {
+      "id":1,
+    "medication": "medication",
+    "frequency":"frequency",
+    "quantity": "1",
+    "daysSupply":"daysSupply",
+    "form":"form",                
+    "refills" :"2",
+    "prn": "true",
+    "daw":"false",
+    "route": "Month",
+    "includeFavorites": "true",
+    "additionalSig":"additionalSig",
+    "includeFavorites1Chk": "true",
+    "includeFavorites1" :"includeFavorites1",
+    "saveFavorites": "false",
+    "print" :"true"
+    },
+    {
+    "id":2,
+    "medication": "medication2",
+    "frequency":"frequency",
+    "quantity": "1",
+    "daysSupply":"daysSupply",
+    "form":"form",                
+    "refills" :"2",
+    "prn": "true",
+    "daw":"false",
+    "route": "Month",
+    "includeFavorites": "true",
+    "additionalSig":"additionalSig",
+    "includeFavorites1Chk": "true",
+    "includeFavorites1" :"includeFavorites1",
+    "saveFavorites": "false",
+    "print" :"true"
+    },
+    {
+    "id":3,
+    "medication": "medication3",
+    "frequency":"frequency",
+    "quantity": "1",
+    "daysSupply":"daysSupply",
+    "form":"form",                
+    "refills" :"2",
+    "prn": "true",
+    "daw":"false",
+    "route": "Month",
+    "includeFavorites": "true",
+    "additionalSig":"additionalSig",
+    "includeFavorites1Chk": "true",
+    "includeFavorites1" :"includeFavorites1",
+    "saveFavorites": "false",
+    "print" :"true"
+    }
+  ]
+}

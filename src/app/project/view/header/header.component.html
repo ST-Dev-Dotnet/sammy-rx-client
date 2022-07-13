@@ -1,0 +1,33 @@
+<div class="card card-w-title card-w-title ui-g-12">
+    <h1 style="color: #49d2c6;">Soundshore Podiatry Practice</h1>
+   <p-tabView>
+                <div class="ui-g-2">
+                    <button pButton type="button" (click)="rxFunClick()"
+                        [ngClass]="{'active': showContainerNewRx == true}" label="New Rx"
+                        class="ui-button-text ui-clickable ui-g-1 custom-ui-btn"></button>
+                </div>
+                <div class="ui-g-2">
+                    <button pButton type="button" (click)="currentMedsAllergiesClick()"
+                        [ngClass]="{'active': showContainerMedAllergies == true}" label="Current Meds & Allergies"
+                        class="ui-g-1 custom-ui-btn"></button>
+                </div>
+                <div class="ui-g-2">
+                    <button pButton (click)="favoritesClick()" [ngClass]="{'active': showContainerFavorites == true}"
+                        type="button" label="Favorites" class="ui-g-1 custom-ui-btn"></button>
+                </div>
+                <div class="ui-g-2">
+                    <button pButton type="button" (click)="alertsClick()"
+                        [ngClass]="{'active': showContainerAlerts == true}" label="Alerts"
+                        class="ui-g-1 custom-ui-btn"><span class="badge_no">4</span></button>
+                </div>
+                <div class="ui-g-2">
+                    <button pButton type="button" (click)="reportsClick()"
+                        [ngClass]="{'active': showContainerReports == true}" label="Reports"
+                        class="ui-g-1 custom-ui-btn"></button>
+                </div>
+                <div class="ui-g-2">
+                    <a href="#"><img src="../../../assets/images/38-385149_android-settings-icon-png-icon.png"
+                            style="margin-left :14px; height: 49px; width: 49px;"></a>
+                </div>
+            </p-tabView>
+</div>

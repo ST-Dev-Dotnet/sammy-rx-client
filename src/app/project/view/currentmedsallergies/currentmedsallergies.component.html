@@ -1,0 +1,294 @@
+<div class="ui-fluid"><div class="ui-g">
+    <section class="current-medi-alleries">
+   <form class="custom-form" [formGroup]="newRxForm" (ngSubmit)="onSubmit()">
+            <p-panel class="cur-med-content">
+
+                <div class="margin-b">
+                    <div class="row ui-g-3 date-check">
+                        <label>Date : </label>
+                        <div class="custom-field">10/14/2019</div>
+                    </div>
+                    <div class="row ui-g-5 cus-width">
+                        <label> Prescribing Doctor: </label>
+                        <a href="" class="custom-field">Robert Alexander</a>
+                    </div>
+                    <div class="row ui-g-4 cus-width">
+                        <label>Pharmacy Benefit Plan: </label>
+                        <a href="" class="custom-field">Medicare</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-upper-div">
+                        <div class="ui-g-6 lef-form1">
+                            <div class="row ui-g-12 link-srchmed">
+                                <label>Medication</label>
+                                <p-dialog [dismissableMask]="true" class="modal-newrx-srch" [(visible)]="displayPopup"
+                                    [modal]="true" [responsive]="true" [minY]="70" [maximizable]="true"
+                                    [baseZIndex]="10000">
+
+                                    <p-autoComplete id="acSimple"[suggestions]="filterMedications"
+                                        (completeMethod)="filterMedication($event)" field="name" [size]="30"
+                                        placeholder="Medications" [minLength]="1">
+                                    </p-autoComplete>
+                                    <!-- <span style="margin-left:10px">Medications:
+                                        {{medcations ? medcations.name||medcations : 'none'}}</span> -->
+
+                                    <div class="data-srch-manual" *ngIf="verified_data">
+                                        <div class="compoun-filled">
+                                            <div class="form-group">
+                                                <label>Name Compound</label>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                        </div>
+
+                                        <div class="footer-btns">
+
+                                            <span class="not-lef">
+                                                <p-checkbox _ngcontent-myc-c2="" label="Save as Favorites" value=""
+                                                    class="ng-untouched ng-pristine ng-valid">
+                                                    <div class="ui-chkbox ui-widget">
+                                                        <div class="ui-helper-hidden-accessible"><input type="checkbox"
+                                                                name="undefined" value="">
+                                                        </div>
+                                                        <div
+                                                            class="ui-chkbox-box ui-widget ui-corner-all ui-state-default">
+                                                            <span class="ui-chkbox-icon ui-clickable"></span>
+                                                        </div>
+                                                    </div>
+                                                    <!----><label class="ng-star-inserted ui-chkbox-label">Save as
+                                                        Favorites</label>
+                                                </p-checkbox>
+                                            </span> <button pButton type="button" label="Finished"></button>
+                                        </div>
+                                        <!-- <button type="button" pButton icon="pi pi-check" (click)="displayPopup=false" label="Yes"></button>
+<button type="button" pButton icon="pi pi-close" (click)="displayPopup=false" label="No" class="ui-button-secondary"></button> -->
+
+
+                                    </div>
+
+
+                                    <div class="form-custom" *ngIf="verifyAddMedication">
+                                        <div class="btn-manual">
+                                            <div>
+                                                <button pButton type="button" class="btn-manuall"
+                                                    (click)="manualadd_med()" label="Item not found add
+                                                    manually"></button>
+                                            </div>
+
+                                            <p-dialog [dismissableMask]="true" class="form_manualadd"
+                                                [(visible)]="modal_manualadd" [modal]="true" [responsive]="true"
+                                                [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+                                                <div class="notify-med warn-tab"><span class="warning"><i
+                                                            aria-hidden="true"
+                                                            class="fa fa-exclamation-triangle"></i></span>
+                                                    This medication will not be part of the
+                                                    contraindications checking since it is being add
+                                                    manually
+                                                </div>
+                                                <p><button pButton type="button" label="Aknowledged"
+                                                        class="btn-aknw"></button></p>
+                                            </p-dialog>
+                                        </div>
+
+                                    </div>
+
+
+                                </p-dialog>
+
+
+                                <a href="#" style="color:#006ce5;font-size: 17px; font-weight: 500;"
+                                    (click)="showPopup()" icon="pi pi-info-circle " label="Show">Search
+                                    Medication
+                                </a>
+                            </div>
+                            <div class="row ui-g-12 set-errors">
+                                <label>Quantity </label>
+                                <p-dropdown
+                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all ui-g-6 w-130 custom-select"
+                                    formControlName="quantity" [options]="quantity"></p-dropdown>
+                                <div
+                                    [className]="!newRxForm.controls['quantity'].valid && submitted?'row ui-g-12 erroz custom-erroz custom-erroz-display-block' : 'row ui-g-12 erroz custom-erroz custom-erroz-display'">
+                                    <p-message severity="error" text="Quantity is required"
+                                        *ngIf="!newRxForm.controls['quantity'].valid && submitted">
+                                    </p-message>
+                                </div>
+                            </div>
+
+                            <div class="row ui-g-12 set-errors">
+                                <label for="">Form </label>
+                                <p-dropdown
+                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all ui-g-6 w-130 custom-select"
+                                    formControlName="form" [options]="form"></p-dropdown>
+                                <div
+                                    [className]="!newRxForm.controls['form'].valid && submitted?'row ui-g-12 erroz custom-erroz custom-erroz-display-block' : 'row ui-g-12 erroz custom-erroz custom-erroz-display'">
+                                    <p-message severity="error" text="Form is required"
+                                        *ngIf="!newRxForm.controls['form'].valid && submitted">
+                                    </p-message>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row ui-g-12 set-errors">
+                                <label for="">Route </label>
+                                <p-dropdown
+                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all ui-g-6 w-130 custom-select"
+                                    formControlName="route" [options]="route"></p-dropdown>
+                                <div
+                                    [className]="!newRxForm.controls['route'].valid && submitted?'row ui-g-12 erroz custom-erroz custom-erroz-display-block' : 'row ui-g-12 erroz custom-erroz custom-erroz-display'">
+                                    <p-message severity="error" text="Route is required"
+                                        *ngIf="!newRxForm.controls['route'].valid && submitted">
+                                    </p-message>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="ui-g-6 rig-form1">
+
+                            <div class="row ui-g-12 pl-sm custom-dropdown set-errors">
+                                <label>Frequency</label>
+                                <p-dropdown
+                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all ui-g-6 w-130 custom-select"
+                                    formControlName="frequency" [options]="frequency"></p-dropdown>
+                                <div
+                                    [className]="!newRxForm.controls['frequency'].valid && submitted?'row ui-g-12 erroz custom-erroz custom-erroz-display-block' : 'row ui-g-12 erroz custom-erroz custom-erroz-display'">
+                                    <p-message severity="error" text="Frequency is required"
+                                        *ngIf="!newRxForm.controls['frequency'].valid && submitted">
+                                    </p-message>
+                                </div>
+                            </div>
+
+
+                            <div class="row ui-g-12 pl-sm set-errors">
+                                <label>Days Supply </label>
+                                <p-dropdown
+                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all ui-g-6 w-130 custom-select"
+                                    formControlName="daysSupply" [options]="daysSupply"></p-dropdown>
+                                <div
+                                    [className]="!newRxForm.controls['daysSupply'].valid && submitted?'row ui-g-12 erroz custom-erroz custom-erroz-display-block' : 'row ui-g-12 erroz custom-erroz custom-erroz-display'">
+                                    <p-message severity="error" text="DaysSupply is required"
+                                        *ngIf="!newRxForm.controls['daysSupply'].valid && submitted">
+                                    </p-message>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row ui-g-12 custom-flex pl-sm ref set-errors">
+                                <div class="row ui-g-4 pl-0 ref-div">
+                                    <label for="">Refills </label>
+                                    <p-dropdown
+                                        class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all ui-g-6 w-130 custom-select"
+                                        formControlName="refills" [options]="refills"></p-dropdown>
+
+                                    <p-message severity="error" text="Refills is required"
+                                        *ngIf="!newRxForm.controls['refills'].valid && submitted">
+                                    </p-message>
+
+                                </div>
+
+                                <div class="row ui-g-7 prn-class">
+                                    <div class="ui-g-5 checkbox-prn">
+                                        <label for="">PRN </label>
+                                        <p-checkbox [(ngModel)]="prn" [ngModelOptions]="{standalone: true}"
+                                            binary="true" class="p-checkbox-box"></p-checkbox>
+                                    </div>
+                                    <div class="ui-g-3 checkbox-prn">
+                                        <label for="">DAW </label>
+                                        <p-checkbox [(ngModel)]="daw" [ngModelOptions]="{standalone: true}"
+                                            binary="true" class="p-checkbox-box"></p-checkbox>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="row ui-g-12 pl-0 full-input">
+                            <div class="row ui-g-4">
+                                <h1>Additional Sig</h1>
+                                <p>Will appear on Rx label</p>
+                            </div>
+                            <div class="row ui-g-3">
+                                <p-checkbox [(ngModel)]="includeFavorites" [ngModelOptions]="{standalone: true}"
+                                    value="" label="Include in Favorites"></p-checkbox>
+                            </div>
+                            <div class="row ui-g-12">
+                                <input formControlName="additionalSig"
+                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all max-w-100"
+                                    role="textbox" placeholder="" type="text">
+                                <!-- <p-message severity="error" text="AdditionalSig is required" *ngIf="!newRxForm.controls['additionalSig'].valid && submitted"></p-message> -->
+                            </div>
+                        </div>
+                        <div class="row ui-g-12 pl-0 full-input">
+                            <div class="row ui-g-4">
+                                <h1>Pharmacist Message</h1>
+                                <p>Will not appear on Rx Label - no sig allowed</p>
+                            </div>
+                            <div class="row ui-g-3">
+                                <p-checkbox [(ngModel)]="includeFavorites1Chk" [ngModelOptions]="{standalone: true}"
+                                    value="" label="Include in Favorites"></p-checkbox>
+                            </div>
+                            <div class="row ui-g-12">
+                                <input formControlName="includeFavorites1"
+                                    class="ui-picklist-filter ui-inputtext ui-widget ui-corner-all max-w-100"
+                                    role="textbox" placeholder="" type="text">
+                                <!-- <p-message severity="error" text="Include Favorites is required" *ngIf="!newRxForm.controls['includeFavorites1'].valid && submitted"></p-message> -->
+                            </div>
+                        </div>
+
+                        <p-dialog [dismissableMask]="true" class="mod_prescrib" [(visible)]="show_succ_presc"
+                            [modal]="true" [responsive]="true" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+                            <div class="prescr">
+                                You have sucessfully sent 5 prescriptions!!!
+                            </div>
+                        </p-dialog>
+                        <p-dialog [dismissableMask]="true" class="mod_errpres" [(visible)]="show_error_presc"
+                            [modal]="true" [responsive]="true" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+                            <div class="prescr">
+                                <h4>Uhh Oh Trouble! Not all of your Prescriptions were submitted!</h4>
+                                <ul>
+                                    <li>1 Rx will be faxed to the pharmacy</li>
+                                    <li class="warn">3 Prescriptions failed to be submitted</li>
+                                    <li><button pButton type="button" (click)="close_error()" label="OK"></button></li>
+                                </ul>
+                            </div>
+                        </p-dialog>
+
+                        <!--  Bottom Conditional area -->
+                        <div class="ui-g-12 float-right btnz-formz-newrx curr-btn ">
+                            <div class="footer-buttons nnewrx">
+                                <ul>
+                                    <li>
+                                        <p-checkbox [(ngModel)]="saveFavorites" [ngModelOptions]="{standalone: true}"
+                                            value="" label="Save as Favorite"></p-checkbox>
+                                    </li>
+
+                                </ul>
+
+
+                            </div>
+                            <ul>
+                                <li> <button pButton type="submit" label="Save as Current Medication and Add New"
+                                        style="margin-bottom:10px" (click)="onSubmit()"></button></li>
+                                <li>
+                                    <button pButton type="button" label="Save as Current Medication"
+                                        style="margin-bottom:10px"></button>
+                                </li>
+                            </ul>
+
+                        </div>
+
+                        <!-- end code -->
+
+                    </div>
+
+                </div>
+            </p-panel>
+        </form>
+    </section>
+</div>
+</div>
